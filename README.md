@@ -102,6 +102,39 @@ Link to testing md
 
 ### CREATE A DATABASE ON ELEPHANTSQL
 
+This section describes the creation of an initial database on [ELEPHANTSQL](https://elephantsql.com)
+
+1. Log in to your elephantSQL account or create one
+2. On your Instances dashboard click on **Create New Instance**
+
+<details>
+  <summary>Create an new database on ElephantSQL</summary>
+  <img src="docs/readme-files/database-elephantsql/elephantsql-new-instance.png" ><br>
+</details>
+
+3. On the next screen select a an instance name then click **Select Region**.
+
+<details>
+  <summary>New database name and region on ElephantSQL</summary>
+  <img src="docs/readme-files/database-elephantsql/elephantsql-name-and-region.png" ><br>
+</details>
+
+4. Select the region nearest to you. Then click **Review**
+
+<details>
+  <summary>Select region on ElephantSQL</summary>
+  <img src="docs/readme-files/database-elephantsql/elephantsql-region.png" ><br>
+</details>
+
+5. On the review tab, check if everything is okay and click **Create Instance**.
+
+<details>
+  <summary>Create new instance on ElephantSQL</summary>
+  <img src="docs/readme-files/database-elephantsql/elephantsql-confirm.png" ><br>
+</details>
+
+ADD STEPS FOR DBURL TO HEROKU
+
 ### DEPLOY ON HEROKU
 
 This section explains the deployment steps on [Heroku](https://www.heroku.com)
