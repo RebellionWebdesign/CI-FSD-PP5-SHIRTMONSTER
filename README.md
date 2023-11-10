@@ -1,4 +1,4 @@
-![HEADER IMAGE HERE](docs\readme-files\readme-header.png)
+![HEADER IMAGE HERE](https://github.com/RebellionWebdesign/CI-FSD-PP5-SHIRTMONSTER/blob/9f464fa485ef09548e5fdb617ff4aca263af55c7/docs/readme-files/readme-header.png)
 
 ## TABLE OF CONTENTS
 
