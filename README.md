@@ -107,42 +107,42 @@ Link to testing md
 This section explains the deployment steps on [Heroku](https://www.heroku.com)
 
 1. Log in to your Heroku account and create a new app:
-2. 
+
 <details>
   <summary>Create an new app on Heroku</summary>
   <img src="docs/readme-files/deployment-heroku/heroku-new-app.png" ><br>
 </details>
 
 2. On the next screen, choose an app name and the where the app should be hosted. **Click "Create app"**.
-3. 
+
 <details>
   <summary>Choose Name and Region on Heroku</summary>
   <img src="docs/readme-files/deployment-heroku/heroku-app-name-and-region.png" ><br>
 </details>
 
 3. In your app go to the **Deploy tab** and click **GitHub**.
-4. 
+
 <details>
   <summary>Search for your repo on Heroku</summary>
   <img src="docs/readme-files/deployment-heroku/heroku-click-github.png" ><br>
 </details>
 
 4. Once clicked a new section will open. Check that the Account is correct and search for your repo name (e.g. CI-FSD-PP5-SHIRTMONSTER in this case). **Click Connect**.
-5. 
+
 <details>
   <summary>Connect your repo with Heroku</summary>
   <img src="docs/readme-files/deployment-heroku/heroku-connect-github.png" ><br>
 </details>
 
 5. Now we need to make some settings in the app. Go to the **Settings tab** and click on **Reveal Config Vars**.
-6. 
+
 <details>
   <summary>Config Vars Heroku</summary>
   <img src="docs/readme-files/deployment-heroku/heroku-settings.png" ><br>
 </details>
 
 6. Once clicked a new Section will open. Add your settings from your `env.py` file to the **KEY** and **VALUE** field. **Click Add**. Repeat this for every config var you need to have and also add the ones which are for Heroku only.
-7. 
+
 <details>
   <summary>Config Vars Heroku</summary>
   <img src="docs/readme-files/deployment-heroku/heroku-config.png" ><br>
