@@ -1,4 +1,4 @@
-![HEADER IMAGE HERE](D:\GitHub\CI-FSD-PP5-SHIRTMONSTER\docs\readme-files\readme-header.png)
+![HEADER IMAGE HERE](docs\readme-files\readme-header.png)
 
 ## TABLE OF CONTENTS
 
