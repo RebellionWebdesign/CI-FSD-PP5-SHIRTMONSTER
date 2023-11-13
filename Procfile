@@ -1,1 +1,1 @@
-web: gunicorn shirtmonster.wsgi:application
+web: gunicorn shirtmonster.wsgi
