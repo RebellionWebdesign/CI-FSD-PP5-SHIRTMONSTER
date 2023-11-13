@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-	"allauth.account.middleware.AccountMiddleware",
+	"allauth.account.middleware.AccountMiddleware",                                 # required by allauth
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -69,13 +69,29 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.request',                       # required by allauth
+                'django.contrib.auth.context_processors.auth',                      # required by allauth
                 'django.contrib.messages.context_processors.messages',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',                                    # Needed to login by username in Django admin, regardless of allauth
+    'allauth.account.auth_backends.AuthenticationBackend',                          # Authentication methods specific to allauth such as login by email or username
+)
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'                    # Required for console confirmation emails in dev mode
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'                                    # Lets the user choose betwen username or email login
+ACCOUNT_EMAIL_REQUIRED = True                                                       # Without an email users cant register
+ACCOUNT_EMAIL_VERIFICATION = 'required'                                             # Unconfirmed users wont be set to active in the website
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True                                             # Confirm email in registration process (write twice)
+ACCOUNT_USERNAME_MINLEGNTH = 4                                                      # Username cant be shorter than 4 characters
+LOGIN_URL = '/accounts/login'                                                       # The url wef ind the login form
+LOGIN_REDIRECT_URL = '/'                                                            # Sends user to the home page after log in
 
 WSGI_APPLICATION = 'shirtmonster.wsgi.application'
 
