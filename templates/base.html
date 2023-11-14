@@ -23,10 +23,11 @@
     {% endblock coreCSS %}
 
     {% block extraCSS %}
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
     {% endblock extraCSS %}
 
     {% comment %} website title {% endcomment %}
-    <title>SHIRTMONSTER | URBAN APPAREL {% block extra_title %}{% endblock extra_title %}</title>
+    <title>SHIRTMONSTER {% block extra_title %}{% endblock extra_title %}</title>
 </head>
 
 <body>
@@ -35,8 +36,58 @@
         <div class="message-container"></div>
     {% endif %}
 
-    {% comment %} NAVBAR HERE {% endcomment %}
-    <header class="container-fluid fixed-top"></header>
+    {% comment %} DESKTOP NAVBAR HERE {% endcomment %}
+    <header class="container-fluid fixed-top px-0">
+        <div class="container-fluid bg-dark d-flex justify-content-center py-2">
+            <div class="w-75 row text-white">
+                <div class="col d-flex justify-content-start align-items-center">
+                    <img class="logo" src="media/img/shirtmonster-logo-white.svg"></img>
+                </div>
+                <div class="col d-flex justify-content-center align-items-center">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Search our shop..." aria-label="Shop Search" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" id="button-addon2"><i class="search-icon" data-lucide="search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-end align-items-center">
+                    <a class="mr-2 bg-primary text-white px-2 py-1 rounded" href="#">LOGIN</a>
+                    <a class="bg-primary text-white px-2 py-1 rounded" href="#">REGISTER</a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gradient container-fluid d-flex justify-content-center py-1">
+            <div class="w-75 row text-white">
+                <div class="col d-flex flex-row justify-content-between w-75 text-white">
+                    <nav>
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link p-0 text-white" href="#">LINK 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0 ml-4 text-white" href="#">LINK 2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0 ml-4 text-white" href="#">LINK 3</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0 ml-4 text-white" href="#">LINK 4</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0 ml-4 text-white" href="#">LINK 5</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="icon-wrapper">
+                        <i class="mr-4" data-lucide="list-todo"></i>
+                        <i class="mr-4" data-lucide="user-circle"></i>
+                        <i data-lucide="shopping-bag"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <main>
         {% block content %}
@@ -53,6 +104,8 @@
     {% endblock coreJS %}
 
     {% block extraJS %}
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="{% static 'js/main.js' %}"></script>
     {% endblock extraJS %}
 </body>
 </html>
