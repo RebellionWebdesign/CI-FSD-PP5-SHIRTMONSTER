@@ -1,0 +1,24 @@
+/* BOOTSTRAP OVERRIDES */
+.bg-dark {
+    background-color: #191818 !important;
+}
+
+.bg-primary {
+    background-color: #D80263 !important;
+}
+
+
+/* CUSTOM CSS */
+.logo {
+    width: 150px;
+}
+
+.bg-gradient {
+    background: rgb(216,2,99);
+    background: linear-gradient(90deg, rgba(216,2,99,1) 0%, rgba(126,58,223,1) 100%);
+}
+
+.search-icon {
+    width: 16px;
+    height: 16px;
+}
