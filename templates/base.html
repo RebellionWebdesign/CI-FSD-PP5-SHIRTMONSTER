@@ -45,16 +45,22 @@
             <div class="w-75 row text-white">
                 <div class="col d-flex justify-content-start align-items-center">
                     <a href="{% url 'home' %}">
-                        <img class="logo" src="media/img/shirtmonster-logo-white.svg" alt="shirtmonster logo"></img>
+                        <img class="logo" src="/media/img/shirtmonster-logo-white.svg" alt="shirtmonster logo"></img>
                     </a>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center">
-                    <div class="input-group">
-                        <input type="search" class="form-control" placeholder="Search our shop..." aria-label="Shop Search" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn search-button" type="button" id="button-addon2"><i class="search-icon text-white" data-lucide="search"></i></button>
+                    <form class="w-100" method="get" action="">
+                        <div class="input-group">
+                            <input type="search" class="form-control" name="search" placeholder="Search our shop..." aria-label="Shop Search" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn search-button" type="button" id="button-addon2">
+                                    <span class="icon">
+                                        <i class="search-icon text-white" data-lucide="search"></i>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 {% if user.is_authenticated %}
                 <div class="col d-flex justify-content-end align-items-center">
@@ -81,10 +87,7 @@
                                 <a class="nav-link p-0 ml-4 text-white" href="#">SHOP</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link p-0 ml-4 text-white" href="#">LINK 3</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link p-0 ml-4 text-white" href="#">LINK 4</a>
+                                <a class="nav-link p-0 ml-4 text-white" href="#">CATEGORIES</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link p-0 ml-4 text-white" href="#">CONTACT</a>
