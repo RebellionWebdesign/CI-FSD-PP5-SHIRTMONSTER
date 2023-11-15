@@ -4,6 +4,7 @@
     --color-primary: #D80263;
     --color-primary-hover: #d6327c;
     --color-secondary: #7E3ADF;
+    --color-secondary-hover: #8d54dd;
     --primary-dark-trans: rgba(0, 0, 0, 0.4);
     --primary-dark: #191818;
     --secondary-dark: #2F2F2F;
@@ -64,6 +65,10 @@ h3 {
     width: 150px;
 }
 
+.login-logo {
+    width: 400px;
+}
+
 .bg-gradient {
     background: rgb(216, 2, 99);
     background: linear-gradient(90deg, rgba(216, 2, 99, 1) 0%, rgba(126, 58, 223, 1) 100%);
@@ -110,4 +115,50 @@ h3 {
     top: 0;
     left: 0;
     background: var(--primary-dark-trans);
+}
+
+/* FORMS */
+
+/* Login Form */
+
+.login {
+    background-color: var(--secondary-dark);
+}
+
+.login label[for="id_login"] {
+    display: none;
+}
+
+#id_login {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.login label[for="id_password"] {
+    display: none;
+}
+
+#id_password {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+}
+
+#id_remember {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+}
+
+.login-button {
+    border: none;
+    width: 100%;
+}
+
+.login-link {
+    color: var(--color-secondary);
+}
+
+.login-link:hover {
+    color: var(--color-secondary-hover);
 }
