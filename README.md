@@ -30,7 +30,17 @@ Features as list
 
 #### RESPONSIVENESS
 
-Chosen breakpoints  here
+For responsive behaviour the default bootstrap 4.6.2 breakpoints were used:
+
+Extra Small: < 576px
+
+Small: <u>></u> 576px
+
+Medium: <u>></u> 768px
+
+Large: <u>></u> 992px
+
+Extra Large: <u>></u> 1200px
 
 ### STRUCTURE
 
