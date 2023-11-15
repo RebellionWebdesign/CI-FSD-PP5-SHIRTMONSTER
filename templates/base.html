@@ -64,6 +64,7 @@
                 </div>
                 {% if user.is_authenticated %}
                 <div class="col d-flex justify-content-end align-items-center">
+                    <p class="mr-2 text-white px-4 py-1 mb-0">Hi, {{ user.username }}!</p>
                     <a class="mr-2 cta text-white px-4 py-1 rounded" href="{% url 'account_logout' %}">LOGOUT</a>
                     <a class="cta text-white px-4 py-1 rounded hide" href="#">REGISTER</a>
                 </div>
