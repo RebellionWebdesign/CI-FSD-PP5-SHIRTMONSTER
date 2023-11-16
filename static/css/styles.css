@@ -162,3 +162,77 @@ h3 {
 .login-link:hover {
     color: var(--color-secondary-hover);
 }
+
+/* Signup Form */
+
+.signup {
+    background-color: var(--secondary-dark);
+}
+
+.signup label[for="id_email2"] {
+    display: none;
+}
+
+.signup label[for="id_email"] {
+    display: none;
+}
+
+.signup label[for="id_username"] {
+    display: none;
+}
+
+.signup label[for="id_password1"] {
+    display: none;
+}
+
+.signup label[for="id_password2"] {
+    display: none;
+}
+
+#id_email {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    width: 250px;
+}
+
+#id_email2 {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    width: 250px;
+}
+
+#id_username {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    width: 250px;
+}
+
+#id_password1 {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    width: 250px;
+}
+
+#id_password2 {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    width: 250px;
+}
+
+.signup-button {
+    border: none;
+    width: 100%;
+}
+
+.signup-link {
+    color: var(--color-secondary);
+}
+
+.signup-link:hover {
+    color: var(--color-secondary-hover);
+}
