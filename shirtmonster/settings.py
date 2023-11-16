@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 	'allauth.socialaccount',
     'django.contrib.staticfiles',
 	'home',
+    'whitenoise',
 ]
 
 MIDDLEWARE = [
