@@ -145,13 +145,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
-
-# AWS config
+# AWS and dev config
 if 'USE_AWS' in os.environ:
 # Caching
     AWS_S3_OBJECT_PARAMETERS = {
@@ -175,7 +169,12 @@ if 'USE_AWS' in os.environ:
 # Overrides for static and media files in prod
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+else:
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
 
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
