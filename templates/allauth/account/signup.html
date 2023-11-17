@@ -9,7 +9,7 @@
 
 <div class="my-3">
   <a href="{% url 'home' %}">
-      <img class="login-logo" src="/media/img/shirtmonster-logo-white.svg" alt="shirtmonster logo"></img>
+      <img class="login-logo" src="{% static 'img/logo/shirtmonster-logo-white.svg' %}" alt="shirtmonster logo"></img>
   </a>
 </div>
 <p>{% blocktrans %}Already have an account? Then please <a class="signup-link" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
