@@ -8,7 +8,9 @@ $('.carousel').carousel({
 })
 
 /* Checks if the url is one of the login/logout/password urls and hides the header */
-function hideHeader() {
+
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Fired!")
     let loginUrl = window.location.href.includes('login');
     let logoutUrl = window.location.href.includes('logout');
     let signupUrl = window.location.href.includes('signup');
@@ -16,14 +18,12 @@ function hideHeader() {
     const header = document.getElementById('header')
 
     if (loginUrl) {
-        header.style.display("none")
+        header.classList.add("hide");
     } else if (logoutUrl) {
-        header.style.display("none")
+        header.classList.add("hide");
     } else if (signupUrl) {
-        header.style.display("none")
+        header.classList.add("hide");
     } else if (resetUrl) {
-        header.style.display("none")
+        header.classList.add("hide");
     }
-}
-
-hideHeader();
+});
