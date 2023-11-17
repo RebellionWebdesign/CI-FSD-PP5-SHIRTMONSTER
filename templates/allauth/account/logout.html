@@ -1,21 +1,26 @@
-{% extends "account/base.html" %}
-
+{% extends "base.html" %}
+{% load static %}
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock head_title %}
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
-
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
-
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
-
-
+<section class="vw-100 min-vh-100 d-flex flex-column justify-content-center align-items-center text-white">
+  <div class="my-3">
+    <a href="{% url 'home' %}">
+        <img class="login-logo" src="{% static 'img/logo/shirtmonster-logo-white.svg' %}" alt="shirtmonster logo"></img>
+    </a>
+  </div>  
+  <p>{% trans 'Are you sure you want to sign out?' %}</p>
+  <form class="signout px-5 py-5 rounded" method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <button class="login-button rounded cta text-white px-2 py-1" type="submit">{% trans 'Sign Out' %}</button>
+      <a class="button mt-3 login-link" href="{% url 'home' %}">{% trans "Back to Homepage" %}</a>
+    </div>
+  </form>
+</section>
 {% endblock content %}
