@@ -47,6 +47,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <div class="d-flex flex-column justify-content-center align-items-center">
     <button class="login-button rounded cta text-white primaryAction" type="submit">{% trans "LOGIN" %}</button>
     <a class="button mt-3 login-link secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    <a class="button mt-3 login-link" href="{% url 'home' %}">{% trans "Back to Homepage" %}</a>
   </div>
 </form>
 </section>
