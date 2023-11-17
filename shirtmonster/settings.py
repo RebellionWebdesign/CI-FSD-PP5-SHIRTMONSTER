@@ -82,6 +82,7 @@ TEMPLATES = [
     },
 ]
 
+# allauth settings
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',                                    # Needed to login by username in Django admin, regardless of allauth
     'allauth.account.auth_backends.AuthenticationBackend',                          # Authentication methods specific to allauth such as login by email or username
@@ -89,7 +90,7 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'                    # Required for console confirmation emails in dev mode
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'                    # Required for console confirmation emails in dev mode
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'                                    # Lets the user choose betwen username or email login
 ACCOUNT_EMAIL_REQUIRED = True                                                       # Without an email users cant register
 ACCOUNT_EMAIL_VERIFICATION = 'required'                                             # Unconfirmed users wont be set to active in the website
@@ -100,6 +101,12 @@ LOGIN_REDIRECT_URL = '/'                                                        
 
 WSGI_APPLICATION = 'shirtmonster.wsgi.application'
 
+#email settings
+EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_PORT = os.environ.get("EMAIL_PORT")
+EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS")
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
