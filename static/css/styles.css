@@ -236,3 +236,18 @@ h3 {
 .signup-link:hover {
     color: var(--color-secondary-hover);
 }
+
+/* Password Reset Form */
+
+.password_reset label[for="id_email"] {
+    display: none;
+}
+
+.password_reset {
+    background: var(--secondary-dark);
+}
+
+.reset-button {
+    border: none;
+    width: 100%;
+}
