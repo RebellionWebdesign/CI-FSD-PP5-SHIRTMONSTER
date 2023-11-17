@@ -262,3 +262,9 @@ input:focus {
     border: none;
     width: 100%;
 }
+
+/* Logout Form */
+
+.signout {
+    background-color: var(--secondary-dark);
+}
