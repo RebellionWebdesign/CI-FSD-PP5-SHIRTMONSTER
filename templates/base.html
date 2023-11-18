@@ -40,19 +40,20 @@
     {% endif %}
 
     {% comment %} RESPONSIVE NAVBAR HERE {% endcomment %}
-    <header id="header" class="header container-fluid fixed-top">
+    <header id="header" class="header-mobile d-md-none container-fluid fixed-top">
         <div class="top-navigation row text-white">
             <div class="col-12 d-flex justify-content-between align-items-center py-2">
                 <a href="{% url 'home' %}">
                     <img class="logo" src="{% static "img/logo/shirtmonster-logo-white.svg" %}" alt="shirtmonster logo"></img>
                 </a>
                 <div class="d-flex justify-content-center align-items-center">
-                    <i class="mr-4 search-toggle" data-lucide="search"></i>
+                    <i class="mr-4 d-md-none search-toggle" data-lucide="search"></i>
                     <i class="d-none mr-4 close-toggle" data-lucide="x-circle"></i>
                     <i class="d-md-none mobile-open" data-lucide="align-right"></i>
                 </div>
             </div>
         </div>
+
         {% comment %} MOBILE SLIDEOUT MENU START {% endcomment %}
         <div class="closed mobile-menu bg-gradient px-2 py-2 d-flex d-md-none justify-content-center align-items-center">
             <div class="mobile-inner container rounded px3 py-3 d-flex justify-content-center align-items-center">
@@ -100,9 +101,84 @@
         </div>
         {% comment %} MOBILE SLIDEOUT MENU END {% endcomment %}
     </header>
-    
+
+    {% comment %} DESKTOP NAVBAR START {% endcomment %}
+    <header id="header" class="header-desktop container-fluid fixed-top d-flex flex-column px-0">
+        <div class="top-navigation container-fluid d-flex justify-content-center align-items-center py-2">
+            <div class="desktop-row w-75 row text-white">
+                <div class="col d-flex justify-content-start align-items-center">
+                <a href="{% url 'home' %}">
+                    <img class="logo" src="{% static "img/logo/shirtmonster-logo-white.svg" %}" alt="shirtmonster logo"></img>
+                </a>
+                </div>
+                <div class="col d-flex justify-content-center align-items-center">
+                    <form class="search-form w-100" method="get" action="">
+                        <div class="input-group">
+                            <input type="search" class="form-control" name="search" placeholder="Search our shop..." aria-label="Shop Search" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn search-button" type="button" id="button-addon2">
+                                    <span class="icon">
+                                        <i class="search-icon text-white" data-lucide="search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {% if user.is_authenticated %}
+                <div class="button-wrapper col d-flex justify-content-end align-items-center">
+                    <p class="mr-2 text-white px-4 py-1 mb-0">Hi, {{ user.username }}!</p>
+                    <a class="mr-2 cta text-white px-4 py-1 rounded" href="{% url 'account_logout' %}">LOGOUT</a>
+                    <a class="cta text-white px-4 py-1 rounded hide" href="#">REGISTER</a>
+                </div>
+                {% else %}
+                    <div class="button-wrapper col d-flex justify-content-end align-items-center">
+                        <a class="mr-2 cta text-white px-4 py-1 rounded" href="{% url 'account_login' %}">LOGIN</a>
+                        <a class="cta text-white px-4 py-1 rounded" href="{% url 'account_signup' %}">REGISTER</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="bg-gradient container-fluid d-flex justify-content-center py-1">
+            <div class="desktop-row w-75 row text-white">
+                <div class="col d-flex flex-row justify-content-between w-75 text-white">
+                    <nav>
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link p-0 text-white" href="{% url 'home' %}">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0 ml-4 text-white" href="#">SHOP</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0 ml-4 text-white" href="#">CATEGORIES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0 ml-4 text-white" href="#">CONTACT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    {% if user.is_authenticated %}
+                        <div class="icon-wrapper">
+                            <i class="mr-4" data-lucide="list-todo"></i>
+                            <i class="mr-4" data-lucide="user-circle"></i>
+                            <i data-lucide="shopping-bag"></i>
+                        </div>
+                    {% else %}
+                        <div class="icon-wrapper hide">
+                            <i class="mr-4" data-lucide="list-todo"></i>
+                            <i class="mr-4" data-lucide="user-circle"></i>
+                            <i data-lucide="shopping-bag"></i>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+    {% comment %} DESKTOP NAVBAR END {% endcomment %}
+
     {% comment %} SEARCH BOX SLIDEOUT START {% endcomment %}
-    <div class="container-fluid search-box py-2">
+    <div class="container-fluid d-md-none search-box py-2">
         <form class="closed-search search-form" method="get" action="">
             <div class="input-group">
                 <input type="search" class="form-control" name="search" placeholder="Search our shop..." aria-label="Shop Search" aria-describedby="button-addon2">
