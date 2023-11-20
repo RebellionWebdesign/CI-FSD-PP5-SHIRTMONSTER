@@ -8,15 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
     let signupUrl = window.location.href.includes('signup');
     let resetUrl = window.location.href.includes('reset');
     const header = document.getElementById('header')
+    const search = document.getElementById('search-box')
 
     if (loginUrl) {
         header.classList.add("hide");
+        search.classList.add("hide");
     } else if (logoutUrl) {
         header.classList.add("hide");
+        search.classList.add("hide");
     } else if (signupUrl) {
         header.classList.add("hide");
+        v.classList.add("hide");
     } else if (resetUrl) {
         header.classList.add("hide");
+        search.classList.add("hide");
     }
 
     /* Custom settings for the bootstrap carousel -> https://getbootstrap.com/docs/4.6/components/carousel/ */
