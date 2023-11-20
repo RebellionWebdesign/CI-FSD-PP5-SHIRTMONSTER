@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     /* This snippet is required to render the Lucide Icons -> https://lucide.dev/guide/packages/lucide */
     lucide.createIcons();
 
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         searchBox.classList.add("open-search")
         searchToggleOpen.classList.add("d-none")
         searchToggleClose.classList.remove("d-none")
-        
+
     })
 
     /* Closes the search box and changes the icon*/
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         searchBox.classList.remove("open-search")
         searchBox.classList.add("closed-search")
     })
-    
+
     //This does exactly the same as above, only with the close icon inside the sidebar and of course the other way around.
     mobileToggleClose.addEventListener("click", () => {
         navBar.classList.remove("open")
@@ -69,7 +69,4 @@ document.addEventListener("DOMContentLoaded", function() {
         searchToggleClose.classList.add("d-none")
     })
 
-});
-
-
-
+})
