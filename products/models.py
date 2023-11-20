@@ -1,18 +1,5 @@
 from django.db import models
 
-class Product(models.Model):
-    #image = DECIDE ON RELATION 
-    name = models.CharField(max_length=128)
-    description = models.TextField(max_length=128)
-    ean = models.CharField(max_length=13)
-    #category_id = DECIDE ON RELATION
-    #inventory_id = DECIDE ON RELATION
-    price = models.FloatField()
-    created_at = models.DateField(auto_now_add=True)
-    modified_at = models.DateField(auto_now=True)
-
-
-
 class ProductCategory(models.Model):
     name = models.CharField(max_length=128)
     display_name = models.CharField(max_length=128, null=True, blank=True)
@@ -29,4 +16,21 @@ class ProductCategory(models.Model):
 
 class ProductInventory(models.Model):
     quantity = models.IntegerField()
-    #category_id = DECIDE ON RELATION
+
+
+class Product(models.Model):
+    image_url = models.URLField()
+    image = models.ImageField(null=True, blank=True)
+    name = models.CharField(max_length=128)
+    description = models.TextField(max_length=128)
+    ean = models.CharField(max_length=13)
+    category_id = models.ForeignKey(ProductCategory, null=True, blank=True, on_delete=models.SET_NULL)
+    inventory_id = models.ForeignKey(ProductInventory, null=True, blank=True, on_delete=models.SET_NULL)
+    price = models.FloatField()
+    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    created_at = models.DateField(auto_now_add=True)
+    modified_at = models.DateField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
