@@ -1,6 +1,7 @@
 from django.db import models
 
 class ProductCategory(models.Model):
+    """This model holds the category data, e.g shirts, hoodies etc."""
     name = models.CharField(max_length=128)
     display_name = models.CharField(max_length=128, null=True, blank=True)
     description = models.CharField(max_length=128)
@@ -15,10 +16,16 @@ class ProductCategory(models.Model):
 
 
 class ProductInventory(models.Model):
+    """
+    This model holds the inventory data, e.g 10 shirts, 25 hoodies.
+    Has n-n connection to ProductCategory and Product to display
+    more data than quantity.
+    """
     quantity = models.IntegerField()
 
 
 class Product(models.Model):
+    """This model holds the product data"""
     image_url = models.URLField()
     image = models.ImageField(null=True, blank=True)
     name = models.CharField(max_length=128)
