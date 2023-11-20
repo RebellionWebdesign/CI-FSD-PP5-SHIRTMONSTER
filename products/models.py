@@ -15,15 +15,6 @@ class ProductCategory(models.Model):
         return self.display_name
 
 
-class ProductInventory(models.Model):
-    """
-    This model holds the inventory data, e.g 10 shirts, 25 hoodies.
-    Has n-n connection to ProductCategory and Product to display
-    more data than quantity.
-    """
-    quantity = models.IntegerField()
-
-
 class Product(models.Model):
     """This model holds the product data"""
     image_url = models.URLField()
@@ -32,7 +23,7 @@ class Product(models.Model):
     description = models.TextField(max_length=128)
     ean = models.CharField(max_length=13)
     category_id = models.ForeignKey(ProductCategory, null=True, blank=True, on_delete=models.SET_NULL)
-    inventory_id = models.ForeignKey(ProductInventory, null=True, blank=True, on_delete=models.SET_NULL)
+    quantity= models.IntegerField(null=True, blank=True)
     price = models.FloatField()
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     created_at = models.DateField(auto_now_add=True)
