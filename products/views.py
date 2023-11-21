@@ -15,3 +15,17 @@ class ProductsHomeView(View):
 
         return render(request, 'home/index.html', context)
 
+
+class ProductsShopView(View):
+
+    def get_products(request):
+
+        products = Product.objects.all()
+        categories = ProductCategory.objects.all()
+        context = {
+            "products": products,
+            "categories": categories,
+        }
+
+        return render(request, 'shop/shop.html', context)
+
