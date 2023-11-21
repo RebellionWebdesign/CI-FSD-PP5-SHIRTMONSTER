@@ -1,5 +1,12 @@
 from django.shortcuts import render
+from django.views import View
+from products.models import Product
 
-def home(request):
-    """This view renders the homepage, including product displays"""
-    return render(request, 'home/index.html')
+class HomeView(View):
+    def get(self, request):
+        products = Product.objects.all()
+        context = {
+            "products": products
+        }
+    
+        return render(request, 'home/index.html', context)
