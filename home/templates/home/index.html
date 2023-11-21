@@ -84,10 +84,12 @@
                 <i data-lucide="heart"></i>
                 <i class="mt-2" data-lucide="info"></i>
             </div>
+            {% for category in categories %}
             <div class="category-info d-flex position-absolute">
                 <i class="category-icon mr-1" data-lucide="tags"></i>
-                <p class="m-0">{{ product.category_id }}</p>
+                <p class="m-0">{{ category.display_name }}</p>
             </div>
+            {% endfor %}
             <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
