@@ -67,7 +67,7 @@ h3 {
 }
 
 .login-logo {
-    width: 400px;
+    width: 250px;
 }
 
 .mobile-menu {
@@ -203,6 +203,15 @@ h3 {
     color: var(--color-primary-hover);
     left: 5px;
     top: 5px;
+}
+
+.category-icon {
+    color: var(--color-primary-hover);
+}
+
+.category-info {
+    right: 10px;
+    bottom: 130px;
 }
 
 /* FORMS */
