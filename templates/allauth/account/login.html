@@ -34,7 +34,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 {% include "socialaccount/snippets/login_extra.html" %}
 
 {% else %}
-<p>{% blocktrans %}Log in here. If you have not created an account yet, then please
+<p class="text-center px-3">{% blocktrans %}Log in here. If you have not created an account yet, then please
 <a class="login-link" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
