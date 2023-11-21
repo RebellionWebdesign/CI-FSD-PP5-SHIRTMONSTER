@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         search.classList.add("hide");
     } else if (signupUrl) {
         header.classList.add("hide");
-        v.classList.add("hide");
+        search.classList.add("hide");
     } else if (resetUrl) {
         header.classList.add("hide");
         search.classList.add("hide");
