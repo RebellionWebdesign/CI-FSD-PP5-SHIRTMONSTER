@@ -21,7 +21,7 @@
                             </div>
                             <div class="cta-wrapper f-flex flex-row w-100">
                                 <a class="mr-2 cta text-white px-4 py-1 rounded" href="#">SHOP NOW</a>
-                                <a class="cta text-white px-4 py-1 rounded" href="#">REGISTER</a>
+                                <a class="cta text-white px-4 py-1 rounded" href="{% url 'account_signup' %}">REGISTER</a>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                             </div>
                             <div class="cta-wrapper f-flex flex-row w-100">
                                 <a class="mr-2 cta text-white px-4 py-1 rounded" href="#">SHOP NOW</a>
-                                <a class="cta text-white px-4 py-1 rounded" href="#">REGISTER</a>
+                                <a class="cta text-white px-4 py-1 rounded" href="{% url 'account_signup' %}">REGISTER</a>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             </div>
                             <div class="cta-wrapper f-flex flex-row w-100">
                                 <a class="mr-2 cta text-white px-4 py-1 rounded" href="#">SHOP NOW</a>
-                                <a class="cta text-white px-4 py-1 rounded" href="#">REGISTER</a>
+                                <a class="cta text-white px-4 py-1 rounded" href="{% url 'account_signup' %}">REGISTER</a>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                 <p>From freak to fancy. We have it all!</p>
                 <div class="cta-wrapper f-flex flex-row w-100px-3">
                     <a class="mr-2 cta text-white px-4 py-1 rounded" href="#">SHOP NOW</a>
-                    <a class="cta text-white px-4 py-1 rounded" href="#">REGISTER</a>
+                    <a class="cta text-white px-4 py-1 rounded" href="{% url 'account_signup' %}">REGISTER</a>
                 </div>
             </div>
         </div>
@@ -83,6 +83,10 @@
             <div class="card-icons d-flex flex-column position-absolute">
                 <i data-lucide="heart"></i>
                 <i class="mt-2" data-lucide="info"></i>
+            </div>
+            <div class="category-info d-flex position-absolute">
+                <i class="category-icon mr-1" data-lucide="tags"></i>
+                <p class="m-0">{{ product.category_id }}</p>
             </div>
             <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
             <div class="card-body">
