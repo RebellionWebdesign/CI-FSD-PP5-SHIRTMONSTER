@@ -63,7 +63,17 @@ The app structure is defined by the database tables and their relationships. The
 
 #### COLOR SCHEME
 
-Color scheme as image with explanation here
+The chosen color theme is compiled of dark backgrounds and colorful elements to give an underground feel to the site. The colors have a good contrast on dark backgrounds and add visual dynamics to the site by using hover effects and gradient backgrounds to visual landmarks.
+
+<details>
+  <summary>Shirtmonster Color Scheme</summary>
+<img src="docs/readme-files/color-scheme.png" ><br>
+</details>
+
+<details>
+  <summary>Shirtmonster Main gradient</summary>
+<img src="docs/readme-files/main-gradient.png" ><br>
+</details>
 
 #### FONTS
 
@@ -81,7 +91,23 @@ For this project the chosen fonts are [Montserrat](https://fonts.google.com/spec
 
 #### VISUAL EFFECTS
 
-Short explanation and small gifs here
+##### BUTTON HOVER EFFECTS
+
+- To give the user visual feedback for certain elements, hover effects were added mainly to the cta button links.
+
+<details>
+  <summary>Button Hover Effects</summary>
+<img src="docs/readme-files/hover-effects.gif" ><br>
+</details>
+
+##### NAVIGATION HOVER EFFECTS AND ACTIVE STATE
+
+- The navbar also has hover effects for the navigation links, the hover color is applied when the user clicks the link and is on the corresponsing page. In the example the user is on the home page which has the applied hover color.
+
+<details>
+  <summary>Navbar Hover Effects</summary>
+<img src="docs/readme-files/nav-hover-effects.gif" ><br>
+</details>
 
 ## AGILE METHODOLOGY
 
