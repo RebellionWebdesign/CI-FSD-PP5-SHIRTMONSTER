@@ -201,16 +201,20 @@ This section explains the deployment steps on [Heroku](https://www.heroku.com)
   <img src="docs/readme-files/deployment-heroku/heroku-config.png" ><br>
 </details>
 
-
-
 NEEDS EXPANSION ON DEPLOY ERROR BECAUSE OF MISSING URL
 
 ### DEPLOY ON A LOCAL MACHINE (Windows)
 
 Deployment explanation here
 
-
 ## CREDITS
+
+- Creating a table of contents isn´t needed anymore. GitHub does this automatically now. Please see below how to open them:
+
+  <details>
+    <summary>Open table of content on GitHub</summary>
+    <img src="docs/readme-files/open-toc-github.png" ><br>
+  </details>
 
 ## ACKNOWLEDGEMENTS
 
