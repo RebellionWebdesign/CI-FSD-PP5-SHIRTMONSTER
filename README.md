@@ -44,7 +44,22 @@ For responsive behaviour the default bootstrap 4.6.2 breakpoints were used:
 
 #### Wireframes
 
-Link to wireframes and images here
+The wireframes were made using [Figma](https://figma.com). However, the finished wireframes are compiled into page based groups for easy viewing. The complete design file can be downloaded [here](design-files/shirtmonster-designs.fig).
+
+<details>
+  <summary>Login Page Wireframes</summary>
+<img src="docs/readme-files/login-page-wireframes.png" ><br>
+</details>
+
+<details>
+  <summary>Logout Page Wireframes</summary>
+<img src="docs/readme-files/logout-page-wireframes.png" ><br>
+</details>
+
+<details>
+  <summary>Password Forgotten Page Wireframes</summary>
+<img src="docs/readme-files/password-forgotten-page.png" ><br>
+</details>
 
 ### DATABASE
 The app structure is defined by the database tables and their relationships. The following images illustrate the inital and the final database schema. The following database models count as custom models:
@@ -71,7 +86,7 @@ The chosen color theme is compiled of dark backgrounds and colorful elements to 
 </details>
 
 <details>
-  <summary>Shirtmonster Main gradient</summary>
+  <summary>Shirtmonster Main Gradient</summary>
 <img src="docs/readme-files/main-gradient.png" ><br>
 </details>
 
