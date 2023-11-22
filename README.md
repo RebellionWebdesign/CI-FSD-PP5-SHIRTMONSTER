@@ -2,7 +2,7 @@
 
 ## OVERVIEW
 
-Overview text here
+Shirtmonster is an educational eCommerce website where customers can buy apparel products like t-shirts and hoodies. It was created as the 5th portfolio project for the full stack developer course at [Code Institute](https://codeinstitute.net/). The app is written with [Django](https://www.djangoproject.com/), [PosrgeSQL](https://www.postgresql.org/), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 ## UX
 
 ### PROJECT GOAL
