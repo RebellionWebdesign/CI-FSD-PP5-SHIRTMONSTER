@@ -1,9 +1,5 @@
 ![HEADER IMAGE HERE](https://github.com/RebellionWebdesign/CI-FSD-PP5-SHIRTMONSTER/blob/9f464fa485ef09548e5fdb617ff4aca263af55c7/docs/readme-files/readme-header.png)
 
-## TABLE OF CONTENTS
-
-[toc]
-
 ## OVERVIEW
 
 Overview text here
@@ -111,6 +107,13 @@ Extensions here
 
 Packages here
 
+### OTHER  TOOLS
+
+- The database schematics were created with [dbdiagram.io](https://dbdiagram.io/)
+- Wireframes were created with [Figma](https://www.figma.com), the .fig file can be found [here](design-files)
+- The Product base images were generated with [MidJourney AI](https://www.midjourney.com/) and post processed with [Affinity Photo](https://affinity.serif.com/) to generate the mockups
+- The Product texts (product description, category description) were generated with [ChatGPT](https://chat.openai.com/auth/login)
+
 ## TESTING
 
 Link to testing md
@@ -119,7 +122,7 @@ Link to testing md
 
 ### CREATE A DATABASE ON ELEPHANTSQL
 
-This section describes the creation of an initial database on [ELEPHANTSQL](https://elephantsql.com)
+This section describes the creation of an initial database on [elephantSQL](https://elephantsql.com)
 
 1. Log in to your elephantSQL account or create one
 2. On your Instances dashboard click on **Create New Instance**
@@ -208,10 +211,6 @@ Deployment explanation here
 
 
 ## CREDITS
-
-### CONTENT
-
-Content credits here
 
 ## ACKNOWLEDGEMENTS
 
