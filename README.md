@@ -44,8 +44,6 @@ For responsive behaviour the default bootstrap 4.6.2 breakpoints were used:
 
 ### STRUCTURE
 
-Structure image here
-
 ### SKELETON
 
 #### Wireframes
@@ -53,8 +51,17 @@ Structure image here
 Link to wireframes and images here
 
 ### DATABASE
+The app structure is defined by the database tables and their relationships. The following images illustrate the inital and the final database schema. The following database models count as custom models:
 
-Database schema here
+- Wishlist
+- User Address
+- User Payment
+- Order
+
+<details>
+  <summary>PP5 ERD initial</summary>
+<img src="docs/readme-files/PP5-ERD-initial.png" ><br>
+</details>
 
 ### SURFACE
 
