@@ -406,6 +406,10 @@ input:focus {
         grid-column-gap: 20px;
         grid-row-gap: 20px;
     }
+
+    .shop-banner-section {
+        padding-top: 107px;
+    }
 }
 
 @media (min-width: 1200px) {
