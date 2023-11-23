@@ -48,17 +48,17 @@ The wireframes were made using [Figma](https://figma.com). However, the finished
 
 <details>
   <summary>Login Page Wireframes</summary>
-<img src="docs/readme-files/login-page-wireframes.png" ><br>
+<img src="docs/readme-files/login-page-wireframes/login-wireframes-all.png" ><br>
 </details>
 
 <details>
   <summary>Logout Page Wireframes</summary>
-<img src="docs/readme-files/logout-page-wireframes.png" ><br>
+<img src="docs/readme-files/logout-page-wireframes/logout-wireframes-all.png" ><br>
 </details>
 
 <details>
   <summary>Password Forgotten Page Wireframes</summary>
-<img src="docs/readme-files/password-forgotten-page.png" ><br>
+<img src="docs/readme-files/forgot-password-wireframes/forgot-password-wireframes-all.png" ><br>
 </details>
 
 ### DATABASE
