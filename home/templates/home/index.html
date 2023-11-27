@@ -11,8 +11,8 @@
                         <h1>Get stylish shirts</h1>
                         <p class="slide-text">From freak to fancy - we got it!</p>
                         <div class="cta flex flex-between m-top-small">
-                            <a class="cta-button-link text-light" href="#">SHOP NOW</a>
-                            <a class="cta-button-link text-light" href="#">REGISTER</a>
+                            <a class="cta-button-link text-light" href="{% url "shop" %}">SHOP NOW</a>
+                            <a class="cta-button-link text-light" href="{% url "account_signup" %}">REGISTER</a>
                         </div>
                     </div>
                     <img src="{% static 'img/heroes/shirtmonster-hero-1.webp' %}" alt="first hero image">
@@ -23,8 +23,8 @@
                         <h2>Captain Beard approves us.<br>So should you.</h2>
                         <p class="slide-text">Streetwear straight from Berlin City!</p>
                         <div class="cta flex flex-between m-top-small">
-                            <a class="cta-button-link text-light" href="#">SHOP NOW</a>
-                            <a class="cta-button-link text-light" href="#">REGISTER</a>
+                            <a class="cta-button-link text-light" href="{% url "shop" %}">SHOP NOW</a>
+                            <a class="cta-button-link text-light" href="{% url "account_signup" %}">REGISTER</a>
                         </div>
                     </div>
                     <img src="{% static 'img/heroes/shirtmonster-hero-2.webp' %}" alt="second hero image">
@@ -35,8 +35,8 @@
                         <h2>Hipsters, Emos and Youngsters welcome!</h2>
                         <p class="slide-text">Get your style fix with ShirtMonster!</p>
                         <div class="cta flex flex-between m-top-small">
-                            <a class="cta-button-link text-light" href="#">SHOP NOW</a>
-                            <a class="cta-button-link text-light" href="#">REGISTER</a>
+                            <a class="cta-button-link text-light" href="{% url "shop" %}">SHOP NOW</a>
+                            <a class="cta-button-link text-light" href="{% url "account_signup" %}">REGISTER</a>
                         </div>
                     </div>
                     <img src="{% static 'img/heroes/shirtmonster-hero-3.webp' %}" alt="third hero image">
@@ -73,7 +73,7 @@
         </div>
     </section>
 
-    <section class="-section flex flex-center flex-column">
+    <section class="section flex flex-center flex-column">
         
     </section>
 {% endblock content %}
