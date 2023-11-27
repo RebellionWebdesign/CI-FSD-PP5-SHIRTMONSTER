@@ -41,8 +41,34 @@
 
 
 
-    {% comment %} DESKTOP NAVBAR START {% endcomment %}
-    <div id="header" class="header-desktop container-fluid fixed-top d-flex flex-column">
+    {% comment %} RESPONSIVE NAVBAR START {% endcomment %}
+    <header class="header flex flex-center flex-column">
+        <div class="container top-nav flex flex-center">
+            <div class="column-3 flex flex-between flex-center-y">
+                <a class="logo-link" href="{% url 'home' %}">
+                    <img class="logo" src="{% static 'img/logo/shirtmonster-logo-white.svg' %}" alt="The shirtmonster logo">
+                </a>
+                {% comment %} MOBILE NAVBAR ELEMENTS START {% endcomment %}
+                <div class="mobile-icon-wrapper text-light">
+                    <i id="mobile-search-open" class="mobile-search-open" data-lucide="search"></i>
+                    <i id="mobile-search-close" class="mobile-search-close hide" data-lucide="x-circle"></i>
+                    <i id="mobile-menu-open" class="mobile-open" data-lucide="align-right"></i>
+                </div>
+                {% comment %} MOBILE NAVBAR ELEMENTS END {% endcomment %}
+            </div>
+            <div id="search-box" class="search-box column-3 flex">
+                <input class="main-search" type="search" id="main-search" name="main-search" placeholder="Search the Shop...">
+                <button class="main-search-button flex flex-center">
+                    <i data-lucide="search"></i>
+                </button>
+            </div>
+            <div class="auth-box column-3 flex flex-end">
+                <a class="cta-button-link text-light" href="{% url "account_login" %}">LOGIN</a>
+                <a class="cta-button-link text-light" href="{% url "account_signup" %}">REGISTER</a>
+            </div>
+        </div>
+        <div class="container bottom-nav">BOTTOM</div>
+    </header>
 
     <main>
         {% block content %}
