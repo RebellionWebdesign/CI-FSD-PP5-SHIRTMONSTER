@@ -11,6 +11,7 @@ Declare them once and then use the variable name as value within the CSS.
     --primary-dark-trans: rgba(0, 0, 0, 0.4);
     --primary-dark: #191818;
     --secondary-dark: #2F2F2F;
+    --primary-gradient: linear-gradient(45deg, rgba(216,2,99,1) 0%, rgba(126,58,223,1) 100%);
     --white: #FFFFFF;
     --black: #000000;
 
@@ -42,6 +43,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--primary-dark);
+    padding-top: 25px;
 }
 
 /* TEXT CLASSES */
@@ -83,7 +85,7 @@ main {
 section {
     width: 100vw;
     height: auto;
-    padding: 5rem 16em 5rem 16rem;
+    padding: 5rem 16rem 5rem 16rem;
 }
 
 /* CONTAINER */
@@ -149,6 +151,76 @@ section {
 
 .m-top-small {
     margin-top: 1.5625rem;
+}
+
+/* HEADER SETTINGS */
+.header {
+    width: 100%;
+    height: auto;
+    background-color: var(--primary-dark);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.top-nav {
+    padding: 0.3125rem 16rem 0.3125rem 16rem;
+}
+
+.column-3 {
+    width: 75%;
+}
+
+.logo {
+    width: 10rem;
+}
+
+.main-search {
+    font-family: 'poppins', sans-serif;
+    width: 31.25rem;
+    padding: 5px;
+    border-radius: 5px 0px 0px 5px;
+    border: none
+}
+
+.main-search:focus {
+    outline: none;
+    border: 1px solid var(--color-primary)
+}
+
+.main-search-button {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    width: 76px;
+    padding: 5px;
+    color: var(--white);
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.5s ease-in-out;
+}
+
+.main-search-button:hover {
+    background-color: var(--color-primary-hover);
+    border: 1px solid var(--color-primary-hover);
+}
+
+.auth-box a:nth-child(even) {
+    margin-left: 1rem;
+    margin-right: -1rem;
+}
+
+.bottom-nav {
+    padding: 0.3125rem 16rem 0.3125rem 16rem;
+    background: var(--primary-gradient);
+}
+
+/* DISPLAY CLASSES */
+.hide {
+    display: none;
+}
+
+.mobile-icon-wrapper {
+    display: none;
 }
 
 /* SLIDER SETTINGS */
@@ -253,6 +325,11 @@ section {
 /* RESPONSIVE MEDIA QUERIES - AFTER BOOTSTRAP*/
 @media (min-width: 0px) and (max-width: 576px) {
 
+/* BODY SETTINGS PHONE */
+body {
+    padding-top: 25px;
+}
+
 /* PHONE SECTION */
 section {
     width: 100vw;
@@ -267,6 +344,47 @@ section {
     grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+}
+
+.header {
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.top-nav {
+    padding: 0.3125rem 1.25rem 0.3125rem 1.25rem;
+    justify-content: space-between;
+}
+
+.mobile-open {
+    margin-left: 1rem;
+}
+
+.container {
+    width: 100%;
+    flex-direction: column;
+}
+
+.column-3 {
+    width: 100%;
+}
+
+.bottom-nav {
+    display: none;
+}
+
+.logo {
+    width: 7.5rem;
+}
+
+.search-box {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: none;
+    transition: 0.5s ease-in-out;
+}
+
+.auth-box {
+    display: none;
 }
 
 }
