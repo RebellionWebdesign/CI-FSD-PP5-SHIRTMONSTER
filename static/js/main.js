@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     // Generate lucide icons
     lucide.createIcons();
+
     // Here we initialize swiper js
     const swiper = new Swiper('.swiper', {
         // Optional parameters
@@ -24,10 +26,30 @@ document.addEventListener("DOMContentLoaded", function () {
             prevEl: '.swiper-button-prev',
         },
 
-        // And if we need scrollbar
+        // And if we need a scrollbar
         scrollbar: {
             el: '.swiper-scrollbar',
         },
     });
+
+    // This opens the search bar on mobile screens
+    const searchToggleOpen = document.getElementById("mobile-search-open")
+    const searchToggleClose = document.getElementById("mobile-search-close")
+    const searchBox = document.getElementById("search-box")
+
+    searchToggleOpen.addEventListener("click", () => {
+        searchBox.style.display = "flex"
+        searchToggleOpen.classList.add("hide")
+        searchToggleClose.classList.remove("hide")
+    
+    })
+
+    // This closes the search bar on mobile screens
+    searchToggleClose.addEventListener("click", () => {
+        searchBox.style.display = "none"
+        searchToggleOpen.classList.remove("hide")
+        searchToggleClose.classList.add("hide")
+    
+    })
 
 })
