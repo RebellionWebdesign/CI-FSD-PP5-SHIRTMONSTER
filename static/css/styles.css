@@ -74,6 +74,13 @@ h3 {
     font-weight: 500;
 }
 
+/* FLUID TEXT */
+p {
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
 /*MAIN STYLES*/
 main {
     width: 100%;
@@ -274,6 +281,13 @@ section {
     opacity: 40%;
 }
 
+/* SHOP PAGE */
+.banner {
+    background: var(--primary-gradient);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
 /* PRODUCT CARD SETTINGS */
 .product-card {
     position: relative;
@@ -320,6 +334,15 @@ section {
     color: var(--color-primary);
     padding: 5px 0px 0px 5px;
     cursor: pointer;
+}
+
+#product-category {
+    position: absolute;
+    color: var(--color-primary);
+    padding: 5px 0px 0px 5px;
+    cursor: pointer;
+    right: 5px;
+    bottom: 85px;
 }
 
 /* RESPONSIVE MEDIA QUERIES - AFTER BOOTSTRAP*/
