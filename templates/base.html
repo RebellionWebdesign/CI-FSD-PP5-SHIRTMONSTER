@@ -67,7 +67,58 @@
                 <a class="cta-button-link text-light" href="{% url "account_signup" %}">REGISTER</a>
             </div>
         </div>
-        <div class="container bottom-nav">BOTTOM</div>
+        <div class="container bottom-nav flex">
+            {% if user.is_authenticated %}
+            <div class="column-3 flex flex-center flex-start">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a class="text-light" href="{% url 'home' %}">HOME</a></li>
+                        <li><a class="text-light" href="{% url 'shop' %}">SHOP</a></li>
+                        <li><a class="text-light" href="#">CATEGORIES</a></li>
+                        <li><a class="text-light" href="#">CUSTOM PRINTS</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="column-3 flex flex-center">
+                <nav class="filter-nav">
+                    <ul>
+                        <li><a class="text-light" href="{% url 'shop' %}?category=hoodies,t_shirts">ALL PRODUCTS</a></li>
+                        <li><a class="text-light" href="{% url 'shop' %}?category=hoodies">HOODIES</a></li>
+                        <li><a class="text-light" href="{% url 'shop' %}?category=t_shirts">T-SHIRTS</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="column-3 flex flex-center flex-end">
+                <nav class="user-nav">
+                    <ul>
+                        <li><a class="text-light flex flex-center" href=""><i data-lucide="list-todo"></a></i></li>
+                        <li><a class="text-light flex flex-center" href=""><i data-lucide="circle-user-round"></i></a></li>
+                        <li><a class="text-light flex flex-center" href=""><i data-lucide="shopping-cart"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+            {% else %}
+            <div class="column-3 flex flex-center flex-start">
+                <nav class="main-nav text-light">
+                    <ul>
+                        <li><a class="text-light" href="{% url 'home' %}">HOME</a></li>
+                        <li><a class="text-light" href="{% url 'shop' %}">SHOP</a></li>
+                        <li><a class="text-light" href="#">CATEGORIES</a></li>
+                        <li><a class="text-light" href="#">CUSTOM PRINTS</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="column-3 flex flex-center flex-end">
+                <nav class="filter-nav">
+                    <ul>
+                        <li>ALL PRODUCTS</li>
+                        <li>HOODIES</li>
+                        <li>T-SHIRTS</li>
+                    </ul>
+                </nav>
+            </div>
+            {% endif %}
+        </div>
     </header>
 
     <main>
