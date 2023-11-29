@@ -89,9 +89,11 @@
             <div class="column-3 flex flex-center">
                 <nav class="filter-nav">
                     <ul>
+                        <li>FILTER BY:</li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies,t_shirts">ALL PRODUCTS</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies">HOODIES</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=t_shirts">T-SHIRTS</a></li>
+                        <li>SORT BY</li>
                     </ul>
                 </nav>
             </div>
@@ -118,10 +120,17 @@
             <div class="column-3 flex flex-center flex-end">
                 <nav class="filter-nav">
                     <ul>
+                        <li><strong><p class="text-light">FILTER BY:</p></strong></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies,t_shirts">ALL PRODUCTS</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies">HOODIES</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=t_shirts">T-SHIRTS</a></li>
+                        <li><strong><p id="sort-open" class="dropdown text-light flex flex-center-y">SORT<i data-lucide="chevron-down"></i></p></strong></li>
                     </ul>
+                    <div id="sort-box" class="dropdown-box flex flex-column hide">
+                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=price&direction=asc">BY PRICE</a>
+                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=rating&direction=desc">BY RATING</a>
+                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=category&direction=asc">BY CATEGORY</a>
+                    </div>
                 </nav>
             </div>
             {% endif %}
