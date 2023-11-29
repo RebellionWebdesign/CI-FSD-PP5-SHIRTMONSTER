@@ -52,4 +52,14 @@ document.addEventListener("DOMContentLoaded", function () {
     
     })
 
+    //This opens the sorting menu on click
+    const sortToggleOpen = document.getElementById("sort-open")
+    const sortLink = document.getElementsByClassName("sort-link")
+    const sortBox = document.getElementById("sort-box")
+
+    sortToggleOpen.addEventListener("click", () => {
+        sortBox.classList.remove("hide")
+
+    })
+
 })
