@@ -63,7 +63,11 @@
                 </button>
             </form>
             <div class="auth-box column-3 flex flex-end">
+                {% if user.is_authenticated %}
+                <a class="cta-button-link text-light" href="{% url "account_logout" %}">LOGOUT</a>
+                {% else %}
                 <a class="cta-button-link text-light" href="{% url "account_login" %}">LOGIN</a>
+                {% endif %}
                 <a class="cta-button-link text-light" href="{% url "account_signup" %}">REGISTER</a>
             </div>
         </div>
@@ -111,9 +115,9 @@
             <div class="column-3 flex flex-center flex-end">
                 <nav class="filter-nav">
                     <ul>
-                        <li>ALL PRODUCTS</li>
-                        <li>HOODIES</li>
-                        <li>T-SHIRTS</li>
+                        <li><a class="text-light" href="{% url 'shop' %}?category=hoodies,t_shirts">ALL PRODUCTS</a></li>
+                        <li><a class="text-light" href="{% url 'shop' %}?category=hoodies">HOODIES</a></li>
+                        <li><a class="text-light" href="{% url 'shop' %}?category=t_shirts">T-SHIRTS</a></li>
                     </ul>
                 </nav>
             </div>
