@@ -220,6 +220,74 @@ section {
     background: var(--primary-gradient);
 }
 
+.main-nav ul {
+    list-style-type: none;
+}
+
+.main-nav ul li {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.main-nav ul li:nth-child(1) {
+    margin-left: 0;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
+    transition: 0.5s ease-in-out;
+}
+
+.main-nav ul li a:hover {
+    color: var(--primary-dark);
+}
+
+.filter-nav ul {
+    list-style-type: none;
+}
+
+.filter-nav ul li {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.filter-nav ul li:nth-child(1) {
+    margin-left: 0;
+}
+
+.filter-nav ul li a {
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
+    transition: 0.5s ease-in-out;
+}
+
+.filter-nav ul li a:hover {
+    color: var(--primary-dark);
+}
+
+.user-nav ul {
+    list-style-type: none;
+}
+
+.user-nav ul li {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.user-nav ul li a {
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
+    transition: 0.5s ease-in-out;
+}
+
+.user-nav ul li a:hover {
+    color: var(--primary-dark);
+}
+
 /* DISPLAY CLASSES */
 .hide {
     display: none;
