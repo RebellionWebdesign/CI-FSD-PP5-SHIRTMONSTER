@@ -14,14 +14,33 @@ class ProductsShopView(View):
         products = Product.objects.all()
         categories = ProductCategory.objects.all()
         query = None
-        category = None
+        categories = None
+        sort = None
+        direction = None
 
         if request.GET:
+
+            if 'sort' in request.GET:
+                sortrule = request.GET['sort']
+                sort = sortrule
+
+                if sortrule == 'name':
+                    sortrule = 'lower_name'
+                    products = products.annotate(lower_name=Lower('name'))
+                
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+
+                    if direction == 'desc':
+                        sortrule = f'-{sortrule}'
+
 
             if 'category' in request.GET:
                 categories = request.GET['category'].split(',')
                 products = products.filter(category_id__name__in=categories)
                 categories = ProductCategory.objects.filter(name__in=categories)
+
+                products = products.order_by(sortrule)
 
             if 'main-search' in request.GET:
                 query = request.GET['main-search']
@@ -31,12 +50,15 @@ class ProductsShopView(View):
                 
                 queries = Q(name__icontains=query) | Q(description__icontains=query)
                 products = products.filter(queries)
-        
+
+        current_sorting = f'{sort}_{direction}'
+
         context = {
             "products": products,
             "categories": categories,
             "search_term": query,
-            "currents_categories": categories,
+            "current_categories": categories,
+            "current_sorting": current_sorting,
         }
 
         return render(request, 'shop/shop.html', context)
