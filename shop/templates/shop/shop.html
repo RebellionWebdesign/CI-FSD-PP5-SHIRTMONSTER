@@ -2,46 +2,32 @@
 {% load static %}
 
 {% block content %}
-<section class="shop-banner-section container-fluid h-auto d-flex justify-content-center align-items-start px-3 pb-3">
-    <div class="banner-row row">
-        <div class="col d-flex justify-content-start align-items-center bg-gradient text-white p-2 rounded">
-            <h1 class="m-0">MERCH<br> REDEFINED</h1>
-        </div>
-    </div>
-</section>
-
-<section class="shop-section container-fluid h-auto d-flex justify-content-center align-items-center px-3 py-3">
-    <div class="product-row row d-flex justify-content-center align-items-center">
-        <div class="col text-white text-center">
-            <h2 class="mb-4">OUR NEW COLLECTION 2024</h2>
-        <div class="w-100 grid">
+<section class="collection-section flex flex-center flex-column">
+    <h2 class="banner text-light">MERCH REDEFINED - OUR COLLECTION 2024</h2>
+    <div class="container grid m-top-large">
         {% for product in products %}
-        <div class="product-card card position-relative mx-auto">
-            <div class="card-icons d-flex flex-column position-absolute">
-                <i data-lucide="heart"></i>
-                <i class="mt-2" data-lucide="info"></i>
-            </div>
-            {% for category in categories %}
-            <div class="category-info d-flex position-absolute">
-                <i class="category-icon mr-1" data-lucide="tags"></i>
-                <p class="m-0">{{ product.category_id.display_name }}</p>
-            </div>
-            {% endfor %}
-            <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
-            <div class="card-body">
-                <div class="d-flex justify-content-between">
-                    <p class="card-title">{{ product.name }}</p>
-                    <p class="card-title">{{ product.rating }}</p>
+        {% for category in categories %}
+            <div class="product-card">
+                <div class="product-action-icons flex flex-column">
+                    <i id="wishlist-icon" data-lucide="heart"></i>
+                    <i id="product-details" class="m-top" data-lucide="info"></i>
                 </div>
-                <div class="d-flex justify-content-center justify-content-between align-items-center">
-                    <p class="m-0"><span class="price-span">{{ product.price }}</span>€</p>
-                    <a href="#" class="cta text-white btn">BUY</a>
+                <div id="product-category" class="flex flex-center text-light">
+                    <i data-lucide="tags"></i>
+                    <p class="text-light">{{ product.category_id.display_name }}</p>
+                </div>
+                <img src="{{ product.image_url }}" alt="{{ product.name }}" class="product-image">
+                <div class="product-header flex flex-between flex-center-y text-light">
+                    <p class="product-name">{{ product.name }}</p>
+                    <div class="product-rating">{{ product.rating }}</div>
+                </div>
+                <div class="product-info flex flex-between flex-center-y text-light">
+                    <h3 class="product-price">{{ product.price }} €</h3>
+                    <button class="to-cart-button text-light">BUY</button>
                 </div>
             </div>
-        </div>
         {% endfor %}
-        </div>  
-        </div>
+        {% endfor %}
     </div>
 </section>
 {% endblock content %}
