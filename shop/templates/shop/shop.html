@@ -6,7 +6,6 @@
     <h2 class="banner text-light">MERCH REDEFINED - OUR COLLECTION 2024</h2>
     <div class="container grid m-top-large">
         {% for product in products %}
-        {% for category in categories %}
             <div class="product-card">
                 <div class="product-action-icons flex flex-column">
                     <i id="wishlist-icon" data-lucide="heart"></i>
@@ -26,7 +25,6 @@
                     <button class="to-cart-button text-light">BUY</button>
                 </div>
             </div>
-        {% endfor %}
         {% endfor %}
     </div>
 </section>
