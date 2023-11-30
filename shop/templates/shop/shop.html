@@ -2,8 +2,11 @@
 {% load static %}
 
 {% block content %}
-<section class="collection-section flex flex-center flex-column">
-    <h2 class="banner text-light">MERCH REDEFINED - OUR COLLECTION 2024</h2>
+<section class="shop-section flex flex-center flex-column">
+    <h2 class="banner text-light">MERCH REDEFINED - OUR COLLECTION 2024
+        <br>
+        <strong>FREE DELIVERY FOR ORDERS OVER {{ free_delivery_threshold }}€</strong>
+    </h2>
     <div class="container grid m-top-large">
         {% for product in products %}
             <div class="product-card">
