@@ -33,14 +33,13 @@ class ProductsShopView(View):
 
                     if direction == 'desc':
                         sortrule = f'-{sortrule}'
-
+                
+                        products = products.order_by(sortrule)
 
             if 'category' in request.GET:
                 categories = request.GET['category'].split(',')
                 products = products.filter(category_id__name__in=categories)
                 categories = ProductCategory.objects.filter(name__in=categories)
-
-                products = products.order_by(sortrule)
 
             if 'main-search' in request.GET:
                 query = request.GET['main-search']
