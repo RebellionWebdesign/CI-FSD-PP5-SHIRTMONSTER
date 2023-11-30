@@ -62,4 +62,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
+    //This hides the navbar on auth pages
+    let loginUrl = window.location.href.includes('login');
+    let logoutUrl = window.location.href.includes('logout');
+    let signupUrl = window.location.href.includes('signup');
+    let resetUrl = window.location.href.includes('reset');
+    const header = document.getElementById('header')
+
+    if (loginUrl) {
+        header.classList.add("hide");
+    } else if (logoutUrl) {
+        header.classList.add("hide");
+    } else if (signupUrl) {
+        header.classList.add("hide");
+    } else if (resetUrl) {
+        header.classList.add("hide");
+    }
+
 })
