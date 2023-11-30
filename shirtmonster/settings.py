@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'products',
     'shop',
     'users',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +81,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',                       # required by allauth
                 'django.contrib.auth.context_processors.auth',                      # required by allauth
                 'django.contrib.messages.context_processors.messages',
+                'cart.contexts.cart_contents',                                      # registers the cart context processor 
             ],
         },
     },
@@ -160,6 +162,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),  
 MEDIA_URL = '/media/'
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+
+# Variables for delivery processing
+FREE_DELIVERY_THRESHOLD = 150
+STANDARD_DELIVERY_PERCENTAGE = 10
 
 # AWS and dev config
 if 'USE_AWS' in os.environ:
