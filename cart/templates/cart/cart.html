@@ -6,7 +6,7 @@
         <div class="container flex flex-column flex-center-y flex-start text-light">
             <h2>Your Cart</h2>
             {% if cart_items %}
-            
+            {{ cart_items }}
             {% else %}
                 <p class="m-top-small">There is nothing to see here yet.</p>
                 <a class="cta-button-link text-light m-top-large" href="{% url 'shop' %}">KEEP SHOPPING</a>
