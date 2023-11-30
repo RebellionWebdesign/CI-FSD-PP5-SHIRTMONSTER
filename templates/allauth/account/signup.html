@@ -5,23 +5,24 @@
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
 {% block content %}
-<section class="vw-100 min-vh-100 d-flex flex-column justify-content-center align-items-center text-white">
+<section class="auth-section flex flex-center flex-column text-light">
 
-<div class="my-3">
-  <a href="{% url 'home' %}">
+<div class="container flex flex-center flex-column">
+  <a class="home-link flex flex-center flex-column" href="{% url 'home' %}">
       <img class="login-logo" src="{% static 'img/logo/shirtmonster-logo-white.svg' %}" alt="shirtmonster logo"></img>
   </a>
-</div>
+
 <p>{% blocktrans %}Already have an account? Then please <a class="signup-link" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
-<form class="signup px-5 py-5 rounded d-flex justify-content-center align-items-center flex-column" id="signup_form" method="post" action="{% url 'account_signup' %}">
+<form class="signup-form m-top-large flex flex-center flex-column" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
   {{ form.as_p }}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button class="button mt-3 signup-button cta rounded text-white" type="submit"> {% trans "Sign Up" %} &raquo;</button>
-  <a class="button mt-3 login-link" href="{% url 'home' %}">{% trans "Back to Homepage" %}</a>
+  <button class="form-button text-light m-top-large" type="submit"> {% trans "Sign Up" %} &raquo;</button>
+  <a class="form-link text-light m-top-small" href="{% url 'home' %}">{% trans "Back to Homepage" %}</a>
 </form>
+</div>
 </section>
 {% endblock content %}
