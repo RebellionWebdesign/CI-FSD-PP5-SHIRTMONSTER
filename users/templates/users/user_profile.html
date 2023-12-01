@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <section class="profile-section flex flex-center">
+        <div class="container text-light">
+            {% for user in users %}
+            <h2>Hello, {{ user.first_name }} this is your userdata</h2>
+            <hr>
+            <h3>Personal Data:</h3>
+            <p>Username: {{ user.username }}</p>
+            <p>First Name: {{ user.first_name }}</p>
+            <p>Last Name: {{ user.last_name }}</p>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+{% endblock content %}
