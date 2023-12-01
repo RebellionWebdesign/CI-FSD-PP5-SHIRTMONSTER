@@ -64,8 +64,10 @@
             </form>
             <div class="auth-box column-3 flex flex-end">
                 {% if user.is_authenticated %}
+                {% if user.is_superuser %}
                 {% if user.is_staff %}
                 <a class="cta-button-link text-light" href="#">STAFF AREA</a>
+                {% endif %}
                 {% endif %}
                 <a class="cta-button-link text-light" href="{% url "account_logout" %}">LOGOUT</a>
                 {% else %}
