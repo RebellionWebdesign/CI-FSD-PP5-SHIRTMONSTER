@@ -17,3 +17,18 @@ class ProductsHomeView(View):
         }
 
         return render(request, 'home/index.html', context)
+
+class ProductDetailView(View):
+    """
+    A view to show the detail page for a given product
+    """
+    def get(self, request, pk):
+
+        products = Product.objects.filter(pk=pk)
+        categories = ProductCategory.objects.all()
+        context = {
+            "products": products,
+            "categories": categories,
+        }
+
+        return render(request, 'products/product_detail.html', context)
