@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View
-from .models import UserAdress, UserProfile, User
+from .models import User
 
 class UserProfileView(LoginRequiredMixin, View):
     template_name = 'users/user_profile.html'
