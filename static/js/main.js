@@ -79,4 +79,22 @@ document.addEventListener("DOMContentLoaded", function () {
         header.classList.add("hide");
     }
 
+    //Functionality for the quantity selection element
+    let decreaseQuantity = document.getElementById("minus")
+    let increaseQuantity = document.getElementById("plus")
+    let quantityCounter = document.getElementById("quantity-counter")
+
+    increaseQuantity.addEventListener("click", () => {
+        // increase quantity by one
+        quantityCounter.value = parseInt(quantityCounter.value) + 1;
+    });
+    
+    decreaseQuantity.addEventListener("click", () => {
+        // decrease quantity by one
+        let currentQuantity = parseInt(quantityCounter.value);
+        if (currentQuantity > 1) {
+            quantityCounter.value = currentQuantity - 1;
+        }
+    })
+
 })
