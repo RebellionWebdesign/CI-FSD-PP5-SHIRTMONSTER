@@ -13,10 +13,10 @@ def add_to_cart(request, item_id):
 
     quantity = 0
 
-    if quantity < 1:
-        quantity = 1
+    if quantity <= 1:
+        quantity = quantity+1
     else:
-        quantity = int(request.POST.get('quantity'))
+        quantity = int(request.POST.get('quantity-counter'))
 
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
