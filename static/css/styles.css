@@ -463,9 +463,21 @@ section {
 
 .product-action-icons {
     position: absolute;
-    color: var(--color-primary);
     padding: 5px 0px 0px 5px;
     cursor: pointer;
+}
+
+.product-detail-icon {
+    color: var(--color-primary);
+    transition: 0.5s ease-in-out
+}
+
+.product-detail-icon:hover {
+    color: var(--color-primary-hover);
+}
+
+.product-detail-icon:visited {
+    color: var(--color-secondary);
 }
 
 #product-category {
