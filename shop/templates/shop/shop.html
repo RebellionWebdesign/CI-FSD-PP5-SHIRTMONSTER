@@ -12,7 +12,9 @@
             <div class="product-card">
                 <div class="product-action-icons flex flex-column">
                     <i id="wishlist-icon" data-lucide="heart"></i>
-                    <i id="product-details" class="m-top" data-lucide="info"></i>
+                    <a class="product-detail-icon" href="{% url "product_detail" pk=product.pk %}">
+                        <i id="product-details" class="m-top" data-lucide="info"></i>
+                    </a>
                 </div>
                 <div id="product-category" class="flex flex-center text-light">
                     <i data-lucide="tags"></i>
