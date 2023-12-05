@@ -164,9 +164,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
 MEDIA_URL = '/media/'
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
-# Variables for delivery processing
+# Variables for order processing
 FREE_DELIVERY_THRESHOLD = 150
 STANDARD_DELIVERY_PERCENTAGE = 10
+TAX_PERCENTAGE = 0.19
 
 # AWS and dev config
 if 'USE_AWS' in os.environ:
