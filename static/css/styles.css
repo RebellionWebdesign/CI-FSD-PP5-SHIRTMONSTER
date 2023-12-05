@@ -359,6 +359,10 @@ section {
     display: none;
 }
 
+.active {
+    color: var(--primary-dark);
+}
+
 /* SLIDER SETTINGS */
 .overlay {
     position: absolute;
