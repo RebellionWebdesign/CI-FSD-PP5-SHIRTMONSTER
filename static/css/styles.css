@@ -505,9 +505,21 @@ section {
 
 /* Cart table styles */
 
-.cart-heading {
+table, tr, td, th {
+    border: none;
+    padding: 0.5rem;
+}
+
+.cart-heading-wrapper {
     width: 100%;
+}
+
+.cart-heading {
     text-align: left;
+}
+
+.cart-heading-shipping {
+    text-align: right;
 }
 
 .cart-table {
@@ -522,18 +534,18 @@ section {
 }
 
 .cart-table td {
-    padding: 1rem;
     text-align: center;
 }
 
-.cart-table td:nth-child(1) {
-    padding: 1rem;
-    text-align: left;
+.update-cart {
+    width: 100%;
 }
 
-.cart-table td:nth-child(2) {
-    padding: 1rem;
-    text-align: left;
+.cart-table td:nth-child(7) {
+    text-align: right;
+}
+.cart-table td:nth-child(8) {
+    text-align: right;
 }
 
 .cart-image {
@@ -541,6 +553,15 @@ section {
     height: 100%;
     border-radius: 10px;
     border: 1px solid var(--color-secondary);
+}
+
+.table-summary-text {
+    text-align: right!important;
+    background-color: var(--black);
+}
+
+.table-summary-value {
+    text-align: right!important;
 }
 
 /* AUTH PAGES */
