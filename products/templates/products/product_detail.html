@@ -5,10 +5,10 @@
     <section class="product-detail-section flex flex-center">
         <div class="container flex">
             {% for product in products %}
-                <div class="column-2">
-                    <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                <div class="column-2 flex flex-center">
+                    <img class="product-detail-image" src="{{ product.image_url }}" alt="{{ product.name }}">
                 </div>
-                <div class="column-2 text-light">
+                <div class="column-2 text-light flex flex-column">
                     <h2>{{ product.name }}</h2>
                     <p>{{ product.rating }}</p>
                     <hr>
