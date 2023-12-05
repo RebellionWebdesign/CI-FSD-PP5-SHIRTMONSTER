@@ -79,6 +79,35 @@ document.addEventListener("DOMContentLoaded", function () {
         header.classList.add("hide");
     }
 
+    // Checks the url for which page we are on and adds the .active class to the link
+    let homeUrl = window.location.pathname == "/";
+    let shopUrl = window.location.href.includes('shop');
+    let contactUrl = window.location.href.includes('contact');
+    let cartUrl = window.location.href.includes('cart');
+    let profileUrl = window.location.href.includes('users');
+    let homeLink = document.getElementById('home')
+    let shopLink = document.getElementById('shop')
+    let contactLink = document.getElementById('contact')
+    let customLink = document.getElementById('custom-shirts')
+    let profileLink = document.getElementById('my-profile')
+    let cartLink = document.getElementById('cart')
+
+    if (homeUrl) {
+        homeLink.classList.add("active");
+    } else if (shopUrl) {
+        shopLink.classList.add("active");
+    } else if (contactUrl) {
+        contactLink.classList.add("active");
+    } else if (contactUrl) {
+        customLink.classList.add("active");
+    } else if (profileUrl) {
+        profileLink.classList.add("active");
+        profileLink.classList.remove("text-light");
+    } else if (cartUrl) {
+        cartLink.classList.add("active");
+        cartLink.classList.remove("text-light");
+    }
+
     //Functionality for the quantity selection element
     let decreaseQuantity = document.getElementById("minus")
     let increaseQuantity = document.getElementById("plus")
