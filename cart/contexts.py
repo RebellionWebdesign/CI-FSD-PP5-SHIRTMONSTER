@@ -14,6 +14,7 @@ def cart_contents(request):
     for item_id, quantity in cart.items():
         product = get_object_or_404(Product, pk=item_id)
         total += quantity * product.price
+        tax = total * Decimal(settings.TAX_PERCENTAGE)
         product_count += quantity
         cart_items.append({
             'item_id': item_id,
@@ -28,7 +29,7 @@ def cart_contents(request):
         delivery = 0
         free_delivery_amount_left = 0
     
-    grand_total = delivery + total
+    grand_total = delivery + total + tax
 
     context = {
         'cart_items': cart_items,
@@ -37,7 +38,8 @@ def cart_contents(request):
         'delivery': delivery,
         'free_delivery_amount_left': free_delivery_amount_left,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
-        'grand_total': grand_total
+        'grand_total': grand_total,
+        'tax': tax,
     }
 
     return context
