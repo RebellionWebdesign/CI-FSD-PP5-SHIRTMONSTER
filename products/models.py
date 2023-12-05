@@ -20,10 +20,30 @@ class ProductCategory(models.Model):
 
 class Product(models.Model):
     """This model holds the product data"""
+
+    XXS = 'XXS'
+    XS = 'XS'
+    S = 'S'
+    M = 'M'
+    L = 'L'
+    XL = 'XL'
+    XXL = 'XXL'
+
+    SIZE_CHOICES = (
+        (XXS, 'XXS'),
+        (XS, 'XS'),
+        (S, 'S'),
+        (M, 'M'),
+        (L, 'L'),
+        (XL, 'XL'),
+        (XXL, 'XXL'),
+    )
+
     image_url = models.URLField()
     image = models.ImageField(null=True, blank=True)
     name = models.CharField(max_length=128)
     description = models.TextField(max_length=254)
+    sizes = models.CharField(max_length=3, choices=SIZE_CHOICES, default=M)
     ean = models.CharField(max_length=13)
     category_id = models.ForeignKey(ProductCategory, null=True, blank=True, on_delete=models.SET_NULL)
     quantity= models.IntegerField(null=True, blank=True)
