@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         searchBox.style.display = "flex"
         searchToggleOpen.classList.add("hide")
         searchToggleClose.classList.remove("hide")
-    
+
     })
 
     // This closes the search bar on mobile screens
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         searchBox.style.display = "none"
         searchToggleOpen.classList.remove("hide")
         searchToggleClose.classList.add("hide")
-    
+
     })
 
     //This opens the sorting menu on click
@@ -111,42 +111,53 @@ document.addEventListener("DOMContentLoaded", function () {
         cartTotal.classList.remove("text-light");
     }
 
-    //Functionality for the quantity selection element
-    let decreaseQuantity = document.getElementsByClassName("decrement-quantity")[0]
-    let increaseQuantity = document.getElementsByClassName("increment-quantity")[0]
-    let quantityCounter = document.getElementById("quantity-counter")
+    // Increase or decrease the product quantity in the cart
+    let decreaseQuantityButtons = document.querySelectorAll(".decrement-quantity");
+    let increaseQuantityButtons = document.querySelectorAll(".increment-quantity");
 
-    increaseQuantity.addEventListener("click", (event) => {
-        // increase quantity by one
-        event.preventDefault()
-        quantityCounter.value = parseInt(quantityCounter.value) + 1;
+    decreaseQuantityButtons.forEach((button, index) => {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            let itemID = button.getAttribute('data-item-id');
+            let quantityCounter = document.getElementById("quantity-counter_" + itemID);
+            let currentQuantity = parseInt(quantityCounter.value);
+
+            if (currentQuantity > 1) {
+                quantityCounter.value = currentQuantity - 1;
+            }
+        });
     });
-    
-    decreaseQuantity.addEventListener("click", (event) => {
-        // decrease quantity by one
-        event.preventDefault()
-        let currentQuantity = parseInt(quantityCounter.value);
-        if (currentQuantity > 1) {
-            quantityCounter.value = currentQuantity - 1;
-        }
-    })
 
-    //Updates the item quantites in the cart
-    let updateButton = document.getElementById("update-cart")
-    let updateForm = document.getElementById("update-form")
+    increaseQuantityButtons.forEach((button, index) => {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
 
-    updateButton.addEventListener("click", () => {
-        updateForm.submit()
-    })
+            let itemID = button.getAttribute('data-item-id');
+            let quantityCounter = document.getElementById("quantity-counter_" + itemID);
 
-    //Deletes an item from the cart
-    let deleteButton = document.getElementById("update-cart")
+            let currentQuantity = parseInt(quantityCounter.value);
+            quantityCounter.value = currentQuantity + 1;
+        });
+    });
 
-    deleteButton.addEventListener("click", () => {
-        let csrfToken = "{{ csrf_token }}";
-        let itemId = $(this).attr('id').split('remove_')[1];
-        let url = `/cart/remove/${itemId}`;
-        let data = {'csrfmiddlewaretoken': csrfToken};
-    })
+    let updateCartButtons = document.querySelectorAll(".update-cart-button");
+
+    updateCartButtons.forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Traverse up the DOM to find the common ancestor (e.g., parent tr)
+            var commonAncestor = button.closest('tr');
+
+            // Within the common ancestor, find the form element
+            var form = commonAncestor.querySelector('form');
+
+            if (form) {
+                form.submit();
+            }
+
+        });
+    });
 
 })
