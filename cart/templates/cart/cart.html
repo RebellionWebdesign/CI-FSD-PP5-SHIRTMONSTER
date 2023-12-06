@@ -18,7 +18,6 @@
                         <tr>
                             <th></th>
                             <th>PRODUCT</th>
-                            <th>SIZE</th>
                             <th>EAN</th>
                             <th>PRICE</th>
                             <th>QUANTITY</th>
@@ -33,17 +32,6 @@
                             <td>
                                 
                                 <a href="{% url "product_detail" pk=item.product.pk %}">{{ item.product.name }}</a>
-                            </td>
-                            <td>
-                                <select name="sizes" id="sizes">
-                                    <option value="XXS">XXS</option>
-                                    <option value="XS">XS</option>
-                                    <option value="S">S</option>
-                                    <option value="M" selected>M</option>
-                                    <option value="L">L</option>
-                                    <option value="XL">XL</option>
-                                    <option value="XXL">XXL</option>
-                                </select>
                             </td>
                             <td>
                                 <p>{{ item.product.ean }}</p>
