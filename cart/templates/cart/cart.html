@@ -45,7 +45,7 @@
                                 <p>{{ item.product.price }} €</p>
                             </td>
                             <td>
-                                <form id="update-form" class="update-form" method="post" action="">
+                                <form id="update-form_{{ item.item_id }}" data-item-id="{{ item.item_id }}" class="update-form" method="post" action="{% url 'adjust_cart_quantity' item.item_id %}">
                                     {% csrf_token %}
                                     <div class="quantity-selector">
                                         <button class="decrement-quantity"
@@ -53,11 +53,10 @@
                                             id="decrement-quantity_{{ item.item_id }}">
                                             <i data-lucide="minus"></i>
                                         </button>
-                                        <input id="quantity-counter" name="quantity-counter"
+                                        <input class="quantity-counter" id="quantity-counter_{{ item.item_id }}" name="quantity-counter"
                                             type="text"
                                             value="{{ item.quantity }}"
-                                            min="1"
-                                            max="3"/>
+                                            min="1"/>
                                         <button class="increment-quantity"
                                             data-item-id="{{ item.item_id }}"
                                             id="increment-quantity_{{ item.item_id }}">
@@ -67,7 +66,8 @@
                                 </form>
                             </td>
                             <td>
-                                <a id="delete-item" class="cta-button-link m-top-small">DELETE</a>
+                                <button id="update-cart_{{ item.item_id }}" class="update-cart-button">UPDATE CART</button>
+                                <button id="delete-item" class="">DELETE</button>
                             </td>
                         </tr>
                         {% endfor %}
@@ -113,7 +113,6 @@
                         </tr>
                         <tr>
                             <td colspan="6">
-                                <a id="update-cart" class="cta-button-link update-cart-button m-top-small">UPDATE CART</a>
                                 <a id="to-checkout" class="cta-button-link checkout-button m-top-small">SECURE CHECKOUT</a>
                             </td>
                         </tr>
