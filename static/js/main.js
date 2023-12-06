@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let customLink = document.getElementById('custom-shirts')
     let profileLink = document.getElementById('my-profile')
     let cartLink = document.getElementById('cart')
+    let cartTotal = document.getElementById('grand-total')
 
     if (homeUrl) {
         homeLink.classList.add("active");
@@ -106,24 +107,46 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (cartUrl) {
         cartLink.classList.add("active");
         cartLink.classList.remove("text-light");
+        cartTotal.classList.add("active");
+        cartTotal.classList.remove("text-light");
     }
 
     //Functionality for the quantity selection element
-    let decreaseQuantity = document.getElementById("minus")
-    let increaseQuantity = document.getElementById("plus")
+    let decreaseQuantity = document.getElementsByClassName("decrement-quantity")[0]
+    let increaseQuantity = document.getElementsByClassName("increment-quantity")[0]
     let quantityCounter = document.getElementById("quantity-counter")
 
-    increaseQuantity.addEventListener("click", () => {
+    increaseQuantity.addEventListener("click", (event) => {
         // increase quantity by one
+        event.preventDefault()
         quantityCounter.value = parseInt(quantityCounter.value) + 1;
     });
     
-    decreaseQuantity.addEventListener("click", () => {
+    decreaseQuantity.addEventListener("click", (event) => {
         // decrease quantity by one
+        event.preventDefault()
         let currentQuantity = parseInt(quantityCounter.value);
         if (currentQuantity > 1) {
             quantityCounter.value = currentQuantity - 1;
         }
+    })
+
+    //Updates the item quantites in the cart
+    let updateButton = document.getElementById("update-cart")
+    let updateForm = document.getElementById("update-form")
+
+    updateButton.addEventListener("click", () => {
+        updateForm.submit()
+    })
+
+    //Deletes an item from the cart
+    let deleteButton = document.getElementById("update-cart")
+
+    deleteButton.addEventListener("click", () => {
+        let csrfToken = "{{ csrf_token }}";
+        let itemId = $(this).attr('id').split('remove_')[1];
+        let url = `/cart/remove/${itemId}`;
+        let data = {'csrfmiddlewaretoken': csrfToken};
     })
 
 })
