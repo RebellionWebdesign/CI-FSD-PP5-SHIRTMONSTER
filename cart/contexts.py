@@ -8,6 +8,7 @@ def cart_contents(request):
 
     cart_items = []
     total = 0
+    tax = 0
     product_count = 0
     cart = request.session.get('cart', {})
 
