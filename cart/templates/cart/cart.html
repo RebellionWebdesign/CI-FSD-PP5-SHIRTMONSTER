@@ -12,6 +12,12 @@
                     You are {{ free_delivery_amount_left }} € away from free shipping!
                 </h3>
                 {% endif %}
+                {% if total >= free_delivery_threshold %}
+                <h3 class="cart-heading-shipping">
+                    Hey, {{ user.username }}!
+                    You get free shipping!
+                </h3>
+                {% endif %}
             </div>
             {% if cart_items %}
                 <table class="cart-table m-top">
@@ -21,7 +27,6 @@
                             <th>EAN</th>
                             <th>PRICE</th>
                             <th>QUANTITY</th>
-                            <th>SUBTOTAL</th>
                             <th>ACTIONS</th>
                         </tr>
                     {% for item in cart_items %}
@@ -40,24 +45,33 @@
                                 <p>{{ item.product.price }} €</p>
                             </td>
                             <td>
-                                <div class="number">
-                                    <span id="minus" class="minus">-</span>
-                                    <input id="quantity-counter" name="quantity-counter" type="text" value="1"/>
-                                    <span id="plus" class="plus">+</span>
-                                </div>
+                                <form id="update-form" class="update-form" method="post" action="">
+                                    {% csrf_token %}
+                                    <div class="quantity-selector">
+                                        <button class="decrement-quantity"
+                                            data-item-id="{{ item.item_id }}"
+                                            id="decrement-quantity_{{ item.item_id }}">
+                                            <i data-lucide="minus"></i>
+                                        </button>
+                                        <input id="quantity-counter" name="quantity-counter"
+                                            type="text"
+                                            value="{{ item.quantity }}"
+                                            min="1"
+                                            max="3"/>
+                                        <button class="increment-quantity"
+                                            data-item-id="{{ item.item_id }}"
+                                            id="increment-quantity_{{ item.item_id }}">
+                                            <i data-lucide="plus"></i>
+                                        </button>
+                                    </div>
+                                </form>
                             </td>
                             <td>
-                                <p>{{ item.product.price }} €</p>
-                            </td>
-                            <td>
-                                <button class="cta-button">UPDATE CART</button>
-                                <button class="cta-button">DELETE ITEM</button>
+                                <a id="delete-item" class="cta-button-link m-top-small">DELETE</a>
                             </td>
                         </tr>
                         {% endfor %}
                         <tr>
-                            <td></td>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -72,16 +86,12 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td></td>
                             <td class="table-summary-text"><p>Tax:</p></td>
                             <td class="table-summary-value" colspan="2">
                                 <p>{{ tax|floatformat:2 }} €</p>
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -95,13 +105,17 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
                                 <td class="table-summary-text"><p><strong>Total:</strong></p></td>
                                 <td class="table-summary-value" colspan="2">
                                     <p><strong>{{ grand_total|floatformat:2 }} €</strong></p>
                                 </td>
                             </tr>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <a id="update-cart" class="cta-button-link update-cart-button m-top-small">UPDATE CART</a>
+                                <a id="to-checkout" class="cta-button-link checkout-button m-top-small">SECURE CHECKOUT</a>
+                            </td>
                         </tr>
                 </table>
             {% else %}
