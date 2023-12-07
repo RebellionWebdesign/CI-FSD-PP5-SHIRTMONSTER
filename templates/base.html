@@ -36,10 +36,10 @@
 <body>
 
     {% if messages %}
-        <div class="message-container"></div>
+        {% for messsage in messages %}
+            {% include "includes/toasts/toast_success.html" %}
+        {% endfor %}
     {% endif %}
-
-
 
     {% comment %} RESPONSIVE NAVBAR START {% endcomment %}
     <header id="header" class="header flex flex-center flex-column">
@@ -83,7 +83,7 @@
                     <ul>
                         <li><a id="home" class="text-light" href="{% url 'home' %}">HOME</a></li>
                         <li><a id="shop" class="text-light" href="{% url 'shop' %}">SHOP</a></li>
-                        <li><a id="contact" class="text-light" href="#">CATEGORIES</a></li>
+                        <li><a id="contact" class="text-light" href="#">CONTACT</a></li>
                         <li><a id="custom-shirts" class="text-light" href="#">CUSTOM SHIRTS</a></li>
                     </ul>
                 </nav>
@@ -132,10 +132,10 @@
             <div class="column-3 flex flex-center flex-start">
                 <nav class="main-nav text-light">
                     <ul>
-                        <li><a class="text-light" href="{% url 'home' %}">HOME</a></li>
-                        <li><a class="text-light" href="{% url 'shop' %}">SHOP</a></li>
-                        <li><a class="text-light" href="#">CATEGORIES</a></li>
-                        <li><a class="text-light" href="#">CUSTOM PRINTS</a></li>
+                        <li><a id="home" class="text-light" href="{% url 'home' %}">HOME</a></li>
+                        <li><a id="shop" class="text-light" href="{% url 'shop' %}">SHOP</a></li>
+                        <li><a id="contact" class="text-light" href="#">CONTACT</a></li>
+                        <li><a id="" class="text-light" href="#">CUSTOM PRINTS</a></li>
                     </ul>
                 </nav>
             </div>
