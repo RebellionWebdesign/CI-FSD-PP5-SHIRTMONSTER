@@ -14,7 +14,10 @@ Declare them once and then use the variable name as value within the CSS.
     --primary-gradient: linear-gradient(45deg, rgba(216, 2, 99, 1) 0%, rgba(126, 58, 223, 1) 100%);
     --white: #FFFFFF;
     --black: #000000;
-
+    --toast-success: #7fd171;
+    --toast-error: #d17171;
+    --toast-warning: #d1cc71;
+    --toast-info: #7181d1;
 }
 
 /*
@@ -169,6 +172,55 @@ section {
 
 .m-top-small {
     margin-top: 1.5625rem;
+}
+
+/* MESSAGES */
+.message-container {
+    width: auto;
+    background-color: var(--secondary-dark);
+    border-radius: 5px;
+    padding: 0.5rem;
+    z-index: 2;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    transition: 0.5s ease-in-out;
+}
+
+.toast-success {
+    border: 2px solid var(--toast-success);
+}
+
+.icon-success {
+    color: var(--toast-success);
+    margin-right: 1rem;
+}
+
+.toast-error {
+    border: 2px solid var(--toast-error);
+}
+
+.icon-error {
+    color: var(--toast-error);
+    margin-right: 1rem;
+}
+
+.toast-warning {
+    border: 2px solid var(--toast-warning);
+}
+
+.icon-warning {
+    color: var(--toast-warning);
+    margin-right: 1rem;
+}
+
+.toast-info {
+    border: 2px solid var(--toast-info);
+}
+
+.icon-info {
+    color: var(--toast-info);
+    margin-right: 1rem;
 }
 
 /* HEADER SETTINGS */
