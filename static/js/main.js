@@ -147,14 +147,40 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener('click', function(e) {
             e.preventDefault();
 
-            // Traverse up the DOM to find the common ancestor (e.g., parent tr)
-            var commonAncestor = button.closest('tr');
-
-            // Within the common ancestor, find the form element
-            var form = commonAncestor.querySelector('form');
+            let formParent = button.closest('tr');
+            let form = formParent.querySelector('form');
 
             if (form) {
                 form.submit();
+            }
+
+        });
+    });
+
+    //Delete a given item from the cart
+    let deleteItemButtons = document.querySelectorAll(".delete-item-button");
+
+    deleteItemButtons.forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            let itemID = button.getAttribute('id').split('delete-item_')[1]
+            let formParent = document.getElementById("delete-item_" + itemID).closest("tr")
+            let form = formParent.querySelector('form');
+            let csrfToken = form.firstElementChild.getAttribute('value')
+            let url = "/cart/remove/" + itemID
+            let data = {
+                "csrfmiddlewaretoken": csrfToken
+            }
+
+            if (confirm("Do you really want to delete this item?")) {
+                txt = "Item deleted!"
+                $.post(url, data)
+                .done(function() {
+                    location.reload()
+                })
+            } else {
+                txt = "Item spared!"
             }
 
         });
