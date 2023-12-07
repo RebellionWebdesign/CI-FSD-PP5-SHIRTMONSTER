@@ -32,7 +32,7 @@ class Order(models.Model):
         (SHIPPED, 'Shipped'),
     )
 
-    order_number = models.CharField(max_length=7)
+    order_number = models.CharField(max_length=7, null=False, editable=False)
     user_id = models.OneToOneField(User, on_delete=models.PROTECT, related_name="user_id")
     address_id = models.OneToOneField(UserAdress, on_delete=models.CASCADE, related_name="user_address")
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_id")
