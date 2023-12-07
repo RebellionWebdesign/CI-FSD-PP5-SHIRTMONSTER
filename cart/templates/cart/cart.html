@@ -45,7 +45,7 @@
                                 <p>{{ item.product.price }} €</p>
                             </td>
                             <td>
-                                <form id="update-form_{{ item.item_id }}" data-item-id="{{ item.item_id }}" class="update-form" method="post" action="{% url 'adjust_cart_quantity' item.item_id %}">
+                                <form id="update-form_{{ item.item_id }}" data-item-id="{{ item.item_id }}" class="update-form" method="post" action="{% url 'update_cart_quantity' item.item_id %}">
                                     {% csrf_token %}
                                     <div class="quantity-selector">
                                         <button class="decrement-quantity"
@@ -55,8 +55,7 @@
                                         </button>
                                         <input class="quantity-counter" id="quantity-counter_{{ item.item_id }}" name="quantity-counter"
                                             type="text"
-                                            value="{{ item.quantity }}"
-                                            min="1"/>
+                                            value="{{ item.quantity }}"/>
                                         <button class="increment-quantity"
                                             data-item-id="{{ item.item_id }}"
                                             id="increment-quantity_{{ item.item_id }}">
@@ -67,7 +66,7 @@
                             </td>
                             <td>
                                 <button id="update-cart_{{ item.item_id }}" class="update-cart-button">UPDATE CART</button>
-                                <button id="delete-item" class="">DELETE</button>
+                                <button id="delete-item_{{ item.item_id }}" class="delete-item-button">DELETE</button>
                             </td>
                         </tr>
                         {% endfor %}
