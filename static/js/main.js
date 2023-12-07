@@ -186,4 +186,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    //Auto hides messages after 5s
+    setTimeout(() => {
+        const message = document.getElementById("messages");
+        if (message) {
+            message.classList.add = 'hide';
+        }
+    }, 5000);
+
 })
