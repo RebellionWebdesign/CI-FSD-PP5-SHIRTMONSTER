@@ -1,12 +1,10 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import messages
-from django.views import View
 from products.models import Product
+from orders.models import Order
 
 def view_cart(request):
-    """
-    A view which lets shoppers view the shopping cart
-    """
+    """ A view which lets shoppers view the shopping cart """
     return render(request, 'cart/cart.html')
 
 
@@ -57,3 +55,6 @@ def remove_from_cart(request, item_id):
 
     except Exception as e:
         return HttpResponse(status=500)
+    
+#def cart_to_order(request, item_id):
+    #do stuff
