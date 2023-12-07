@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Auto hides messages after 5s
     setTimeout(() => {
-        const message = document.getElementById("messages");
+        const message = document.getElementById("message");
         if (message) {
             message.classList.add = 'hide';
         }
