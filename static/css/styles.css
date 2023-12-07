@@ -185,6 +185,8 @@ section {
     right: 50px;
     bottom: 50px;
     transition: 0.5s ease-in-out;
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
 }
 
 .toast-success {
