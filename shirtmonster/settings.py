@@ -88,6 +88,8 @@ TEMPLATES = [
     },
 ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'          # stores messages in the session storage
+
 # allauth settings
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',                                    # Needed to login by username in Django admin, regardless of allauth
