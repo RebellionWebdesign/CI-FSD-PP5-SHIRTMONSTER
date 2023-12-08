@@ -80,7 +80,7 @@ class CancelledOrders(models.Model):
         (DEFECTIVE, 'Defective'),
         (ORDERED_WRONG, 'Ordered wrong item'),
         (UNAUTHORIZED_PURCHASE, 'Unauthorized purchase'),
-        (SIMPLE_RETURN, 'Just return'),
+        (SIMPLE_RETURN, 'I just want to return the item'),
     )
 
     order_number = models.OneToOneField(Order, on_delete=models.PROTECT, related_name="order_id")
@@ -91,3 +91,43 @@ class CancelledOrders(models.Model):
     cancel_status = models.CharField(max_length=10,choices=CANCEL_CHOICES, default=PENDING)
     resolved_on = models.DateField(auto_now_add=True)
     resolved_by = models.OneToOneField(User, on_delete=models.PROTECT, related_name="cancel_user")
+
+    def __str__(self):
+        return "Cancelled Orders"
+
+
+class WishList(models.Model):
+    """ This model acts as a datastore for wishlist items """
+    product_id = models.ForeignKey(Product, on_delete=models.PROTECT, related_name="wishlist_product")
+    user_id = models.OneToOneField(User, on_delete=models.CASCADE, related_name="wishlist_user")
+
+    def __str__(self):
+        return "Wish List"
+
+
+class Testimonials(models.Model):
+    """
+    Users can give testimonials for orders. This model stores it. """
+
+    ONE = 1
+    TWO = 2
+    THREE = 3
+    FOUR = 4
+    FIVE = 5
+
+    RATE_CHOICES = (
+        ("1", 1),
+        ("2", 2),
+        ("3", 3),
+        ("4", 4),
+        ("5", 5),
+    )
+
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="testimonial_user")
+    order_id = models.OneToOneField(Order, on_delete=models.CASCADE, related_name="testimonial_order")
+    rate = models.IntegerField(choices=RATE_CHOICES, default=FIVE)
+    content = models.TextField()
+    created_on = models.DateField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.user_id
