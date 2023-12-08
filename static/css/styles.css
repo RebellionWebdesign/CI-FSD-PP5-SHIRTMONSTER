@@ -187,6 +187,7 @@ section {
     transition: 0.5s ease-in-out;
     font-family: 'poppins', sans-serif;
     font-weight: 400;
+    display: block;
 }
 
 .toast-success {
