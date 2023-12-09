@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import messages
 from products.models import Product
-from orders.models import Order
 
 def view_cart(request):
     """ A view which lets shoppers view the shopping cart """
