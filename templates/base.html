@@ -125,7 +125,7 @@
             <div class="column-3 flex flex-center flex-end">
                 <nav class="user-nav">
                     <ul class="flex flex-end">
-                        <li><a class="text-light flex flex-center" href=""><i data-lucide="list-todo"></a></i></li>
+                        <li><a class="text-light flex flex-center" href="{% url 'user_wishlist' %}"><i data-lucide="list-todo"></a></i></li>
                         <li><a id="my-profile" class="text-light flex flex-center" href="{% url 'user_profile' pk=user.pk %}"><i data-lucide="circle-user-round"></i></a></li>
                         <li><a id="cart" class="text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
                         <p id="grand-total" class="grand-total text-light">
