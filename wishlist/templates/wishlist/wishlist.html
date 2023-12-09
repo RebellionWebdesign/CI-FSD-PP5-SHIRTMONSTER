@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="flex flex-center">
+        <container class="flex flex-center">
+            {% for wish in wishes %}
+            <p>
+                {{ wish.user_id }}
+                <br>
+                {{ wish.product_id }}
+            </p>
+            {% endfor %}
+        </container>
+    </section>
+{% endblock content %}
