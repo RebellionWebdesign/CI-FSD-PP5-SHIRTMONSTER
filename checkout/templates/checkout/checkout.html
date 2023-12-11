@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="cart-section flex flex-center text-light flex-column">
+        <h2>Hi {{ user.username }}, please fill out the form below to complete your order.</h2>
+        <div class="container flex flex-column flex-center-y flex-start text-light">
+            <div class="column-2">
+                <form action="{% url 'checkout' %}" method="post" id="payment-form">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Details</legend>
+                        {{ order_form.full_name }}
+                        {{ order_form.email }}
+                        {{ order_form.phone }}
+                    </fieldset>
+                    <fieldset>
+                        <legend>Delivery</legend>
+                        {{ order_form.adress_line_1 }}
+                        {{ order_form.adress_line_2 }}
+                        {{ order_form.city }}
+                        {{ order_form.zip_code }}
+                        {{ order_form.country }}
+                        <label class="" for ="save-info">Save this info to my account</label>
+                        <input class="" type="checkbox" id="save-info" name="save-info" checked>
+                        <label for="save-info">
+                            <a href="{% url 'account_signup' %}" class="">SIGNUP</a>
+                            <a href="{% url 'account_login' %}" class="">LOGIN</a>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Payment</legend>
+                        <h3>Your card will be charged <strong>{{ grand_total|floatformat:2 }} €</strong></h3>
+                        <div id="card-element"></div>
+                        <div id="card-errors"></div>
+                        <button id="stripe-button" >Complete Order</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="column-2">
+                <!--ADD PRODUCT DETAILS HERE-->
+            </div>
+        </div>
+    </section>
+{% endblock content %}
