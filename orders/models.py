@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.contrib.auth.models import User
 from products.models import Product
@@ -32,7 +33,7 @@ class Order(models.Model):
         (SHIPPED, 'Shipped'),
     )
 
-    order_number = models.CharField(max_length=7, null=False, editable=False)
+    order_number = models.CharField(max_length=32, null=False, editable=False)
     user_id = models.OneToOneField(User, on_delete=models.PROTECT, related_name="user_id")
     address_id = models.OneToOneField(UserAdress, on_delete=models.CASCADE, related_name="user_address")
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_id")
@@ -49,6 +50,19 @@ class Order(models.Model):
         """ Ordering rule for orders """
         ordering = ('-order_date',)
     
+
+    def _generate_order_number(self):
+        """ Returns a random order number """
+        return uuid.uuid4().hex.upper()
+    
+
+    def save(self, *args, **kwargs):
+        """ Overrides djangos save method to set an order number if none """
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
+            super().save()
+    
+
     def __str__(self):
         """ Display class name as order number """
         return self.order_number
@@ -83,7 +97,7 @@ class CancelledOrders(models.Model):
         (SIMPLE_RETURN, 'I just want to return the item'),
     )
 
-    order_number = models.OneToOneField(Order, on_delete=models.PROTECT, related_name="order_id")
+    order_number = models.OneToOneField(Order,max_length=32, on_delete=models.PROTECT, editable=False, related_name="order_id")
     user_id = models.OneToOneField(User, on_delete=models.CASCADE, related_name="order_user")
     requested_on = models.DateField(auto_now_add=True)
     cancel_reason = models.CharField(max_length=30,choices=CANCEL_REASONS, default=DEFAULT)
@@ -92,5 +106,10 @@ class CancelledOrders(models.Model):
     resolved_on = models.DateField(auto_now_add=True)
     resolved_by = models.OneToOneField(User, on_delete=models.PROTECT, related_name="cancel_user")
 
+    class Meta:
+        """ Ordering rule for cancelled orders """
+        ordering = ('-requested_on',)
+
     def __str__(self):
-        return "Cancelled Orders"
+        return self.order_number
+6
