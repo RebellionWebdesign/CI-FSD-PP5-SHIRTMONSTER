@@ -168,11 +168,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
 MEDIA_URL = '/media/'
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
-# Variables for order processing
-FREE_DELIVERY_THRESHOLD = 150
-STANDARD_DELIVERY_PERCENTAGE = 10
-TAX_PERCENTAGE = 0.19
-
 # AWS and dev config
 if 'USE_AWS' in os.environ:
 # Caching
@@ -198,6 +193,13 @@ if 'USE_AWS' in os.environ:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
+# Stripe settings
+STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
+FREE_DELIVERY_THRESHOLD = 150
+STANDARD_DELIVERY_PERCENTAGE = 10
+TAX_PERCENTAGE = 0.19
+STRIPE_CURRENCY = 'eur'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
