@@ -6,6 +6,11 @@ CSS is from here:
 https://stripe.com/docs/stripe.js
 */
 
+/*
+Copied from the walkthrough. The stripe documentation
+recommends the payment element now and doesnt provide information on
+the card element anymore.
+*/
 var stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
 var client_secret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripe_public_key);
@@ -25,5 +30,18 @@ var style = {
         iconColor: '#dc3545'
     }
 };
+
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
+
+// Card element error handler
+card.addEventListener("change", function (event) {
+    var errorDiv = document.getElementById("card-errors")
+    if (event.error) {
+        var html = 
+            `<p>${event.error.message}</p>`;
+        $(errorDiv).html(html);
+    } else {
+        errorDiv.textContent = '';
+    }
+})
