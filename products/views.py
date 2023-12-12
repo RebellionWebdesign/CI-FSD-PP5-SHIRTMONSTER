@@ -40,12 +40,18 @@ def add_to_wishlist(request, pk):
     """ A view to let users add products to a wishlist """
     
     product = Product.objects.get(pk=pk)
+    duplicates = WishList.objects.values_list()
     user = request.user
-    wish = WishList()
-    wish.user_id = user
-    wish.product_id = product
-    wish.full_clean()
-    wish.save()
-    messages.success(request, 'Product added to wishlist!')
+
+    if product in duplicates:
+        messages.info(request, "Item is already in wishlist.")
+        pass
+    else:
+        wish = WishList()
+        wish.user_id = user
+        wish.product_id = product
+        wish.full_clean()
+        wish.save()
+        messages.success(request, 'Product added to wishlist!')
     
-    return render(request, 'products/product_detail.html')
+    return redirect(reverse('product_detail'))
