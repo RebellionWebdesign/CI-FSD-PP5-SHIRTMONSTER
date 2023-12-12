@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="">
+        <div class="">
+            <div class=""></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class=""></div>
+    <div class="">
+        <div class="">
+            <div class="">
+                <hr>
+                <h2 class="">Thank You</h2>
+                <hr>
+                <p class="">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+            </div>
+        </div>
+
+        <div class="">
+            <div class=""></div>
+        </div>
+        <div class="">
+			<div class="">
+				<a href="{% url 'shop' %}" class="">
+					<span class="">
+						<i class=""></i>
+					</span>
+					<span class="text-uppercase">Check out more shirts!</span>
+				</a>
+			</div>
+		</div>
+    </div>
+{% endblock content %}
