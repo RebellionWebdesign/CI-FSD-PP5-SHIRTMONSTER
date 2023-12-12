@@ -20,24 +20,24 @@ class Order(models.Model):
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
-    def _generate_oder_number(self):
+    def _generate_order_number(self):
         """ Generates an order number as uuid """
         return uuid.uuid4().hex.upper()
     
     def update_total(self):
         """ Updates grand total and delivery cost for each new order item """
-        self.order_total = self.orderitems.aggregate(Sum('orderitem_total'))['orderitem_total__sum']
+        self.order_total = self.order_items.aggregate(Sum('orderitem_total'))['orderitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+            self.shipping_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
-            self.delivery_cost = 0
-        self.grand_total = self.order_total + self.delivery_cost
+            self.shipping_cost = 0
+        self.grand_total = self.order_total + self.shipping_cost
         self.save()
 
     def save(self, *args, **kwargs):
         """ Override the default save method if there isnt an order number """
         if not self.order_number:
-            self.order_number = self._generate_oder_number()
+            self.order_number = self._generate_order_number()
             super().save(*args, **kwargs)
     
     def __str__(self):
