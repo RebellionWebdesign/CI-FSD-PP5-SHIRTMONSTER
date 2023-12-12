@@ -11,7 +11,7 @@ Copied from the walkthrough. The stripe documentation
 recommends the payment element now and doesnt provide information on
 the card element anymore.
 */
-var stripePublicKey = $('#id_stripePublicKey').text().slice(1, -1);
+var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
