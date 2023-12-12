@@ -4,7 +4,6 @@ from .models import Product, ProductCategory
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'name',
-        'sizes',
         'ean',
         'category_id',
         'price',
