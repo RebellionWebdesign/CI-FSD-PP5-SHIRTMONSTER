@@ -28,10 +28,10 @@ def cart_contents(request):
         shipping = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE/100)
         free_delivery_amount_left = settings.FREE_DELIVERY_THRESHOLD - total
     else:
-        delivery = 0
+        shipping = 0
         free_delivery_amount_left = 0
     
-    grand_total = delivery + total + tax
+    grand_total = shipping + total + tax
 
     context = {
         'cart_items': cart_items,
