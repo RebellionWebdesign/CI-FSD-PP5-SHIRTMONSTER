@@ -54,6 +54,3 @@ def remove_from_cart(request, item_id):
 
     except Exception as e:
         return HttpResponse(status=500)
-    
-#def cart_to_order(request, item_id):
-    #do stuff
