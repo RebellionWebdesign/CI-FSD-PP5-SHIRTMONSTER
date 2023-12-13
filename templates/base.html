@@ -99,7 +99,7 @@
                 </nav>
             </div>
             <div class="column-3 flex flex-center">
-                <nav class="filter-nav">
+                <nav id="filter-nav" class="filter-nav">
                     <ul class="flex flex-center-y">
                         <li><strong><p class="text-light">FILTER BY:</p></strong></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies,t_shirts">ALL PRODUCTS</a></li>
@@ -181,9 +181,9 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="{% static 'js/main.js' %}"></script>
     {% comment %} Stripe {% endcomment %}
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="{% static 'js/main.js' %}"></script>
     {% endblock coreJS %}
 
     {% block extraJS %}
