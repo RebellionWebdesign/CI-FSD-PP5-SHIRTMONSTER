@@ -21,12 +21,15 @@
                         {{ order_form.city }}
                         {{ order_form.zip_code }}
                         {{ order_form.country }}
+                        {% if user.is_authenticated %}
                         <label class="" for ="save-info">Save this info to my account</label>
-                        <input class="" type="checkbox" id="save-info" name="save-info" checked>
-                        <label for="save-info">
+                        <input class="" type="checkbox" id="id-save-info" name="save-info" checked>
+                        {% else %}
+                        <label for="id-save-info">
                             <a href="{% url 'account_signup' %}" class="">SIGNUP</a>
                             <a href="{% url 'account_login' %}" class="">LOGIN</a>
                         </label>
+                        {% endif %}
                     </fieldset>
                     <fieldset>
                         <legend>Payment</legend>
