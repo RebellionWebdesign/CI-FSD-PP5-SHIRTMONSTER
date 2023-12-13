@@ -199,7 +199,7 @@ STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
 FREE_DELIVERY_THRESHOLD = 150
 STANDARD_DELIVERY_PERCENTAGE = 10
 TAX_PERCENTAGE = 0.19
-STRIPE_CURRENCY = 'eur'
+STRIPE_CURRENCY = 'EUR'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
