@@ -60,8 +60,7 @@ form.addEventListener('submit', function(ev) {
     }).then(function(result) {
         if (result.error) {
             var errorDiv = document.getElementById('card-errors');
-            var html = 
-                `<p>${result.error.message}</p>`;
+            var html = `<p>${result.error.message}</p>`;
             $(errorDiv).html(html);
             card.update({ 'disabled': false});
             $('#stripe-button').attr('disabled', false);
