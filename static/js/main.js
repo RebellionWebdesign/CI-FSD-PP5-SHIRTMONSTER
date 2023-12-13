@@ -62,11 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
-    //This hides the navbar on auth pages
+    //This hides the navbar on auth pages and hides the filter from the profile page
     let loginUrl = window.location.href.includes('login');
     let logoutUrl = window.location.href.includes('logout');
     let signupUrl = window.location.href.includes('signup');
     let resetUrl = window.location.href.includes('reset');
+    let filterUrl = window.location.href.includes('profiles');
+    const filter = document.getElementById('filter_nav')
     const header = document.getElementById('header')
 
     if (loginUrl) {
@@ -77,6 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
         header.classList.add("hide");
     } else if (resetUrl) {
         header.classList.add("hide");
+    } else if (filterUrl) {
+        filter.classList.add("hide");
     }
 
     // Checks the url for which page we are on and adds the .active class to the link
@@ -84,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let shopUrl = window.location.href.includes('shop');
     let contactUrl = window.location.href.includes('contact');
     let cartUrl = window.location.href.includes('cart');
-    let profileUrl = window.location.href.includes('users');
+    let profileUrl = window.location.href.includes('profiles');
     let homeLink = document.getElementById('home')
     let shopLink = document.getElementById('shop')
     let contactLink = document.getElementById('contact')
@@ -185,13 +189,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
     });
-
-    //Auto hides messages after 5s
-    setTimeout(() => {
-        const message = document.getElementById("message");
-
-            message.style.display = 'none';
-
-    }, 5000);
-
 })
