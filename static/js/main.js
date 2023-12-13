@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let signupUrl = window.location.href.includes('signup');
     let resetUrl = window.location.href.includes('reset');
     let filterUrl = window.location.href.includes('profiles');
-    const filter = document.getElementById('filter_nav')
+    const filter = document.getElementById('filter-nav')
     const header = document.getElementById('header')
 
     if (loginUrl) {
