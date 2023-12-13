@@ -126,7 +126,7 @@
                 <nav class="user-nav">
                     <ul class="flex flex-end">
                         <li><a class="text-light flex flex-center" href="{% url 'user_wishlist' %}"><i data-lucide="list-todo"></a></i></li>
-                        <li><a id="my-profile" class="text-light flex flex-center" href="{% url 'user_profile' pk=user.pk %}"><i data-lucide="circle-user-round"></i></a></li>
+                        <li><a id="my-profile" class="text-light flex flex-center" href="{% url 'profile' pk=user.pk %}"><i data-lucide="circle-user-round"></i></a></li>
                         <li><a id="cart" class="text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
                         <p id="grand-total" class="grand-total text-light">
                             {% if grand_total %}
@@ -145,12 +145,12 @@
                         <li><a id="home" class="text-light" href="{% url 'home' %}">HOME</a></li>
                         <li><a id="shop" class="text-light" href="{% url 'shop' %}">SHOP</a></li>
                         <li><a id="contact" class="text-light" href="#">CONTACT</a></li>
-                        <li><a id="" class="text-light" href="#">CUSTOM PRINTS</a></li>
+                        <li><a id="custom-print" class="text-light" href="#">CUSTOM PRINTS</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="column-3 flex flex-center flex-end">
-                <nav class="filter-nav">
+                <nav id="filter-nav" class="filter-nav">
                     <ul>
                         <li><strong><p class="text-light">FILTER BY:</p></strong></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies,t_shirts">ALL PRODUCTS</a></li>
