@@ -11,12 +11,18 @@
                     <img src="{{ wish.product_id.image_url }}" alt="{{ wish.product_id.name }}" class="wishlist-image">
                     <div class="wishlist-item-header flex flex-column">
                         <h3 class="text-light">{{ wish.product_id.name }}</h3>
-                        <div class="flex flex-xolumn flex-center-y">
-                            <i data-lucide="tags"></i>
-                            {{ wish.product_id.category_id.display_name }}
+                        <div class="flex flex-center-y flex-between text-light">
+                            <i class="" data-lucide="tags"></i>
+                            <p>{{ wish.product_id.category_id.display_name }}</p>
+                            <p>ADDED ON: {{ wish.added_on }}</p>
                         </div>
-                        <div class="item-description">
-                            {{ wish.product_id.description }}
+                        <div class="item-description m-top text-light">
+                            <p>{{ wish.product_id.description }}</p>
+                        </div>
+                        <div class="wishlist-product-info flex flex-between text-light m-top">
+                            <div><p>EAN: {{ wish.product_id.ean }}</p></div>
+                            <div><p>PRICE: {{ wish.product_id.price }} €</p></div>
+                            <div><p></p></div>
                         </div>
                     </div>
                 </div>
