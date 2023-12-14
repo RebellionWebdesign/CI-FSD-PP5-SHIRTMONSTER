@@ -165,6 +165,10 @@ section {
     margin-top: 0.625rem;
 }
 
+.m-bottom {
+    margin-bottom: 0.625rem;
+}
+
 /* These are used for margin between headings and containers etc. */
 .m-top-large {
     margin-top: 3.125rem;
@@ -873,6 +877,24 @@ label[for=id_password2] {
 #id_password2:focus {
     outline: none;
     border: 1px solid var(--color-primary);
+}
+
+/* Wishlist page */
+.wishlist-item {
+    width: 800px;
+    height: 250px;
+    background-color: var(--secondary-dark);
+    border-radius: 10px;
+}
+
+.wishlist-item-header {
+    padding: 15px;
+}
+
+.wishlist-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px 0 0 10px;
 }
 
 /* RESPONSIVE MEDIA QUERIES - AFTER BOOTSTRAP*/
