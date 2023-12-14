@@ -38,12 +38,12 @@ class ProductDetailView(View):
 
 def add_to_wishlist(request, pk):
     """ A view to let users add products to a wishlist """
-    
-    product = Product.objects.get(pk=pk)
-    duplicates = WishList.objects.values_list()
-    user = request.user
 
-    if product in duplicates:
+    user = request.user
+    product = get_object_or_404(Product, pk=pk)
+    wishlist_item = WishList.objects.filter(user_id=user, product_id=product)
+
+    if wishlist_item.exists():
         messages.info(request, "Item is already in wishlist.")
         pass
     else:
