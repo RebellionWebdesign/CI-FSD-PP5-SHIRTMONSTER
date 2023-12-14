@@ -3,14 +3,27 @@
 
 {% block content %}
     <section class="flex flex-center">
-        <container class="flex flex-center">
+        <container class="flex flex-center flex-column">
+            {% if user.is_authenticated %}
+            <h2 class="text-light">Hey {{ user.username }}, this is your wishlist!</h2>
             {% for wish in wishes %}
-            <p>
-                {{ wish.user_id }}
-                <br>
-                {{ wish.product_id }}
-            </p>
+                <div class="wishlist-item m-top m-bottom flex">
+                    <img src="{{ wish.product_id.image_url }}" alt="{{ wish.product_id.name }}" class="wishlist-image">
+                    <div class="wishlist-item-header flex flex-column">
+                        <h3 class="text-light">{{ wish.product_id.name }}</h3>
+                        <div class="flex flex-xolumn flex-center-y">
+                            <i data-lucide="tags"></i>
+                            {{ wish.product_id.category_id.display_name }}
+                        </div>
+                        <div class="item-description">
+                            {{ wish.product_id.description }}
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
+            {% else %}
+                <h2>Sorry, nothing is here yet!</h2>
+            {% endif %}
         </container>
     </section>
 {% endblock content %}
