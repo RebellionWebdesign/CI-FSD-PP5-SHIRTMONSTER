@@ -54,4 +54,5 @@ def add_to_wishlist(request, pk):
         wish.save()
         messages.success(request, 'Product added to wishlist!')
     
-    return redirect(reverse('product_detail'))
+    return redirect(reverse('product_detail', kwargs={'pk': product.pk}))
+
