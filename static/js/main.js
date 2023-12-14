@@ -186,7 +186,14 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 txt = "Item spared!"
             }
-
         });
     });
+
+    // Hides messages after five seconds
+    setTimeout(() => {
+        const message = document.getElementById("message");
+        if (message) {
+            message.style.display = 'none';
+        }
+    }, 5000);
 })
