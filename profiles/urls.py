@@ -1,7 +1,7 @@
 from django.contrib import admin
-from django.urls import path
 from .views import UserProfileView
+from django.urls import path
 
 urlpatterns = [
-    path('show_user/<int:pk>', UserProfileView.as_view(), name='profile')
+    path('show_user/<int:pk>', UserProfileView.as_view() , name='profile')
 ]
