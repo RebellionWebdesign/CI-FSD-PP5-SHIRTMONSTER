@@ -561,7 +561,7 @@ section {
 }
 
 .product-detail-icon:visited {
-    color: var(--color-secondary);
+    color: var(--color-primary-hover);
 }
 
 #product-category {
