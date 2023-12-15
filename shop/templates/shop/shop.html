@@ -17,9 +17,8 @@
         {% for product in products %}
             <div class="product-card">
                 <div class="product-action-icons flex flex-column">
-                    <i id="wishlist-icon" data-lucide="heart"></i>
                     <a class="product-detail-icon" href="{% url "product_detail" pk=product.pk %}">
-                        <i id="product-details" class="m-top" data-lucide="info"></i>
+                        <i id="product-details" data-lucide="info"></i>
                     </a>
                 </div>
                 <div id="product-category" class="flex flex-center text-light">
@@ -29,7 +28,6 @@
                 <img src="{{ product.image_url }}" alt="{{ product.name }}" class="product-image">
                 <div class="product-header flex flex-between flex-center-y text-light">
                     <p class="product-name">{{ product.name }}</p>
-                    <div class="product-rating">{{ product.rating }}</div>
                 </div>
                 <div class="product-info flex flex-between flex-center-y text-light">
                     <h3 class="product-price">{{ product.price }} €</h3>
