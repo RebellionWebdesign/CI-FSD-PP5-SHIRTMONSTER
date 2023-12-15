@@ -12,17 +12,23 @@
                     <div class="wishlist-item-header flex flex-column">
                         <h3 class="text-light">{{ wish.product_id.name }}</h3>
                         <div class="flex flex-center-y flex-between text-light">
-                            <i class="" data-lucide="tags"></i>
-                            <p>{{ wish.product_id.category_id.display_name }}</p>
-                            <p>ADDED ON: {{ wish.added_on }}</p>
+                            <div class="flex">
+                                <i id="wish-product-category" data-lucide="tags"></i>
+                                <p class="m-left">{{ wish.product_id.category_id.display_name }}</p>
+                            </div>
+                            <p>ADDED ON: {{ wish.added_on|date:'d.m.Y' }}</p>
                         </div>
                         <div class="item-description m-top text-light">
                             <p>{{ wish.product_id.description }}</p>
                         </div>
-                        <div class="wishlist-product-info flex flex-between text-light m-top">
+                        <div class="wishlist-product-info flex flex-between flex-center-y text-light m-top">
                             <div><p>EAN: {{ wish.product_id.ean }}</p></div>
                             <div><p>PRICE: {{ wish.product_id.price }} €</p></div>
-                            <div><p></p></div>
+                            <form action="{% url 'add_to_cart' wish.product_id.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="to-cart-button text-light">BUY</button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </form>
                         </div>
                     </div>
                 </div>
