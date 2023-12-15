@@ -5,7 +5,14 @@
 {% block content %}
 <section class="hero-section flex flex-center">
     <div class="container flex flex-center">
-        <div class="column-2  flex flex-center flex-column text-light"><p>Whats goin on here?</p></div>
+        <div class="column-2  flex flex-center flex-column text-light">
+            <p>Welcome to your user profile, {{ user.username }}</p>
+            <form class="profile-form" action="{% url 'profile' pk=user.pk %}" method='post' id="profile-update-form">
+                {% csrf_token %}
+                {{ form }}
+                <button>UPDATE DATA</button>
+            </form>
+        </div>
         <div class="column-2  flex flex-center flex-column text-light"><p>Jeez, this takes long</p></div>
     </div>
 </section>
