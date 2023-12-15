@@ -55,7 +55,8 @@ form.addEventListener('submit', function(ev) {
     $('#stripe-button').attr('disabled', true);
 
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
-    var csrfToken = $('input["csrfmiddlewaretoken"]').val();
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    console.log(csrfToken)
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
@@ -87,7 +88,7 @@ form.addEventListener('submit', function(ev) {
                     line2: $.trim(form.adress_line_2.value),
                     city: $.trim(form.city.value),
                     country: $.trim(form.country.value),
-                    zip_code: $.trim(form.zip_code.value),
+                    postal_code: $.trim(form.zip_code.value),
                 }
             },
         }).then(function(result) {
