@@ -3,9 +3,15 @@
 
 {% block content %}
 <section class="shop-section flex flex-center flex-column">
-    <h2 class="banner text-light">MERCH REDEFINED - OUR COLLECTION 2024
+    {% if products %}
+        <h2 class="banner text-light">MERCH REDEFINED - OUR COLLECTION 2024
         <br>
         <strong>FREE DELIVERY FOR ORDERS OVER {{ free_delivery_threshold }}€</strong>
+    {% else %}
+    <h2 class="banner text-light hide">MERCH REDEFINED - OUR COLLECTION 2024
+        <br>
+        <strong>FREE DELIVERY FOR ORDERS OVER {{ free_delivery_threshold }}€</strong>
+    {% endif %}
     </h2>
     <div class="container grid m-top-large">
         {% for product in products %}
@@ -34,6 +40,8 @@
                     </form>
                 </div>
             </div>
+            {% empty %}
+                <h2 class="text-light">Sorry, we couldnt find your requested item!</h2>
         {% endfor %}
     </div>
 </section>
