@@ -21,7 +21,7 @@ class RemoveWish(View):
 
     def post(self, request, pk):
         wish_product = get_object_or_404(Product, pk=pk)
-        wish_item = get_object_or_404(WishList, product_id=wish_product)
+        wish_item = WishList.objects.filter(product_id=wish_product)
 
         wish_item.delete()
         messages.success(request, 'Product removed from wishlist!')
