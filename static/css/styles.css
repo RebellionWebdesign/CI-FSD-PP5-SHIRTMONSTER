@@ -169,6 +169,14 @@ section {
     margin-bottom: 0.625rem;
 }
 
+.m-left {
+    margin-left: 0.625rem;
+}
+
+.m-right {
+    margin-right: 0.625rem;
+}
+
 /* These are used for margin between headings and containers etc. */
 .m-top-large {
     margin-top: 3.125rem;
@@ -561,6 +569,10 @@ section {
     color: var(--color-primary);
     right: 5px;
     bottom: 85px;
+}
+
+#wish-product-category {
+    color: var(--color-primary);
 }
 
 /* ABOUT SECTION */
