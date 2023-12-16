@@ -6,14 +6,25 @@
 <section class="hero-section flex flex-center">
     <div class="container flex flex-center">
         <div class="column-2  flex flex-center flex-column text-light">
-            <p>Welcome to your user profile, {{ user.username }}</p>
+            <p>
+                Welcome to your user profile, {{ user.username }}
+                <br>
+                Please update your info if needed.
+            </p>
             <form class="profile-form" action="{% url 'profile' pk=user.pk %}" method='post' id="profile-update-form">
                 {% csrf_token %}
                 {{ form }}
-                <button>UPDATE DATA</button>
+                <button>UPDATE PROFILE</button>
             </form>
         </div>
-        <div class="column-2  flex flex-center flex-column text-light"><p>Jeez, this takes long</p></div>
+        <div class="column-2  flex flex-center flex-column text-light">
+            <p>
+                This is your order history
+            </p>
+            {% for orders in order %}
+                <p>{{ orders.order_number }}</p>
+            {% endfor %}
+        </div>
     </div>
 </section>
 
