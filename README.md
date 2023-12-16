@@ -1,4 +1,4 @@
-![HEADER IMAGE HERE](https://github.com/RebellionWebdesign/CI-FSD-PP5-SHIRTMONSTER/blob/9f464fa485ef09548e5fdb617ff4aca263af55c7/docs/readme-files/readme-header.png)
+![readme-header](https://github.com/RebellionWebdesign/CI-FSD-PP5-SHIRTMONSTER/blob/9f464fa485ef09548e5fdb617ff4aca263af55c7/docs/readme-files/readme-header.png)
 
 ## OVERVIEW
 
@@ -7,7 +7,7 @@ Shirtmonster is an educational eCommerce website where customers can buy apparel
 
 ### PROJECT GOAL
 
-Goal text here
+The projects´ goal is to build a webshop and enable visitors and customers as well as the website owner to perform different tasks like order an item or write testimonials.
 
 ### PROJECT OBJECTIVES
 
@@ -72,6 +72,11 @@ The app structure is defined by the database tables and their relationships. The
 <details>
   <summary>PP5 ERD initial</summary>
 <img src="docs/readme-files/PP5-ERD-initial.png" ><br>
+</details>
+
+<details>
+  <summary>PP5 ERD final</summary>
+<img src="docs/readme-files/PP5-ERD-final.png" ><br>
 </details>
 
 ### SURFACE
