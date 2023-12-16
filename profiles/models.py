@@ -19,9 +19,13 @@ class UserProfile(models.Model):
     def __str__(self):
         return self.user.username
 
-@receiver(post_save, sender=UserProfile)
+@receiver(post_save, sender=User)
 def create_or_update_profile(sender, instance, created, **kwargs):
     """ Creates or saves the user profile """
     if created:
-        UserProfile.objects.create(user=instance)
-    instance.userprofile.save()
+        profile, profile_created = UserProfile.objects.get_or_create(user=instance)
+        if profile_created:
+            instance.userprofile = profile
+            instance.save()
+        else:
+            profile.save()
