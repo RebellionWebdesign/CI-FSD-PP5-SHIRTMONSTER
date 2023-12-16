@@ -30,13 +30,14 @@ class Order(models.Model):
     
     def update_total(self):
         """ Updates grand total and delivery cost for each new order item """
-        self.order_total = self.order_items.aggregate(Sum('orderitem_total'))['orderitem_total__sum'] or 0
+        order_items = self.order_items.all()
+        self.order_total = order_items.aggregate(Sum('orderitem_total'))['orderitem_total__sum'] or 0
+        print(self.order_total)
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.shipping_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
             self.shipping_cost = 0
-        self.grand_total = self.order_total + self.shipping_cost
-        self.save()
+        print(self.shipping_cost)
 
     def save(self, *args, **kwargs):
         """ Override the default save method if there isnt an order number """
