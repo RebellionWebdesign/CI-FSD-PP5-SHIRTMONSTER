@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %} Extra Title {% endcomment %}
+{% block extra_title %}404 Error{% endblock %}
+
+{% block content %}
+<section class="error-section flex flex-center">
+    <div class="container flex flex-center flex-xcolumn">
+        <h2>This is not the page you´re looking for...</h2>
+        <a href="{% url 'shop' %}">GO BACK</a>
+    </div>
+</section>
+{% endblock %}

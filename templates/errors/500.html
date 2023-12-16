@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %} Extra Title {% endcomment %}
+{% block extra_title %}500 Error{% endblock %}
+
+{% block content %}
+<section class="error-section flex flex-center">
+    <div class="container flex flex-center flex-xcolumn">
+        <h2>Ooops...something wen´t wrong here. We apologize for the inconvenience.</h2>
+        <a href="{% url 'shop' %}">GO BACK</a>
+    </div>
+</section>
+{% endblock %}
