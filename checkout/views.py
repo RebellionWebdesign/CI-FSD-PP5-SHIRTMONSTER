@@ -31,6 +31,14 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    user_profile_id = None
+    if request.user.is_authenticated:
+        try:
+            profile = UserProfile.objects.get(user=request.user)
+            user_profile_id = profile.id
+        except UserProfile.DoesNotExist:
+            messages.error("Sorry, there was a problem with your profile. Please contact us.")
+        
     if request.method == 'POST':
         cart = request.session.get('cart', {})
         form_data = {
@@ -42,7 +50,9 @@ def checkout(request):
             'city': request.POST['city'],
             'adress_line_1': request.POST['adress_line_1'],
             'adress_line_2': request.POST['adress_line_2'],
+            'user_profile': int(user_profile_id),
         }
+        print(form_data)
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
@@ -96,9 +106,12 @@ def checkout(request):
                     'city': profile.city,
                     'adress_line_1': profile.adress_line_1,
                     'adress_line_2': profile.adress_line_2,
+                    'user_profile': user_profile_id,
                 })
             except UserProfile.DoesNotExist:
-                order_form = OrderForm()
+                order_form = OrderForm(initial={
+                    'user_profile': user_profile_id,
+                })
         else:
             order_form = OrderForm()
 
@@ -137,7 +150,7 @@ def checkout_success(request, order_number):
             'adress_line_2': order.adress_line_2,
             'country': order.country,
         }
-        print(profile_data)
+
         user_profile_form = UserProfileForm(profile_data, instance=profile)
         if user_profile_form.is_valid():
             user_profile_form.save()
