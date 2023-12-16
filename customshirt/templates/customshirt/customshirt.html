@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %} Extra Title {% endcomment %}
+{% block extra_title %}Custom Shirts{% endblock extra_title %}
+
+{% block content %}
+<section class="inquiry-section flex flex-center">
+    <div class="container flex flex-center flex-column">
+        <form class="inquiry-form" action="{% url 'custom_shirts' %}" method='post' id="inquiry-form">
+            {% csrf_token %}
+            {{ inquiry_form }}
+            <button>SEND INQUIRY</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
