@@ -6,8 +6,12 @@
 
 {% block content %}
 <section class="inquiry-section flex flex-center">
-    <div class="container flex flex-center flex-column">
-        <form class="inquiry-form" action="{% url 'custom_shirts' %}" method='post' id="inquiry-form">
+    <div class="container flex flex-center flex-column text-light">
+        <h2>
+            Hey {{ user.username }}, looks like you need to contact us!<br>
+            Please use the form below to do so!
+        </h2>
+        <form class="inquiry-form text-light flex flex-center flex-column flex-center" action="{% url 'custom_shirts' %}" method='post' id="inquiry-form">
             {% csrf_token %}
             {{ inquiry_form }}
             <button>SEND INQUIRY</button>
