@@ -891,6 +891,60 @@ label[for=id_password2] {
     border: 1px solid var(--color-primary);
 }
 
+/* Contact Page */
+.inquiry-section {
+    height: 100vh;
+}
+
+#inquiry-form {
+    background-color: var(--secondary-dark);
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+}
+
+#id_full_name {
+    width: 600px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--secondary-dark);
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    color: var(--white);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'poppins', sans-serif;
+}
+
+#id_phone {
+    width: 600px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--secondary-dark);
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    color: var(--white);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'poppins', sans-serif;
+}
+
+#id_inquiry {
+    width: 600px;
+    height: 150px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--secondary-dark);
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    color: var(--white);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'poppins', sans-serif;
+}
+
 /* Wishlist page */
 .wishlist-item {
     width: 800px;
@@ -920,7 +974,6 @@ label[for=id_password2] {
     /* PHONE SECTION */
     section {
         width: 100vw;
-        height: auto;
         padding: 1.25rem 1.25em 1.25rem 1.25rem;
     }
 
