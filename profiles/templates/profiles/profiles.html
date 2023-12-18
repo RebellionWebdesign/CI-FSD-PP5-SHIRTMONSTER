@@ -3,26 +3,33 @@
 {% load i18n %}
 
 {% block content %}
-<section class="hero-section flex flex-center">
+<section class="user-section flex flex-center">
     <div class="container flex flex-center">
-        <div class="column-2  flex flex-center flex-column text-light">
-            <p>
+        <div class="column-2 flex flex-center flex-column text-light">
+            <p class="text-center">
                 Welcome to your user profile, {{ user.username }}
                 <br>
                 Please update your info if needed.
             </p>
-            <form class="profile-form" action="{% url 'profile' pk=user.pk %}" method='post' id="profile-update-form">
+            <form class="profile-form flex flex-center flex-column m-top" action="{% url 'profile' pk=user.pk %}" method='post' id="profile-update-form">
                 {% csrf_token %}
                 {{ form }}
-                <button>UPDATE PROFILE</button>
+                <button class="cta-button-link text-light">UPDATE PROFILE</button>
+                <button class="cta-button-link m-top text-light">DELETE PROFILE</button>
             </form>
         </div>
-        <div class="column-2  flex flex-center flex-column text-light">
-            <p>
+        <div class="column-2 flex flex-center flex-column text-light">
+            <p class="text-center">
                 This is your order history
             </p>
-            {% for orders in order %}
-                <p>{{ orders.order_number }}</p>
+            {% for order in orders %}
+                <div class="order-container m-top">
+                        <p>Order-No.: {{ order.order_number|truncatechars:6 }}</p>
+                        <p>Order Date: {{ order.order_date|date:'d.m.Y' }}</p>
+                        {% for item in order.order_items.all %}
+                            <p>{{ item.name }}</p>
+                        {% endfor %}
+                </div>
             {% endfor %}
         </div>
     </div>
