@@ -70,6 +70,10 @@ body {
     text-align: right;
 }
 
+.w-100 {
+    width: 100%;
+}
+
 /* FLUID HEADINGS */
 h1 {
     font-family: 'montserrat', sans-serif;
@@ -472,6 +476,7 @@ section {
 .cta-button-link {
     padding: 8px 16px 8px 16px;
     background-color: var(--color-primary);
+    border: none;
     border-radius: 5px;
     text-decoration: none;
     font-family: 'poppins', sans-serif;
@@ -891,7 +896,7 @@ label[for=id_password2] {
     border: 1px solid var(--color-primary);
 }
 
-/* Contact Page */
+/* Inquiries Page */
 .inquiry-section {
     height: 100vh;
 }
@@ -963,6 +968,113 @@ label[for=id_password2] {
     outline: none;
     border: 1px solid var(--color-primary)
 }
+
+/* Profile page */
+.user-section {
+    height: 100vh;
+}
+
+.profile-form {
+    background-color: var(--secondary-dark);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+#id_zip_code {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--secondary-dark);
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    color: var(--white);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'poppins', sans-serif;
+}
+
+#id_zip_code:focus {
+    outline: none;
+    border: 1px solid var(--color-primary)
+}
+
+#id_city {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--secondary-dark);
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    color: var(--white);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'poppins', sans-serif;
+}
+
+#id_city:focus {
+    outline: none;
+    border: 1px solid var(--color-primary)
+}
+
+#id_adress_line_1 {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--secondary-dark);
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    color: var(--white);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'poppins', sans-serif;
+}
+
+#id_adress_line_1:focus {
+    outline: none;
+    border: 1px solid var(--color-primary)
+}
+
+#id_adress_line_2 {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--secondary-dark);
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    color: var(--white);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'poppins', sans-serif;
+}
+
+#id_adress_line_2:focus {
+    outline: none;
+    border: 1px solid var(--color-primary)
+}
+
+#id_country {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--secondary-dark);
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+    color: var(--white);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'poppins', sans-serif;
+}
+
+#id_country:focus {
+    outline: none;
+    border: 1px solid var(--color-primary)
+}
+
 
 /* Wishlist page */
 .wishlist-item {
