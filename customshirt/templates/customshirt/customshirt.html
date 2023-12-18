@@ -6,17 +6,18 @@
 
 {% block content %}
 <section class="inquiry-section flex flex-center">
-    <div class="container flex flex-center flex-column text-light">
+    <div class="container flex flex-center flex-column text-light text-center">
         <h2>
-            Hey {{ user.username }}, looks like you need to contact us!<br>
-            Please use the form below to do so!
+            Hey shirt friend, looks like you need a custom shirt!<br>
+            Please use the form below to make an inquiry!
         </h2>
-        <form class="inquiry-form text-light flex flex-center flex-column flex-center"
+        <form class="inquiry-form text-light flex flex-center flex-column flex-center m-top"
                 action="{% url 'custom_shirts' %}" method='post' id="inquiry-form"
                 enctype="multipart/form-data">
             {% csrf_token %}
             {{ inquiry_form }}
-            <button>SEND INQUIRY</button>
+            <p class="m-bottom">With * marked fields are mandatory.</p>
+            <button class="cta-button-link">SEND INQUIRY</button>
         </form>
     </div>
 </section>
