@@ -17,11 +17,13 @@ class UserProfileView(LoginRequiredMixin, View):
         profile, created = UserProfile.objects.get_or_create(user=user)
         if not hasattr(user, 'userprofile'):
             user.userprofile = profile
+        orders = Order.objects.filter(user_profile=profile)
         form = forms.UserProfileForm(instance=profile)
         form.set_update_user(user)
         context = {
             'user': user,
             'form': form,
+            'orders': orders,
         }
 
         return render(request, 'profiles/profiles.html', context)
@@ -46,18 +48,3 @@ class UserProfileView(LoginRequiredMixin, View):
 
     def get_object(self):
         return self.request.user
-
-class OrderHistory(LoginRequiredMixin, View):
-    """ Displays the order history on the profile page """
-    def get(self, request, order_number):
-        order = get_object_or_404(Order, order_number=order_number)
-
-        messages.info(request, (f'This is a past order.'))
-
-        template='checkout/checkout_success.html'
-        context = {
-            'order': order,
-            'from_profile': True,
-        }
-
-        return render(request, template, context)
