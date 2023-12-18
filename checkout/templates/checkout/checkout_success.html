@@ -1,38 +1,40 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <div class="">
-        <div class="">
-            <div class=""></div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
-    <div class=""></div>
-    <div class="">
-        <div class="">
+    <section class="cart-section flex flex-center text-light flex-column">
+        <div class="container">
             <div class="">
                 <hr>
-                <h2 class="">Thank You</h2>
+                <h2 class="">Thank You, {{ user.username }}</h2>
                 <hr>
                 <p class="">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
             </div>
+            <div class="flex flex-between w-100 m-top">
+                <p>Order Number: {{ order.order_number }}</p>
+                <p>Order Date: {{ order.order_date|date:'d.m.Y' }}</p>
+            </div>
+            <div>
+                <p class="m-top">Details:</p>
+            </div>
+            <div class="flex flex-column">
+                {% for item in order.order_items.all %}
+                    <div class="flex flex-between">
+                        <p class="w-100">Product: {{ item.product.name }}</p>
+                        <p class="w-100">EAN: {{ item.product.ean }}</p>
+                        <p class="w-100">Quantity: {{ item.quantity }}</p>
+                        <p class="w-100">Quantity: {{ item.orderitem_total }}€</p>
+                    </div>
+                {% endfor %}
+                <hr>
+                <div class="flex flex-between m-top">
+                    <p class="w-100">Total: {{ order.order_total }}€</p>
+                    <p class="w-100">Tax: {{ tax|floatformat:2 }}</p>
+                    <p class="w-100">Shipping: {{ order.shipping_cost }}</p>
+                    <p class="w-100"><strong>Grand Total: {{ order.grand_total }}€</strong></p>
+                </div>
+                <p class="w-100 text-center m-top"><strong>Your card will be charged {{ order.grand_total }}€</strong></p>
+            </div>
         </div>
-
-        <div class="">
-            <div class=""></div>
-        </div>
-        <div class="">
-			<div class="">
-				<a href="{% url 'shop' %}" class="">
-					<span class="">
-						<i class=""></i>
-					</span>
-					<span class="text-uppercase">Check out more shirts!</span>
-				</a>
-			</div>
-		</div>
-    </div>
+    </section>
 {% endblock content %}
