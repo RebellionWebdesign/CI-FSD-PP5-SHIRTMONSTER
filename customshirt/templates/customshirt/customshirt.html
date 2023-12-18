@@ -11,7 +11,9 @@
             Hey {{ user.username }}, looks like you need to contact us!<br>
             Please use the form below to do so!
         </h2>
-        <form class="inquiry-form text-light flex flex-center flex-column flex-center" action="{% url 'custom_shirts' %}" method='post' id="inquiry-form">
+        <form class="inquiry-form text-light flex flex-center flex-column flex-center"
+                action="{% url 'custom_shirts' %}" method='post' id="inquiry-form"
+                enctype="multipart/form-data">
             {% csrf_token %}
             {{ inquiry_form }}
             <button>SEND INQUIRY</button>
