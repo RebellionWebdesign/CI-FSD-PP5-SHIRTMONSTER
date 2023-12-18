@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=20, null=False, blank=False)
     country = CountryField(blank_label='Country *', null=False, blank=False)
-    zip_code = models.CharField(max_length=20, null=True, blank=True)
+    zip_code = models.CharField(max_length=20, null=False, blank=False)
     city = models.CharField(max_length=40, null=False, blank=False)
     adress_line_1 = models.CharField(max_length=80, null=False, blank=False)
     adress_line_2 = models.CharField(max_length=80, null=True, blank=True)
