@@ -6,6 +6,7 @@ class CustomShirt(models.Model):
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone = models.CharField(max_length=20, null=False, blank=False)
     inquiry = models.TextField()
+    image = models.ImageField(upload_to='custom_shirts', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
