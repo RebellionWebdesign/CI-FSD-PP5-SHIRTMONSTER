@@ -31,3 +31,5 @@ urlpatterns = [
     path('', include('customshirt.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+handler404 = 'shirtmonster.views.handler404'
+handler500 = 'shirtmonster.views.handler500'
