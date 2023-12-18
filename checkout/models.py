@@ -37,7 +37,10 @@ class Order(models.Model):
             self.shipping_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
             self.shipping_cost = 0
+        self.grand_total = self.order_total + self.shipping_cost
         print(self.shipping_cost)
+        self.save()
+
 
     def save(self, *args, **kwargs):
         """ Override the default save method if there isnt an order number """
