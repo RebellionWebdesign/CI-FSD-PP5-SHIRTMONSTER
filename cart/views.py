@@ -15,14 +15,21 @@ def add_to_cart(request, item_id):
 
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
+    current_cart_items = cart.get(item_id, 0)
 
     if item_id in list(cart.keys()):
-        cart[item_id] += quantity
-        messages.add_message(request, messages.SUCCESS, "Product added!")
+        if current_cart_items + quantity > 5:
+            (messages.error(request, 'You only can have 5 items of each!'))
+            quantity = 5 - current_cart_items 
+        else:
+            cart[item_id] += quantity
+            messages.add_message(request, messages.SUCCESS, "Product added!")
+            print(current_cart_items)
+            print(quantity)
     else:
         cart[item_id] = quantity
         messages.add_message(request, messages.SUCCESS, "Product added!")
-    
+
     request.session['cart'] = cart
     return redirect(redirect_url)
 
@@ -32,6 +39,12 @@ def adjust_cart_quantity(request, item_id):
 
     quantity = int(request.POST.get('quantity-counter'))
     cart = request.session.get('cart', {})
+
+    if quantity > 5:
+        messages.error(request, 'You only can have 5 items of each!')
+        quantity = 5
+    else:
+        pass
 
     if quantity > 0:
         cart[item_id] = quantity
