@@ -8,7 +8,8 @@ class WishView(View):
     """ This displays the users wishlist on the wishlist page """
 
     def get(self, request):
-        wishes = WishList.objects.all()
+        user = request.user
+        wishes = WishList.objects.filter(user_id=user)
         context = {
             "wishes": wishes,
         }
