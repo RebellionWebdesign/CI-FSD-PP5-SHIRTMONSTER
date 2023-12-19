@@ -8,6 +8,8 @@ class ProductCategory(models.Model):
     created_at = models.DateField(auto_now_add=True)
     modified_at = models.DateField(auto_now=True)
 
+    ordering = ['-date']
+
     class Meta:
         verbose_name_plural = 'Product Categories'
 
