@@ -29,7 +29,6 @@ class Product(models.Model):
     category_id = models.ForeignKey(ProductCategory, null=True, blank=True, on_delete=models.SET_NULL)
     quantity= models.IntegerField(null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     created_at = models.DateField(auto_now_add=True)
     modified_at = models.DateField(auto_now=True)
 

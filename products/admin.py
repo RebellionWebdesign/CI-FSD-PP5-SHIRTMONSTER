@@ -7,7 +7,6 @@ class ProductAdmin(admin.ModelAdmin):
         'ean',
         'category_id',
         'price',
-        'rating',
         'image',
         'created_at',
         'modified_at',
