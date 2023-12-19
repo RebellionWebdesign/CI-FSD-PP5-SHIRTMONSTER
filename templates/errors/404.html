@@ -6,9 +6,9 @@
 
 {% block content %}
 <section class="error-section flex flex-center">
-    <div class="container flex flex-center flex-xcolumn">
+    <div class="container flex flex-center flex-column text-light">
         <h2>This is not the page you´re looking for...</h2>
-        <a href="{% url 'shop' %}">GO BACK</a>
+        <a class="m-top-large cta-button-link text-light" href="{% url 'shop' %}">GO BACK</a>
     </div>
 </section>
 {% endblock %}
