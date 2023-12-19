@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
+from django.views import View
 from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderItem
@@ -38,7 +39,7 @@ def checkout(request):
             user_profile_id = profile.id
         except UserProfile.DoesNotExist:
             messages.error("Sorry, there was a problem with your profile. Please contact us.")
-        
+
     if request.method == 'POST':
         cart = request.session.get('cart', {})
         form_data = {
@@ -52,7 +53,6 @@ def checkout(request):
             'adress_line_2': request.POST['adress_line_2'],
             'user_profile': int(user_profile_id),
         }
-        print(form_data)
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
