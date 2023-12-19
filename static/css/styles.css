@@ -181,6 +181,15 @@ section {
     margin-right: 0.625rem;
 }
 
+.social-link {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.social-link:hover {
+    color: var(--color-primary-hover);
+}
+
 /* These are used for margin between headings and containers etc. */
 .m-top-large {
     margin-top: 3.125rem;
@@ -1094,6 +1103,13 @@ label[for=id_password2] {
     border-radius: 10px 0 0 10px;
 }
 
+/* Footer */
+footer {
+    width: 100vw;
+    height: 8vh;
+    padding: 0.3125rem 16rem 0.3125rem 16rem;
+}
+
 /* RESPONSIVE MEDIA QUERIES - AFTER BOOTSTRAP*/
 @media (min-width: 0px) and (max-width: 576px) {
 
@@ -1135,7 +1151,7 @@ label[for=id_password2] {
     }
 
     .column-3 {
-        width: 100%;
+        width: 33.33333%;
     }
 
     .bottom-nav {
