@@ -1090,6 +1090,10 @@ label[for=id_password2] {
 
 
 /* Wishlist page */
+.wishlist-section {
+    min-height: 100vh;
+}
+
 .wishlist-item {
     width: 800px;
     height: 250px;
