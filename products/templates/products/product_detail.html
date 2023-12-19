@@ -14,30 +14,17 @@
                     <hr>
                     <p>{{ product.price }} €</p>
                     <p>{{ product.description }}</p>
-                    <form action="{% url 'add_to_cart' product.id %}" method="post">
-                        {% csrf_token %}
-                        <div>
-                            <div class="quantity-selector">
-                                <button class="decrement-quantity"
-                                    data-item-id="{{ product.id }}"
-                                    id="decrement-quantity_{{ product.id }}">
-                                    <i data-lucide="minus"></i>
-                                </button>
-                                <input id="quantity-counter" name="quantity-counter" type="text" value="1"/>
-                                <button class="increment-quantity"
-                                    data-item-id="{{ product.id }}"
-                                    id="increment-quantity_{{ product.id }}">
-                                    <i data-lucide="plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <button type="submit" class="to-cart-button text-light">BUY</button>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                    </form>
-                    <form action="{% url 'add_to_wishlist' product.id %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit" class="to-wishlist-button cta-button-link text-light">TO WISHLIST</button>
-                    </form>
+                    <div class="flex m-top">
+                        <form action="{% url 'add_to_cart' product.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="cta-button-link text-light">BUY</button>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </form>
+                        <form class="m-left" action="{% url 'add_to_wishlist' product.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="to-wishlist-button cta-button-link text-light">TO WISHLIST</button>
+                        </form>
+                    </div>
                 </div>
             {% endfor %}
         </div>
