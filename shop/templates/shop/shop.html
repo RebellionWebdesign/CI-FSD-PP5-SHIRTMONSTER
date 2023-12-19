@@ -17,8 +17,8 @@
         {% for product in products %}
             <div class="product-card">
                 <div class="product-action-icons flex flex-column">
-                    <a class="product-detail-icon" href="{% url "product_detail" pk=product.pk %}">
-                        <i id="product-details" data-lucide="info"></i>
+                    <a class="cta-button-link text-light" href="{% url "product_detail" pk=product.pk %}">
+                        <p>DETAILS</p>
                     </a>
                 </div>
                 <div id="product-category" class="flex flex-center text-light">
