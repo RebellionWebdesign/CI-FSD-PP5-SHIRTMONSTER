@@ -479,7 +479,11 @@ section {
 }
 
 .cta {
-    width: 17%;
+    width: 20%;
+    position: absolute;
+    z-index: 99;
+    top: 480px;
+    left: 80px;
 }
 
 .cta-button-link {
