@@ -5,6 +5,7 @@ from django.conf import settings
 from products.models import Product
 from django_countries.fields import CountryField
 from profiles.models import UserProfile
+from django.contrib import messages
 
 class Order(models.Model):
     """ This class handles the orders """
@@ -33,12 +34,12 @@ class Order(models.Model):
         order_items = self.order_items.all()
         self.order_total = order_items.aggregate(Sum('orderitem_total'))['orderitem_total__sum'] or 0
         print(self.order_total)
+
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.shipping_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
             self.shipping_cost = 0
         self.grand_total = self.order_total + self.shipping_cost
-        print(self.shipping_cost)
         self.save()
 
 
