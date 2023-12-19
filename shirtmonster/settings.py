@@ -105,7 +105,7 @@ SITE_ID = 1
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'                    # Required for console confirmation emails in dev mode
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'                                    # Lets the user choose betwen username or email login
 ACCOUNT_EMAIL_REQUIRED = True                                                       # Without an email users cant register
-ACCOUNT_EMAIL_VERIFICATION = 'required'                                             # Unconfirmed users wont be set to active in the website
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'                                             # Unconfirmed users wont be set to active in the website
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True                                             # Confirm email in registration process (write twice)
 ACCOUNT_USERNAME_MINLEGNTH = 4                                                      # Username cant be shorter than 4 characters
 LOGIN_URL = '/accounts/login'                                                       # The url wef ind the login form
@@ -166,37 +166,37 @@ USE_TZ = True
 
 # AWS and dev config
 
-#if "DEBUG" in os.environ:
-DEBUG = True
-# This is used while developing locally
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#else:
-DEBUG = False
-# Caching
-AWS_S3_OBJECT_PARAMETERS = {
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'CacheControl': 'max-age=94608000'  
-}
+if "DEBUG" in os.environ:
+    DEBUG = True
+    # This is used while developing locally
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+else:
+    DEBUG = False
+    # Caching
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000'  
+    }
 
-# Bucket
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_BUCKET')
-AWS_S3_REGION_NAME = os.environ.get('AWS_REGION')
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_KEY')
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
+    # Bucket
+    AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_BUCKET')
+    AWS_S3_REGION_NAME = os.environ.get('AWS_REGION')
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
 
-# Static and Media files
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-STATICFILES_LOCATION = 'static'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-MEDIAFILES_LOCATION = 'media'
+    # Static and Media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
 
-# Overrides for static and media files in prod
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    # Overrides for static and media files in prod
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Stripe settings
 STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
