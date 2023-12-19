@@ -176,16 +176,33 @@
     </main>
 
     {% comment %} FOOTER HERE {% endcomment %}
-    <footer>
-        <div class="container">
-            <div class="column-3 flex flex-center-y flex-start text-light">
+    <footer class="flex flex-center text-light">
+        <div class="container flex">
+            <div class="column-3 flex flex-center-y flex-start">
                 <i data-lucide="copyright"></i>
-                <p>
+                <p class="m-left">
                     2024 Daniel Stauffer
                 </p>
             </div>
-            <div class="column-3"></div>
-            <div class="column-3"></div>
+            <div class="column-3 flex flex-center">
+                <div class="social-wrapper">
+                    <a href="https://facebook.com" target="blank" class="social-link m-right">
+                        <i data-lucide="facebook"></i>
+                    </a>
+                    <a href="https://instagram.com" target="blank" class="social-link">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="blank" class="social-link m-left">
+                        <i data-lucide="twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="column-3 flex flex-center-y flex-end">
+                <p class="m-right">
+                    An educational webshop
+                </p>
+                <i data-lucide="graduation-cap"></i>
+            </div>
         </div>
     </footer>
 
