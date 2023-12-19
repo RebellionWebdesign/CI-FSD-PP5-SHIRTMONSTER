@@ -110,13 +110,11 @@
                     {% if user.is_authenticated %}
                     <div id="sort-box" class="dropdown-box-center flex flex-column hide">
                         <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=price&direction=asc">BY PRICE</a>
-                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=rating&direction=desc">BY RATING</a>
                         <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=category&direction=asc">BY CATEGORY</a>
                     </div>
                     {% else %}
                     <div id="sort-box" class="dropdown-box flex flex-column hide">
                         <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=price&direction=asc">BY PRICE</a>
-                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=rating&direction=desc">BY RATING</a>
                         <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=category&direction=asc">BY CATEGORY</a>
                     </div>
                     {% endif %}
