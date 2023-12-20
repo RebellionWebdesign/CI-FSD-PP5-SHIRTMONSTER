@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 from django_countries.fields import CountryField
 
 class UserProfile(models.Model):
@@ -18,14 +16,3 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
-
-@receiver(post_save, sender=User)
-def create_or_update_profile(sender, instance, created, **kwargs):
-    """ Creates or saves the user profile """
-    if created:
-        profile, profile_created = UserProfile.objects.get_or_create(user=instance)
-        if profile_created:
-            instance.userprofile = profile
-            instance.save()
-        else:
-            profile.save()
