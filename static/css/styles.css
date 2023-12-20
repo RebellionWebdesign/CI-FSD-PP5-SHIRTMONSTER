@@ -984,7 +984,11 @@ label[for=id_password2] {
 
 /* Profile page */
 .user-section {
-    height: 100vh;
+    min-height: 100vh;
+}
+
+.order-history {
+    overflow-y: scroll;
 }
 
 .profile-form {
