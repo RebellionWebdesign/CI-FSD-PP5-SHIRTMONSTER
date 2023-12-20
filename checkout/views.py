@@ -42,17 +42,29 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
-        form_data = {
-            'full_name': request.POST['full_name'],
-            'email': request.POST['email'],
-            'phone': request.POST['phone'],
-            'country': request.POST['country'],
-            'zip_code': request.POST['zip_code'],
-            'city': request.POST['city'],
-            'adress_line_1': request.POST['adress_line_1'],
-            'adress_line_2': request.POST['adress_line_2'],
-            'user_profile': int(user_profile_id),
-        }
+        if request.user.is_authenticated:
+            form_data = {
+                'full_name': request.POST['full_name'],
+                'email': request.POST['email'],
+                'phone': request.POST['phone'],
+                'country': request.POST['country'],
+                'zip_code': request.POST['zip_code'],
+                'city': request.POST['city'],
+                'adress_line_1': request.POST['adress_line_1'],
+                'adress_line_2': request.POST['adress_line_2'],
+                'user_profile': int(user_profile_id),
+            }
+        else:
+            form_data = {
+                'full_name': request.POST['full_name'],
+                'email': request.POST['email'],
+                'phone': request.POST['phone'],
+                'country': request.POST['country'],
+                'zip_code': request.POST['zip_code'],
+                'city': request.POST['city'],
+                'adress_line_1': request.POST['adress_line_1'],
+                'adress_line_2': request.POST['adress_line_2'],
+            }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
