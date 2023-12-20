@@ -52,16 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
-    //This opens the sorting menu on click
-    const sortToggleOpen = document.getElementById("sort-open")
-    const sortLink = document.getElementsByClassName("sort-link")
-    const sortBox = document.getElementById("sort-box")
-
-    sortToggleOpen.addEventListener("click", () => {
-        sortBox.classList.remove("hide")
-
-    })
-
     //This hides the navbar on auth pages and hides the filter from the profile page
     let loginUrl = window.location.href.includes('login');
     let logoutUrl = window.location.href.includes('logout');
