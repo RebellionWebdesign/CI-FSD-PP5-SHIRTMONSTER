@@ -18,12 +18,14 @@ class Order(models.Model):
     country = CountryField(blank_label='Country *', null=False, blank=False)
     zip_code = models.CharField(max_length=20, null=True, blank=True)
     city = models.CharField(max_length=40, null=False, blank=False)
-    adress_line_1 = models.CharField(max_length=80, null=False, blank=False)
-    adress_line_2 = models.CharField(max_length=80, null=True, blank=True)
+    adress_line_1 = models.CharField(max_length=160, null=False, blank=False)
+    adress_line_2 = models.CharField(max_length=160, null=True, blank=True)
     order_date = models.DateTimeField(auto_now_add=True)
     shipping_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    original_cart = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
     def _generate_order_number(self):
         """ Generates an order number as uuid """
