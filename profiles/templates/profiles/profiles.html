@@ -23,11 +23,8 @@
             </p>
             {% for order in orders %}
                 <div class="order-container m-top">
-                        <p>Order-No.: {{ order.order_number|truncatechars:6 }}</p>
+                        <p>Order-No.: <a href="{% url 'order_detail' order_number=order.order_number %}">{{ order.order_number|truncatechars:6 }}</a></p>
                         <p>Order Date: {{ order.order_date|date:'d.m.Y' }}</p>
-                        {% for item in order.order_items.all %}
-                            <p>{{ item.name }}</p>
-                        {% endfor %}
                 </div>
             {% endfor %}
         </div>
