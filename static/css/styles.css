@@ -989,12 +989,14 @@ label[for=id_password2] {
 
 .order-history {
     overflow-y: scroll;
+    max-height: 704px;
 }
 
 .profile-form {
     background-color: var(--secondary-dark);
     padding: 25px;
     border-radius: 10px;
+    max-height: 704px;
 }
 
 #id_zip_code {
