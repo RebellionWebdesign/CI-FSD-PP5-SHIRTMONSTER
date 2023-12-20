@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<section class="user-section flex flex-center">
+    <div class="container flex flex-center">
+        <div class="column-2 flex flex-start flex-column text-light">
+            <h3 class="m-bottom">Hello, {{ user.username }}! This a past order:</h3>
+            <p>Order-No.: {{ orders.order_number }}</p>
+            <p>Order Date: {{ orders.order_date|date:'d.m.Y' }}</p>
+            <p class="m-top">Shipped to:</p>
+            <p>{{ orders.full_name }}</p>
+            <p class="m-top">Address:</p>
+            <p>{{ orders.adress_line_1 }}</p>
+            <p>{{ orders.zip_code }} {{ orders.city }}</p>
+            <p>{{ orders.country }}</p>
+            <p class="m-top">Items bought:</p>
+            {% for item in order_items %}
+            <p>Name: {{ item.product.name }}</p>
+            <p>Quantity: {{ item.quantity }}</p>
+            {% endfor %}
+        </div>
+        <div class="order-history column-2 flex flex-center flex-column text-light">
+            <p>
+                Please consider writing a testimonial for us!
+            </p>
+            
+        </div>
+    </div>
+</section>
+{% endblock content %}
