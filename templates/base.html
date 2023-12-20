@@ -105,19 +105,7 @@
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies,t_shirts">ALL PRODUCTS</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies">HOODIES</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=t_shirts">T-SHIRTS</a></li>
-                        <li><strong><p id="sort-open" class="dropdown text-light flex flex-center-y">SORT<i data-lucide="chevron-down"></i></p></strong></li>
                     </ul>
-                    {% if user.is_authenticated %}
-                    <div id="sort-box" class="dropdown-box-center flex flex-column hide">
-                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=price&direction=asc">BY PRICE</a>
-                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=category&direction=asc">BY CATEGORY</a>
-                    </div>
-                    {% else %}
-                    <div id="sort-box" class="dropdown-box flex flex-column hide">
-                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=price&direction=asc">BY PRICE</a>
-                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=category&direction=asc">BY CATEGORY</a>
-                    </div>
-                    {% endif %}
                 </nav>
             </div>
             <div class="column-3 flex flex-center flex-end">
@@ -128,10 +116,10 @@
                         <li><a id="cart" class="text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
                         <p id="grand-total" class="grand-total text-light">
                             {% if grand_total %}
-                                        {{ grand_total|floatformat:2 }}€
-                                    {% else %}
-                                        0.00€
-                                    {% endif %}
+                                {{ grand_total|floatformat:2 }}€
+                            {% else %}
+                                0.00 €
+                            {% endif %}
                         </p>
                     </ul>
                 </nav>
@@ -154,13 +142,21 @@
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies,t_shirts">ALL PRODUCTS</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies">HOODIES</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=t_shirts">T-SHIRTS</a></li>
-                        <li><strong><p id="sort-open" class="dropdown text-light flex flex-center-y">SORT<i data-lucide="chevron-down"></i></p></strong></li>
                     </ul>
-                    <div id="sort-box" class="dropdown-box flex flex-column hide">
-                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=price&direction=asc">BY PRICE</a>
-                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=rating&direction=desc">BY RATING</a>
-                        <a class="dropdown-link text-light" href="{% url 'shop' %}?sort=category&direction=asc">BY CATEGORY</a>
-                    </div>
+                </nav>
+            </div>
+            <div class="column-3 flex flex-center flex-end">
+                <nav class="user-nav">
+                    <ul class="flex flex-end">
+                        <li><a id="cart" class="text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
+                        <p id="grand-total" class="grand-total text-light">
+                            {% if grand_total %}
+                                {{ grand_total|floatformat:2 }}€
+                            {% else %}
+                                0.00 €
+                            {% endif %}
+                        </p>
+                    </ul>
                 </nav>
             </div>
             {% endif %}
