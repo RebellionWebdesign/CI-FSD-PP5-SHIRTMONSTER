@@ -30,7 +30,7 @@ class UserProfileView(LoginRequiredMixin, View):
     
     def post(self, request, pk):
         user = get_object_or_404(User, pk=pk)
-        profile, created = UserProfile.objects.get_or_create(user=user)
+        profile = request.user.userprofile
         form = forms.UserProfileForm(request.POST, instance=user.userprofile)
         form.set_update_user(user)
         context = {
@@ -48,3 +48,19 @@ class UserProfileView(LoginRequiredMixin, View):
 
     def get_object(self):
         return self.request.user
+
+class OrderOverview(View):
+    """
+    This view provides the testimonial field and an order overview
+    for registered customers
+    """
+    def get(self, request, order_number):
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        orders = get_object_or_404(Order, user_profile=user_profile, order_number=order_number)
+        order_items = orders.order_items.all()
+        context = {
+            'orders': orders,
+            'order_items': order_items,
+        }
+
+        return render(request, 'profiles/order_detail.html', context)
