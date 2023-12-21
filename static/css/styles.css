@@ -685,6 +685,10 @@ table, tr, td, th {
 
 /* AUTH PAGES */
 
+label {
+    font-family: 'poppins', sans-serif;
+}
+
 /* Login */
 .auth-section {
     height: 100vh;
@@ -789,6 +793,11 @@ label[for=id_password] {
 
 .form-button:hover {
     background-color: var(--color-primary-hover);
+}
+
+/* Logout */
+.logout-section {
+    min-height: 100vh;
 }
 
 /* Signup */
@@ -983,11 +992,28 @@ label[for=id_password2] {
     margin-top: 15px;
     margin-bottom: 15px;
     font-family: 'poppins', sans-serif;
+    resize: none;
 }
 
 #id_inquiry:focus {
     outline: none;
     border: 1px solid var(--color-primary)
+}
+
+#id_image {
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+}
+
+#file-upload-button {
+    padding: 8px 16px 8px 16px;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 /* Profile page */
@@ -1102,6 +1128,39 @@ label[for=id_password2] {
     border: 1px solid var(--color-primary)
 }
 
+.order-detail-link {
+    color: var(--color-primary);
+}
+
+.order-detail-link:visited {
+    color: var(--color-primary-hover);
+}
+
+/*Testimonial page*/
+.testimonial-form {
+    width: 500px;
+    background-color: var(--secondary-dark);
+    font-family: 'poppins', sans-serif;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid var(--color-primary-hover);
+    padding: 5px;
+    caret-color: var(--color-primary-hover);
+    color: var(--white);
+}
+
+.testimonial-form:focus {
+    border: 1px solid var(--color-primary);
+}
+
+.testimonial-buttons {
+    width: 500px;
+    padding: 0px 50px 0px 50px;
+}
+
+.testimonial-column {
+    overflow: none;
+}
 
 /* Wishlist page */
 .wishlist-section {
@@ -1123,6 +1182,27 @@ label[for=id_password2] {
     width: 250px;
     height: 250px;
     border-radius: 10px 0 0 10px;
+}
+
+/* Checkout page */
+fieldset {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid var(--color-primary-hover);
+    border-radius: 10px;
+    font-family: 'poppins', sans-serif;
+    margin-bottom: 0.625rem;
+    background-color: var(--secondary-dark);
+}
+
+#card-element {
+    padding: 5px;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    width: 80%;
 }
 
 /*Error Pages*/ 
