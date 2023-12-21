@@ -195,7 +195,15 @@ section {
     margin-top: 3.125rem;
 }
 
+.m-bottom-large {
+    margin-top: 3.125rem;
+}
+
 .m-top-small {
+    margin-top: 1.5625rem;
+}
+
+.m-bottom-small {
     margin-top: 1.5625rem;
 }
 
@@ -1194,6 +1202,11 @@ footer {
 
     .auth-box {
         display: none;
+    }
+
+    .usp-icons {
+        color: var(--color-primary);
+        width: 75px;
     }
 
 }
