@@ -5,21 +5,21 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock head_title %}
 
 {% block content %}
-<section class="vw-100 min-vh-100 d-flex flex-column justify-content-center align-items-center text-white">
-  <div class="my-3">
+<section class="auth-section flex flex-center flex-column text-light">
+  <div class="container flex flex-center flex-column">
     <a href="{% url 'home' %}">
-        <img class="login-logo" src="{% static 'img/logo/shirtmonster-logo-white.svg' %}" alt="shirtmonster logo"></img>
+      <img class="home-link flex flex-center flex-column" src="{% static 'img/logo/shirtmonster-logo-white.svg' %}" alt="shirtmonster logo"></img>
     </a>
   </div>  
-  <p>{% trans 'Are you sure you want to sign out?' %}</p>
-  <form class="signout px-5 py-5 rounded" method="post" action="{% url 'account_logout' %}">
+  <p class="text-light">{% trans 'Are you sure you want to sign out?' %}</p>
+  <form class="" method="post" action="{% url 'account_logout' %}">
     {% csrf_token %}
     {% if redirect_field_value %}
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
     {% endif %}
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <button class="login-button rounded cta text-white px-2 py-1" type="submit">{% trans 'Sign Out' %}</button>
-      <a class="button mt-3 login-link" href="{% url 'home' %}">{% trans "Back to Homepage" %}</a>
+    <div class="flex flex-center flex-column m-top-small">
+      <button class="cta-button-link text-light" type="submit">{% trans 'Sign Out' %}</button>
+      <a class="m-top" href="{% url 'home' %}">{% trans "Back to Homepage" %}</a>
     </div>
   </form>
 </section>
