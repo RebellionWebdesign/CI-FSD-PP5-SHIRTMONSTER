@@ -33,10 +33,11 @@
                     </fieldset>
                     <fieldset>
                         <legend>Payment</legend>
-                        <h3>Your card will be charged <strong>{{ grand_total|floatformat:2 }} €</strong></h3>
+                        <h3 class="m-top">Your card will be charged <strong>{{ grand_total|floatformat:2 }} €</strong></h3>
+                        <p class="m-bottom"><small>Please provide your card info below.</small></p>
                         <div id="card-element"></div>
                         <div id="card-errors"></div>
-                        <button id="stripe-button" class="cta-button-link" >Complete Order</button>
+                        <button id="stripe-button" class="cta-button-link m-top text-light" >Complete Order</button>
                         <input type="hidden" value={{ client_secret }} name="client_secret">
                     </fieldset>
                 </form>
