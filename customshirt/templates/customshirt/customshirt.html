@@ -9,7 +9,8 @@
     <div class="container flex flex-center flex-column text-light text-center">
         <h2>
             Hey shirt friend, looks like you need a custom shirt!<br>
-            Please use the form below to make an inquiry!
+            Please use the form below to make an inquiry!<br>
+            <small>You can also contact us normally here.</small>
         </h2>
         <form class="inquiry-form text-light flex flex-center flex-column flex-center m-top"
                 action="{% url 'custom_shirts' %}" method='post' id="inquiry-form"
@@ -17,7 +18,7 @@
             {% csrf_token %}
             {{ inquiry_form }}
             <p class="m-bottom">With * marked fields are mandatory.</p>
-            <button class="cta-button-link">SEND INQUIRY</button>
+            <button class="cta-button-link text-light">SEND INQUIRY</button>
         </form>
     </div>
 </section>
