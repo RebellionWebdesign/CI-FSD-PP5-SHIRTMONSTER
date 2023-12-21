@@ -48,6 +48,21 @@
         </div>
     </section>
 
+    <section class="team-section flex flex-center">
+        <div class="container flex flex-center">
+            <div class="column-2 text-light">
+                <h2>Best customer experience - <br> provided by us.</h2>
+            </div>
+            <div class="column-2 text-light">
+                <article>
+                    <p>
+                        Whether you need a new stylish shirt or want order a custom print. We help you fulfill your wishes!
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <section class="collection-section flex flex-center flex-column">
         <h2 class="text-light">NEW COLLECTION 2024</h2>
         <div class="container grid m-top-large">
@@ -64,21 +79,6 @@
                         </div>
                     </div>
             {% endfor %}
-        </div>
-    </section>
-
-    <section class="team-section flex flex-center">
-        <div class="container flex flex-center">
-            <div class="column-2 text-light">
-                <h2>Best customer experience - <br> provided by us.</h2>
-            </div>
-            <div class="column-2 text-light">
-                <article>
-                    <p>
-                        Whether you need a new stylish shirt or want order a custom print. We help you fulfill your wishes!
-                    </p>
-                </article>
-            </div>
         </div>
     </section>
 
@@ -106,6 +106,51 @@
             </div>
             <div class="column-2 flex flex-end">
                 <img class="team-image" src="{% static 'img/heroes/shirtmonster-team.webp' %}" alt="Our super cool team!">
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-section flex flex-center">
+        <div class="swiper container">
+            <h2 class="m-bottom-large text-light text-center">Check out what our customers are saying:</h2>
+            <div class="swiper-wrapper">
+                {% for testimonial in testimonials %}
+                <div class="swiper-slide">
+                    <div class="slide-testimonial flex flex-start flex-column text-light">
+                        <h3 class="m-bottom">{{ testimonial.user_id }} on {{ testimonial.created_at|date:'d.m.Y' }}</h3>
+                        <p class="slide-text"><i>"{{ testimonial.content }}"</i></p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section flex flex-center">
+        <div class="container flex flex-center">
+            <div class="column-2 text-light">
+                    <h2>Why choose us?</h2>
+                    <p class="m-top-small">
+                        Check out why you should Shirtmonster as your apparel brand!
+                    </p>
+            </div>
+            <div class="column-2 flex flex-center flex-column text-light">
+                <div class="flex m-bottom">
+                    <i class="usp-icons" data-lucide="palette"></i>
+                    <h3 class="m-left">100% biodegradable colors</h3>
+                </div>
+                <div class="flex m-bottom">
+                    <i class="usp-icons" data-lucide="flower"></i>
+                    <h3 class="m-left">100% organic cotton</h3>
+                </div>
+                <div class="flex m-bottom">
+                    <i class="usp-icons" data-lucide="diameter"></i>
+                    <h3 class="m-left">100% unisex sizes</h3>
+                </div>
+                <div class="flex">
+                    <i class="usp-icons" data-lucide="zap"></i>
+                    <h3 class="m-left">100% badass</h3>
+                </div>
             </div>
         </div>
     </section>
