@@ -10,4 +10,4 @@ class Testimonial(models.Model):
     modified_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.user_id
+        return str(self.user_id)
