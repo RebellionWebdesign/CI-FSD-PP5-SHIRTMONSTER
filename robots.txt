@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /customshirt/
+Disallow: /profiles/
+Disallow: /testimonial/
+Disallow: /users/
+Disallow: /wishlist/
+Disallow: https://shirtmonster-c4453ded83e7.herokuapp.com/sitemap.xml
