@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.html import mark_safe
 
 class CustomShirt(models.Model):
     """ This model saves inquiries for custom shirts """
@@ -12,3 +13,9 @@ class CustomShirt(models.Model):
 
     def __str__(self):
         return self.full_name
+    
+    def image_tag(self):
+        return mark_safe('<img src="https://shirtmonster.s3.eu-central-1.amazonaws.com/%s" width="150" height="150" />' % (self.image))
+    
+    image_tag.short_description = 'Image'
+    image_tag.allow_tags = True
