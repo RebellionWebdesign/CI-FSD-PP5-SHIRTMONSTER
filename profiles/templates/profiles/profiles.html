@@ -18,14 +18,20 @@
             </form>
         </div>
         <div class="order-history column-2 flex flex-center flex-column text-light">
+            {% if orders %}
             <p class="text-center">
                 This is your order history, click on the order number to write a testimonial!
             </p>
+            {% endif %}
             {% for order in orders %}
                 <div class="order-container m-top">
-                        <p>Order-No.: <a href="{% url 'order_detail' order_number=order.order_number %}">{{ order.order_number|truncatechars:6 }}</a></p>
+                        <p>Order-No.: <a class="order-detail-link" href="{% url 'order_detail' order_number=order.order_number %}">{{ order.order_number|truncatechars:6 }}</a></p>
                         <p>Order Date: {{ order.order_date|date:'d.m.Y' }}</p>
                 </div>
+            {% empty %}
+            <p class="text-center">
+                There are no orders yet.
+            </p>
             {% endfor %}
         </div>
     </div>
