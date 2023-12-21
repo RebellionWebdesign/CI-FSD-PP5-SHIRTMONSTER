@@ -16,7 +16,7 @@
                 <div class="swiper-slide">
                     <div class="overlay"></div>
                     <div class="slide-info flex flex-start flex-column text-light">
-                        <h1>Get stylish shirts</h1>
+                        <h1 class="main-heading">Get stylish shirts</h1>
                         <p class="slide-text">From freak to fancy - we got it!</p>
                     </div>
                     <img src="{% static 'img/heroes/shirtmonster-hero-1.webp' %}" alt="first hero image">
@@ -24,7 +24,7 @@
                 <div class="swiper-slide">
                     <div class="overlay"></div>
                     <div class="slide-info flex flex-start flex-column text-light">
-                        <h2>Captain Beard approves us.<br>So should you.</h2>
+                        <h2 class="main-heading-h2">Captain Beard approves us.<br>So should you.</h2>
                         <p class="slide-text">Streetwear straight from Berlin City!</p>
                         <div class="cta flex flex-between m-top-small">
                         </div>
@@ -34,7 +34,7 @@
                 <div class="swiper-slide">
                     <div class="overlay"></div>
                     <div class="slide-info flex flex-start flex-column text-light">
-                        <h2>Hipsters, Emos and Youngsters welcome!</h2>
+                        <h2 class="main-heading-h2">Hipsters, Emos and Youngsters welcome!</h2>
                         <p class="slide-text">Get your style fix with ShirtMonster!</p>
                         <div class="cta flex flex-between m-top-small">
                         </div>
@@ -50,10 +50,10 @@
 
     <section class="team-section flex flex-center">
         <div class="container flex flex-center">
-            <div class="column-2 text-light">
-                <h2>Best customer experience - <br> provided by us.</h2>
+            <div class="column-2 text-light flex">
+                <h2 class="team-heading">Best customer experience - <br> provided by us.</h2>
             </div>
-            <div class="column-2 text-light">
+            <div class="column-2 text-light flex">
                 <article>
                     <p>
                         Whether you need a new stylish shirt or want order a custom print. We help you fulfill your wishes!
@@ -79,6 +79,35 @@
                         </div>
                     </div>
             {% endfor %}
+        </div>
+    </section>
+
+    <section class="team-section flex flex-center">
+        <div class="container flex flex-center">
+            <div class="column-2 text-light">
+                    <h2>Why choose us?</h2>
+                    <p class="m-top-small">
+                        Check out why you should Shirtmonster as your apparel brand!
+                    </p>
+            </div>
+            <div class="column-2 flex flex-center flex-column text-light">
+                <div class="flex m-bottom">
+                    <i class="usp-icons" data-lucide="palette"></i>
+                    <h3 class="m-left">100% biodegradable colors</h3>
+                </div>
+                <div class="flex m-bottom">
+                    <i class="usp-icons" data-lucide="flower"></i>
+                    <h3 class="m-left">100% organic cotton</h3>
+                </div>
+                <div class="flex m-bottom">
+                    <i class="usp-icons" data-lucide="diameter"></i>
+                    <h3 class="m-left">100% unisex sizes</h3>
+                </div>
+                <div class="flex">
+                    <i class="usp-icons" data-lucide="zap"></i>
+                    <h3 class="m-left">100% badass</h3>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -122,35 +151,6 @@
                     </div>
                 </div>
                 {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <section class="team-section flex flex-center">
-        <div class="container flex flex-center">
-            <div class="column-2 text-light">
-                    <h2>Why choose us?</h2>
-                    <p class="m-top-small">
-                        Check out why you should Shirtmonster as your apparel brand!
-                    </p>
-            </div>
-            <div class="column-2 flex flex-center flex-column text-light">
-                <div class="flex m-bottom">
-                    <i class="usp-icons" data-lucide="palette"></i>
-                    <h3 class="m-left">100% biodegradable colors</h3>
-                </div>
-                <div class="flex m-bottom">
-                    <i class="usp-icons" data-lucide="flower"></i>
-                    <h3 class="m-left">100% organic cotton</h3>
-                </div>
-                <div class="flex m-bottom">
-                    <i class="usp-icons" data-lucide="diameter"></i>
-                    <h3 class="m-left">100% unisex sizes</h3>
-                </div>
-                <div class="flex">
-                    <i class="usp-icons" data-lucide="zap"></i>
-                    <h3 class="m-left">100% badass</h3>
-                </div>
             </div>
         </div>
     </section>
