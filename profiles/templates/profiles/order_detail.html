@@ -21,7 +21,7 @@
             <p>Quantity: {{ item.quantity }}</p>
             {% endfor %}
         </div>
-        <div class="order-history column-2 flex flex-center flex-column text-light">
+        <div class="testimonial-column column-2 flex flex-center flex-column text-light">
             {% if testimonial_content %}
             <p>
                 This is your latest written testimonial:
@@ -34,8 +34,10 @@
             <form class="flex flex-center flex-column m-top" action="{% url 'order_detail' order_number=orders.order_number %}" method='post' id="testimonial-form">
                 {% csrf_token %}
                 {{ testimonial_form }}
-                <button type="submit" name="save-testimonial" class="cta-button-link text-light">SAVE TESTIMONIAL</button>
-                <button type="submit" name="update_testimonial" class="cta-button-link text-light">UPDATE TESTIMONIAL</button>
+                <div class="testimonial-buttons flex flex-between m-top">
+                    <button type="submit" name="save-testimonial" class="cta-button-link text-light m-right">SAVE TESTIMONIAL</button>
+                    <button type="submit" name="update_testimonial" class="cta-button-link text-light m-left">UPDATE TESTIMONIAL</button>
+                </div>
             </form>
         </div>
     </div>
