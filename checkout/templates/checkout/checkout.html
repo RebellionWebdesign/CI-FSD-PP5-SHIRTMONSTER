@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block content %}
-    <section class="cart-section flex flex-center text-light flex-column">
+    <section class="checkout-section flex flex-center text-light flex-column">
         <h2>Hi {{ user.username }}, please fill out the form below to complete your order.</h2>
-        <div class="container flex flex-column flex-center-y flex-start text-light">
-            <div class="column-2">
+        <div class="checkout-container container flex flex-column flex-center-y flex-start text-light">
+            <div class="column">
                 <form action="{% url 'checkout' %}" method="post" id="payment-form">
                     {% csrf_token %}
                     <fieldset>
@@ -26,8 +26,8 @@
                         <input class="" type="checkbox" id="id-save-info" name="save-info" checked>
                         {% else %}
                         <label for="id-save-info">
-                            <a href="{% url 'account_signup' %}" class="">SIGNUP</a>
-                            <a href="{% url 'account_login' %}" class="">LOGIN</a>
+                            <a href="{% url 'account_signup' %}" class="cta-button-link text-light">SIGNUP</a>
+                            <a href="{% url 'account_login' %}" class="cta-button-link text-light">LOGIN</a>
                         </label>
                         {% endif %}
                     </fieldset>
@@ -41,9 +41,6 @@
                         <input type="hidden" value={{ client_secret }} name="client_secret">
                     </fieldset>
                 </form>
-            </div>
-            <div class="column-2">
-                <!--ADD PRODUCT DETAILS HERE-->
             </div>
         </div>
     </section>
