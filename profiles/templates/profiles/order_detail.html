@@ -3,11 +3,11 @@
 {% load i18n %}
 
 {% block content %}
-<section class="user-section flex flex-center">
-    <div class="container flex flex-center">
-        <div class="column-2 flex flex-start flex-column text-light">
-            <h3 class="m-bottom">Hello, {{ user.username }}! This a past order:</h3>
-            <p>Order-No.: {{ orders.order_number }}</p>
+<section class="testimonial-section flex flex-center">
+    <div class="testimonial-container container flex flex-center">
+        <div class="testimonial-column column-2 flex flex-start flex-column text-light">
+            <h3 class="testimonial-header m-bottom">Hello, {{ user.username }}! This a past order:</h3>
+            <p>Order-No.: <small>{{ orders.order_number }}</small></p>
             <p>Order Date: {{ orders.order_date|date:'d.m.Y' }}</p>
             <p class="m-top">Shipped to:</p>
             <p>{{ orders.full_name }}</p>
@@ -24,11 +24,11 @@
         <div class="testimonial-column column-2 flex flex-center flex-column text-light">
             {% if testimonial_content %}
             <p>
-                This is your latest written testimonial:
+                <span class="textbox-header">This is your latest written testimonial:</span>
             </p>
             {% else %}
             <p>
-                Please consider to write a testimonial for us!
+                <span class="textbox-header">Please consider to write a testimonial for us!</span>
             </p>
             {% endif %}
             <form class="flex flex-center flex-column m-top" action="{% url 'order_detail' order_number=orders.order_number %}" method='post' id="testimonial-form">
