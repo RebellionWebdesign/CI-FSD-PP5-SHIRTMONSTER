@@ -64,7 +64,7 @@
                 <div class="mobile-icon-wrapper text-light">
                     <i id="mobile-search-open" class="mobile-search-open" data-lucide="search"></i>
                     <i id="mobile-search-close" class="mobile-search-close hide" data-lucide="x-circle"></i>
-                    <i id="mobile-menu-open" class="mobile-open" data-lucide="align-right"></i>
+                    <i id="mobile-nav-open" class="mobile-open" data-lucide="align-right"></i>
                 </div>
                 {% comment %} MOBILE NAVBAR ELEMENTS END {% endcomment %}
             </div>
@@ -88,9 +88,10 @@
                 {% endif %}
             </div>
         </div>
-        <div class="container bottom-nav flex">
+        <div id="bottom-nav" class="container bottom-nav flex">
+            <i id="mobile-nav-close" class="mobile-nav-close" data-lucide="x-circle"></i>
             {% if user.is_authenticated %}
-            <div class="column-3 flex flex-center flex-start">
+            <div class="bottom-nav-column column-3 flex flex-center flex-start">
                 <nav class="main-nav">
                     <ul>
                         <li><a id="home" class="text-light" href="{% url 'home' %}">HOME</a></li>
@@ -99,7 +100,7 @@
                     </ul>
                 </nav>
             </div>
-            <div class="column-3 flex flex-center">
+            <div class="filter-column column-3 flex flex-center">
                 <nav id="filter-nav" class="filter-nav">
                     <ul class="flex flex-center-y">
                         <li><strong><p class="text-light">FILTER BY:</p></strong></li>
@@ -114,14 +115,16 @@
                     <ul class="flex flex-end">
                         <li><a class="text-light flex flex-center" href="{% url 'user_wishlist' %}"><i data-lucide="list-todo"></a></i></li>
                         <li><a id="my-profile" class="text-light flex flex-center" href="{% url 'profile' pk=user.pk %}"><i data-lucide="circle-user-round"></i></a></li>
-                        <li><a id="cart" class="text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
-                        <p id="grand-total" class="grand-total text-light">
-                            {% if grand_total %}
-                                {{ grand_total|floatformat:2 }}€
-                            {% else %}
-                                0.00 €
-                            {% endif %}
-                        </p>
+                        <div class="mobile-cart-wrapper">
+                            <li><a id="cart" class="cart text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
+                            <p id="grand-total" class="grand-total text-light">
+                                {% if grand_total %}
+                                    {{ grand_total|floatformat:2 }}€
+                                {% else %}
+                                    0.00 €
+                                {% endif %}
+                            </p>
+                        </div>
                     </ul>
                 </nav>
             </div>
@@ -131,8 +134,7 @@
                     <ul>
                         <li><a id="home" class="text-light" href="{% url 'home' %}">HOME</a></li>
                         <li><a id="shop" class="text-light" href="{% url 'shop' %}">SHOP</a></li>
-                        <li><a id="contact" class="text-light" href="#">CONTACT</a></li>
-                        <li><a id="custom-print" class="text-light" href="{% url 'custom_shirts' %}">CUSTOM PRINTS</a></li>
+                        <li><a id="custom-shirts" class="text-light" href="{% url 'custom_shirts' %}">CONTACT | INQUIRIES</a></li>
                     </ul>
                 </nav>
             </div>
