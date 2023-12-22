@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const swiper = new Swiper('.swiper', {
         // Optional parameters
         direction: 'horizontal',
-        loop: true,
+        loop: false,
 
         autoplay: {
             delay: 5000,
@@ -51,6 +51,20 @@ document.addEventListener("DOMContentLoaded", function () {
         searchToggleClose.classList.add("hide")
 
     })
+
+    //This opens and closes the navbar on mobile
+    const menuToggleOpen = document.getElementById('mobile-nav-open')
+    const menuToggleClose = document.getElementById('mobile-nav-close')
+    const mobileMenu = document.getElementById('bottom-nav')
+
+    menuToggleClose.addEventListener("click", () => {
+        mobileMenu.style.right = "-70%"
+    })
+
+    menuToggleOpen.addEventListener("click", () => {
+        mobileMenu.style.right = "0"
+    })
+
 
     //This hides the navbar on auth pages and hides the filter from the profile page
     let loginUrl = window.location.href.includes('login');
