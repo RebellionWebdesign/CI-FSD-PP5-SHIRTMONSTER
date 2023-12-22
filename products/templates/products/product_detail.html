@@ -5,25 +5,27 @@
     <section class="product-detail-section flex flex-center">
         <div class="container flex">
             {% for product in products %}
-                <div class="column-2 flex flex-center">
+                <div class="product-column column-2 flex flex-center">
                     <img class="product-detail-image" src="{{ product.image_url }}" alt="{{ product.name }}">
                 </div>
-                <div class="column-2 text-light flex flex-column">
+                <div class="product-column column-2 text-light flex flex-column">
                     <h2>{{ product.name }}</h2>
                     <p>{{ product.rating }}</p>
                     <hr>
                     <p>{{ product.price }} €</p>
-                    <p>{{ product.description }}</p>
-                    <div class="flex m-top">
+                    <p class="product-description">{{ product.description }}</p>
+                    <div class="product-buttons flex m-top">
                         <form action="{% url 'add_to_cart' product.id %}" method="post">
                             {% csrf_token %}
                             <button type="submit" class="cta-button-link text-light">BUY</button>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
+                        {% if user.is_authenticated %}
                         <form class="m-left" action="{% url 'add_to_wishlist' product.id %}" method="post">
                             {% csrf_token %}
                             <button type="submit" class="to-wishlist-button cta-button-link text-light">TO WISHLIST</button>
                         </form>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}
