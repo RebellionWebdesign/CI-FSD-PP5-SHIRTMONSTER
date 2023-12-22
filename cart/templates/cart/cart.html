@@ -7,10 +7,17 @@
             <div class="cart-heading-wrapper flex flex-center-y flex-between">
                 <h2 class="cart-heading">Your Cart</h2>
                 {% if total < free_delivery_threshold %}
+                {% if user.is_autheticated %}
                 <h3 class="cart-heading-shipping">
                     Hey, {{ user.username }}!
-                    You are {{ free_delivery_amount_left }} € away from free shipping!
+                    You are<br> {{ free_delivery_amount_left }} € away from free shipping!
                 </h3>
+                {% else %}
+                <h3 class="cart-heading-shipping">
+                    Hey, Guest!
+                    You are<br> {{ free_delivery_amount_left }} € away from free shipping!
+                </h3>
+                {% endif %}
                 {% endif %}
                 {% if total >= free_delivery_threshold %}
                 <h3 class="cart-heading-shipping">
@@ -20,102 +27,104 @@
                 {% endif %}
             </div>
             {% if cart_items %}
+            {% comment %}Cart table for Desktop{% endcomment %}
+            <div class="table-wrapper">
                 <table class="cart-table m-top">
-                        <tr>
-                            <th></th>
-                            <th>PRODUCT</th>
-                            <th>EAN</th>
-                            <th>PRICE</th>
-                            <th>QUANTITY</th>
-                            <th>ACTIONS</th>
-                        </tr>
+                    <tr>
+                        <th></th>
+                        <th>PRODUCT</th>
+                        <th>EAN</th>
+                        <th>PRICE</th>
+                        <th>QUANTITY</th>
+                        <th>ACTIONS</th>
+                    </tr>
                     {% for item in cart_items %}
-                        <tr>
-                            <td>
-                                <img class="cart-image" src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
-                            </td>
-                            <td>
-                                
-                                <a href="{% url "product_detail" pk=item.product.pk %}">{{ item.product.name }}</a>
-                            </td>
-                            <td>
-                                <p>{{ item.product.ean }}</p>
-                            </td>
-                            <td>
-                                <p>{{ item.product.price }} €</p>
-                            </td>
-                            <td>
-                                <form id="update-form_{{ item.item_id }}" data-item-id="{{ item.item_id }}" class="update-form" method="post" action="{% url 'update_cart_quantity' item.item_id %}">
-                                    {% csrf_token %}
-                                    <div class="quantity-selector">
-                                        <button class="decrement-quantity"
-                                            data-item-id="{{ item.item_id }}"
-                                            id="decrement-quantity_{{ item.item_id }}">
-                                            <i data-lucide="minus"></i>
-                                        </button>
-                                        <input class="quantity-counter" id="quantity-counter_{{ item.item_id }}" name="quantity-counter"
-                                            type="text"
-                                            value="{{ item.quantity }}"/>
-                                        <button class="increment-quantity"
-                                            data-item-id="{{ item.item_id }}"
-                                            id="increment-quantity_{{ item.item_id }}">
-                                            <i data-lucide="plus"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </td>
-                            <td>
-                                <button id="update-cart_{{ item.item_id }}" class="update-cart-button">UPDATE CART</button>
-                                <button id="delete-item_{{ item.item_id }}" class="delete-item-button">DELETE</button>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="table-summary-text"><p>Subtotal:</p></td>
-                            <td class="table-summary-value" colspan="2">
-                                <p>{{ total|floatformat:2 }} €</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="table-summary-text"><p>Tax:</p></td>
-                            <td class="table-summary-value" colspan="2">
-                                <p>{{ tax|floatformat:2 }} €</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="table-summary-text"><p>Shipping:</p></td>
-                            <td class="table-summary-value" colspan="2">
-                                <p>{{ shipping|floatformat:2 }} €</p>
-                            </td>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="table-summary-text"><p><strong>Total:</strong></p></td>
-                                <td class="table-summary-value" colspan="2">
-                                    <p><strong>{{ grand_total|floatformat:2 }} €</strong></p>
-                                </td>
-                            </tr>
-                        </tr>
-                        <tr>
-                            <td colspan="6">
-                                <a href="{% url 'checkout' %}" id="to-checkout" class="cta-button-link checkout-button m-top-small">SECURE CHECKOUT</a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            <img class="cart-image" src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
+                        </td>
+                        <td>
+                            <a href="{% url "product_detail" pk=item.product.pk %}">{{ item.product.name }}</a>
+                        </td>
+                        <td>
+                            <p>{{ item.product.ean }}</p>
+                        </td>
+                        <td>
+                            <p>{{ item.product.price }} €</p>
+                        </td>
+                        <td>
+                            <form id="update-form_{{ item.item_id }}" data-item-id="{{ item.item_id }}" class="update-form" method="post" action="{% url 'update_cart_quantity' item.item_id %}">
+                                {% csrf_token %}
+                                <div class="quantity-selector flex flex-center">
+                                    <button class="decrement-quantity cta-button-link text-light flex flex-center"
+                                        data-item-id="{{ item.item_id }}"
+                                        id="decrement-quantity_{{ item.item_id }}">
+                                        <i data-lucide="minus"></i>
+                                    </button>
+                                    <input class="quantity-counter" id="quantity-counter_{{ item.item_id }}" name="quantity-counter"
+                                        type="text"
+                                        value="{{ item.quantity }}"/>
+                                    <button class="increment-quantity cta-button-link text-light flex flex-center"
+                                        data-item-id="{{ item.item_id }}"
+                                        id="increment-quantity_{{ item.item_id }}">
+                                        <i data-lucide="plus"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </td>
+                        <td>
+                            <button id="update-cart_{{ item.item_id }}" class="cta-button-link text-light">UPDATE CART</button>
+                            <button id="delete-item_{{ item.item_id }}" class="cta-button-link text-light">DELETE</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td rowspan='4' colspan='4' ></td>
+                        <td class="table-summary-text"><p>Subtotal:</p></td>
+                        <td class="table-summary-value">
+                            <p>{{ total|floatformat:2 }} €</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-summary-text"><p>Tax:</p></td>
+                        <td class="table-summary-value">
+                            <p>{{ tax|floatformat:2 }} €</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-summary-text">Shipping:</td>
+                        <td class="table-summary-value"><p>{{ shipping|floatformat:2 }} €</p></td>
+                    </tr>
+                    <tr>
+                        <td class="table-summary-text"><p><strong>Total:</strong></p></td>
+                        <td class="table-summary-value">
+                            <p><strong>{{ grand_total|floatformat:2 }} €</strong></p>
+                        </td>
+                    </tr>
                 </table>
+                {% comment %} Cart table for mobile {% endcomment %}
+                <table class="mobile-summary">
+                    <tr>
+                        <td>
+                            <span class="mobile-head">Subtotal:</span>
+                            <p>{{ total|floatformat:2 }} €</p>
+                        </td>
+                        <td>
+                            <span class="mobile-head">Tax:</span>
+                            <p>{{ tax|floatformat:2 }} €</p>
+                        </td>
+                        <td>
+                            <span class="mobile-head">Shipping:</span>
+                            <p>{{ shipping|floatformat:2 }} €</p>
+                        </td>
+                        <td>
+                            <span class="mobile-head">Total:</span>
+                            <p><strong>{{ grand_total|floatformat:2 }} €</strong></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <a href="{% url 'checkout' %}" id="to-checkout" class="cta-button-link flex flex-center text-light checkout-button m-top-small"><i data-lucide="lock"></i>SECURE CHECKOUT</a>
             {% else %}
                 <p class="m-top-small">There is nothing to see here yet.</p>
                 <a class="cta-button-link text-light m-top-large" href="{% url 'shop' %}">KEEP SHOPPING</a>
