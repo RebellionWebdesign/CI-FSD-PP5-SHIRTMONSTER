@@ -77,22 +77,22 @@ body {
 /* FLUID HEADINGS */
 h1 {
     font-family: 'montserrat', sans-serif;
-    font-size: 1.25rem;
-    font-size: clamp(1.25rem, 0.8999999999999999rem + 1.7500000000000002vw, 3rem);
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 3rem);
     font-weight: 700;
 }
 
 h2 {
     font-family: 'montserrat', sans-serif;
-    font-size: 1.0625rem;
-    font-size: clamp(1.0625rem, 0.875rem + 0.9375vw, 2rem);
-    font-weight: 500;
+    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
+    font-weight: 600;
 }
 
 h3 {
     font-family: 'montserrat', sans-serif;
-    font-size: 0.875rem;
-    font-size: clamp(0.875rem, 0.7rem + 0.8750000000000001vw, 1.75rem);
+    font-size: 1.125rem;
+    font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem);
     font-weight: 500;
 }
 
@@ -269,7 +269,7 @@ section {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 99;
 }
 
 .top-nav {
@@ -1262,13 +1262,156 @@ footer {
 /* RESPONSIVE MEDIA QUERIES - AFTER BOOTSTRAP*/
 @media (min-width: 0px) and (max-width: 576px) {
 
+    .active {
+        color: var(--color-primary);
+    }
+
     /* Header Settings */
-    header {
-        display: none!important;
+    .bottom-nav {
+        position: fixed;
+        top: 0;
+        right: -70%;
+        height: 100vh;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
+    }
+
+    .bottom-nav-column {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-nav {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-dark);
+        padding: 3px;
+        border-radius: 5px;
+    }
+
+    .main-nav ul li {
+        margin: 0;
+        text-align: center;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-nav ul li:nth-child(2) {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .filter-nav {
+        width: 100%;
+        height: auto;
+        background-color: var(--primary-dark);
+        padding: 3px;
+        border-radius: 5px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .filter-nav ul {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filter-nav ul li {
+        margin: 0;
+    }
+    .user-nav {
+        width: 100%;
+        height: auto;
+        background-color: var(--primary-dark);
+        padding: 3px;
+        border-radius: 5px;
+    }
+
+    .user-column {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        height: auto;
+    }
+
+    .user-nav ul {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .user-nav ul li {
+        margin: 0;
+    }
+
+    .grand-total {
+        display: none;
+    }
+
+    .auth-box {
+        display: none;
+    }
+
+    .search-box {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 44.98px;
+        padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
+        background-color: var(--primary-dark);
+        transition: 0.5s ease-in-out;
+    }
+
+    .mobile-search-open,
+    .mobile-search-close {
+        margin-right: 1rem;
     }
 
     .hero-section>.swiper {
         display: none!important;
+    }
+
+    .top-nav {
+        padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
+        z-index: 99;
+        border-bottom: 1px solid var(--color-primary);
+        height: 6vh;
+    }
+
+    .logo-link {
+        width: 100%;
+    }
+
+    .logo {
+        width: 45%;
+    }
+
+    .mobile-icon-wrapper {
+        display: flex;
+    }
+
+    .bottom-nav {
+        transition: 1s ease-in-out;
     }
 
     /* Section Settings */
@@ -1289,12 +1432,15 @@ footer {
 
     /* USP Section Settings */
     .usp-section .container {
+        width: 100%;
         flex-direction: column;
     }
 
     .usp-heading {
         width: 100%!important;
         text-align: center;
+        justify-content: center;
+        align-items: center;
     }
 
     .usp-icons {
