@@ -6,7 +6,7 @@
 <section class="user-section flex flex-center">
     <div class="container flex flex-center">
         <div class="column-2 flex flex-center flex-column text-light">
-            <p class="text-center">
+            <p class="profile-header text-center">
                 Welcome to your user profile, {{ user.username }}
                 <br>
                 Please update your info if needed.
@@ -16,13 +16,11 @@
                 {{ form }}
                 <button class="cta-button-link text-light">UPDATE PROFILE</button>
             </form>
-        </div>
-        <div class="order-history column-2 flex flex-center flex-column text-light">
-            {% if orders %}
-            <p class="text-center">
+            <p class="order-history-header text-center">
                 This is your order history, click on the order number to write a testimonial!
             </p>
-            {% endif %}
+        </div>
+        <div class="order-history column-2 flex flex-center flex-column text-light">
             {% for order in orders %}
                 <div class="order-container m-top">
                         <p>Order-No.: <a class="order-detail-link" href="{% url 'order_detail' order_number=order.order_number %}">{{ order.order_number|truncatechars:6 }}</a></p>
