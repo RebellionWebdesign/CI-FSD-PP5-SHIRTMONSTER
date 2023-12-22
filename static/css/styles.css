@@ -83,7 +83,7 @@ h1 {
 
 h2 {
     font-family: 'montserrat', sans-serif;
-    font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+    font-size: clamp(1.7rem, calc(1.94vw + 1.08rem), 3.8rem);
     font-weight: 500;
 }
 
@@ -689,6 +689,19 @@ table, tr, td, th {
     text-align: right!important;
 }
 
+.quantity-counter {
+    height: 40px;
+    background-color: var(--secondary-dark);
+    border: none;
+    text-align: center;
+    color: var(--white);
+    font-family: 'poppins', sans-serif;
+}
+
+.mobile-summary {
+    display:none;
+}
+
 /* AUTH PAGES */
 
 label {
@@ -1218,6 +1231,7 @@ fieldset {
 
 /* Footer */
 footer {
+    border-top: 1px solid var(--color-primary);
     width: 100vw;
     height: 8vh;
     padding: 0.3125rem 16rem 0.3125rem 16rem;
@@ -1226,7 +1240,219 @@ footer {
 /* RESPONSIVE MEDIA QUERIES - AFTER BOOTSTRAP*/
 @media (min-width: 0px) and (max-width: 576px) {
 
+    /* Header Settings */
+    header {
+        display: none!important;
+    }
 
+    .hero-section>.swiper {
+        display: none!important;
+    }
+
+    /* Section Settings */
+    section {
+        width: 100vw;
+        height: auto;
+        padding: 3.125rem 0.625rem 3.125rem 0.625rem;
+    }
+
+    /* Hero Section Settings */
+    .hero-section {
+        width: 100vw;
+        height: 50vh;
+        background-image: url("/static/img/heroes/shirtmonster-hero-1-xs.webp");
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    /* USP Section Settings */
+    .usp-section .container {
+        flex-direction: column;
+    }
+
+    .usp-heading {
+        width: 100%!important;
+        text-align: center;
+    }
+
+    .usp-icons {
+        color: var(--color-primary);
+    }
+
+    .usp-text {
+        margin-top: 2rem;
+        width: 100%!important;
+        text-align: center;
+    }
+
+    /* New Collection Settings */
+    .collection-section h2 {
+        text-align: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+
+    .team-section .container {
+        flex-direction: column;
+    }
+
+    /* Team Section Settings */
+    .team-text {
+        text-align: center;
+        width: 100%;
+    }
+
+    .team-image {
+        margin-top: 1rem;
+        width: 100%!important;
+    }
+
+    /* Testimonial Section Settings */
+
+    .swiper-wrapper {
+        width: 100%;
+    }
+
+    .slide-testimonial {
+        text-align: center;
+        margin-top: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slide-text i {
+        width: 100%;
+        text-align: center;
+    }
+
+    .testimonial-user {
+        color: var(--color-primary);
+    }
+
+    /* Footer Settings */
+    footer {
+        width: 100vw;
+        height: auto;
+        padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
+    }
+
+    footer .container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .footer-column-left {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .footer-column-right {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    /* Product Details */
+    .product-detail-section .container {
+        flex-direction: column;
+
+    }
+
+    .product-column {
+        width: 100%;
+    }
+
+    .product-detail-image {
+        width: 100%;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        border: 1px solid var(--color-secondary);
+    }
+
+    .product-description {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .product-buttons {
+        justify-content: center;
+    }
+
+    /* Cart */
+    .cart-heading-wrapper {
+        flex-direction: column;
+    }
+
+    .cart-heading,
+    .cart-heading-shipping {
+        text-align: center;
+    }
+
+    .cta-button-link {
+        padding: 4px 8px 4px 8px;
+    }
+    
+
+    /* Mobile Cart Table */
+    table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        padding: 0px;
+        table-layout: fixed;
+        min-width: 100%;
+    }
+
+    .table-summary-text {
+        text-align: left!important;
+        background-color: var(--black);
+    }
+
+    table td {
+        padding: 8px;
+        display: block;
+        text-align: right;
+        width: 100%\9;
+        float: left\9;
+    }
+
+    table tr {
+        background-color: var(--secondary-dark);
+        color: var(--white);
+        text-align: center;
+    }
+
+    table tr:first-child {
+        display: none;
+    }
+
+    table tr {
+        display: block;
+    }
+
+    table td:not(:first-child) {
+        border-top: 0px;
+    }
+
+    table .mobile-head {
+        font-weight: bold;
+        color: #000000;
+        float: left;
+        text-align: left;
+        display: block;
+    }
+
+    table .show-on-mobile {
+        display: block;
+    }
 
 }
 
