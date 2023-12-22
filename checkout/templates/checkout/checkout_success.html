@@ -2,24 +2,22 @@
 {% load static %}
 
 {% block content %}
-    <section class="cart-section flex flex-center text-light flex-column">
-        <div class="container">
-            <div class="">
+    <section class="checkout-success-section flex flex-center text-light flex-column">
+        <div class="container flex flex-column">
                 <hr>
-                <h2 class="">Thank You, {{ user.username }}</h2>
+                <h2 class="checkout-header">Thank You, {{ user.username }}</h2>
                 <hr>
                 <p class="">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+            <div class="checkout-order-data flex flex-between m-top">
+                <p><strong>Order Number:</strong> <small>{{ order.order_number }}</small></p>
+                <p><strong>Order Date:</strong> {{ order.order_date|date:'d.m.Y' }}</p>
             </div>
-            <div class="flex flex-between w-100 m-top">
-                <p>Order Number: {{ order.order_number }}</p>
-                <p>Order Date: {{ order.order_date|date:'d.m.Y' }}</p>
+            <div class="checkout-detail-header">
+                <p class="m-top"><strong>Details:</strong></p>
             </div>
-            <div>
-                <p class="m-top">Details:</p>
-            </div>
-            <div class="flex flex-column">
+            <div class="checkout-order-data flex flex-column">
                 {% for item in order.order_items.all %}
-                    <div class="flex flex-between">
+                    <div class="checkout-order-detail flex flex-between">
                         <p class="w-100">Product: {{ item.product.name }}</p>
                         <p class="w-100">EAN: {{ item.product.ean }}</p>
                         <p class="w-100">Quantity: {{ item.quantity }}</p>
@@ -27,13 +25,14 @@
                     </div>
                 {% endfor %}
                 <hr>
-                <div class="flex flex-between m-top">
+                <div class="checkout-success-summary flex flex-between m-top">
                     <p class="w-100">Order Total: {{ order.order_total }}€</p>
                     <p class="w-100">Tax: {{ tax|floatformat:2 }}</p>
                     <p class="w-100">Shipping: {{ order.shipping_cost }}</p>
                     <p class="w-100"><strong>Grand Total: {{ order.grand_total }}€</strong></p>
                 </div>
                 <p class="w-100 text-center m-top"><strong>Your card will be charged {{ order.grand_total }}€</strong></p>
+                <a class="cta-button-link text-light flex flex-center m-top" href="{% url 'home' %}">BACK TO HOME</a>
             </div>
         </div>
     </section>
