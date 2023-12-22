@@ -138,10 +138,10 @@
     <section class="testimonial-section flex flex-center">
         <div class="swiper container">
             <h2 class="m-bottom-large text-light text-center">Check out what our customers are saying:</h2>
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper m-top">
                 {% for testimonial in testimonials %}
                 <div class="swiper-slide flex">
-                    <div class="slide-testimonial flex flex-start flex-column text-light">
+                    <div class="slide-testimonial flex flex-center flex-column text-light">
                         <h3 class="m-bottom">
                             <span class="testimonial-user">{{ testimonial.user_id }}<span> on {{ testimonial.created_at|date:'d.m.Y' }}</h3>
                         <p class="slide-text"><i>"{{ testimonial.content }}"</i></p>
