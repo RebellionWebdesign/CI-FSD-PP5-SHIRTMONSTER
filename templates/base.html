@@ -76,11 +76,6 @@
             </form>
             <div class="auth-box column-3 flex flex-end">
                 {% if user.is_authenticated %}
-                {% if user.is_superuser %}
-                {% if user.is_staff %}
-                <a class="cta-button-link text-light" href="#">STAFF AREA</a>
-                {% endif %}
-                {% endif %}
                 <a class="cta-button-link text-light" href="{% url "account_logout" %}">LOGOUT</a>
                 {% else %}
                 <a class="cta-button-link text-light" href="{% url "account_login" %}">LOGIN</a>
@@ -97,6 +92,7 @@
                         <li><a id="home" class="text-light" href="{% url 'home' %}">HOME</a></li>
                         <li><a id="shop" class="text-light" href="{% url 'shop' %}">SHOP</a></li>
                         <li><a id="custom-shirts" class="text-light" href="{% url 'custom_shirts' %}">CONTACT | INQUIRIES</a></li>
+                        <li><a id="privacy" class="text-light" href="{% url 'privacy' %}">PRIVACY</a></li>
                     </ul>
                 </nav>
             </div>
@@ -115,7 +111,7 @@
                     <ul class="flex flex-end">
                         <li><a class="text-light flex flex-center" href="{% url 'user_wishlist' %}"><i data-lucide="list-todo"></a></i></li>
                         <li><a id="my-profile" class="text-light flex flex-center" href="{% url 'profile' pk=user.pk %}"><i data-lucide="circle-user-round"></i></a></li>
-                        <div class="mobile-cart-wrapper">
+                        <div class="mobile-cart-wrapper flex">
                             <li><a id="cart" class="cart text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
                             <p id="grand-total" class="grand-total text-light">
                                 {% if grand_total %}
