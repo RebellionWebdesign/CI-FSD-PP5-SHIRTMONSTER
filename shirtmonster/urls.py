@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.flatpages import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,7 +30,12 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profiles/', include('profiles.urls')),
     path('', include('customshirt.urls')),
+    path("pages/", include("django.contrib.flatpages.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [
+    path('privacy/', views.flatpage, {'url': '/privacy/'}, name='privacy'),
+]
 
 handler404 = 'shirtmonster.views.handler404'
 handler500 = 'shirtmonster.views.handler500'
