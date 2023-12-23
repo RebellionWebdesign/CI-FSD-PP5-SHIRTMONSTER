@@ -93,6 +93,7 @@
                         <li><a id="shop" class="text-light" href="{% url 'shop' %}">SHOP</a></li>
                         <li><a id="custom-shirts" class="text-light" href="{% url 'custom_shirts' %}">CONTACT | INQUIRIES</a></li>
                         <li><a id="privacy" class="text-light" href="{% url 'privacy' %}">PRIVACY</a></li>
+                        
                     </ul>
                 </nav>
             </div>
@@ -131,6 +132,7 @@
                         <li><a id="home" class="text-light" href="{% url 'home' %}">HOME</a></li>
                         <li><a id="shop" class="text-light" href="{% url 'shop' %}">SHOP</a></li>
                         <li><a id="custom-shirts" class="text-light" href="{% url 'custom_shirts' %}">CONTACT | INQUIRIES</a></li>
+                        <li><a id="privacy" class="text-light" href="{% url 'privacy' %}">PRIVACY</a></li>
                     </ul>
                 </nav>
             </div>
@@ -159,6 +161,14 @@
                 </nav>
             </div>
             {% endif %}
+            <div class="mobile-auth-box column-3 flex flex-center m-top">
+                {% if user.is_authenticated %}
+                <a class="cta-button-link text-light" href="{% url "account_logout" %}">LOGOUT</a>
+                {% else %}
+                <a class="cta-button-link text-light" href="{% url "account_login" %}">LOGIN</a>
+                <a class="cta-button-link text-light" href="{% url "account_signup" %}">REGISTER</a>
+                {% endif %}
+            </div>
         </div>
     </header>
 
