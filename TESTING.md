@@ -1,13 +1,30 @@
 ## COMPATIBILITY
 
-Explanatory text here
+For cross-browser compatibility the browsers Google Chrome and Firefox Developer Edition were tested. Apple devices were omitted because I don´t own any. The tests were conducted on the deployed site.
 
 ### CHROME:
 
 <details>
-  <summary>TITLE HERE</summary>
-<img src="IMAGE HERE" ><br>
+  <summary>Homepage Desktop View</summary>
+<img src="docs/testing-files/chrome-desktop.png" ><br>
 </details>
+
+<details>
+  <summary>Homepage Tablet View</summary>
+<img src="docs/testing-files/chrome-tablet.png" ><br>
+</details>
+
+<details>
+  <summary>Homepage Phone View</summary>
+<img src="docs/testing-files/chrome-phone.png" ><br>
+</details>
+
+<details>
+  <summary>Shop Desktop View</summary>
+<img src="docs/testing-files/shop-page-desktope.png" ><br>
+</details>
+
+
 
 ### FIREFOX:
 
