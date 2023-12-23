@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
 	'django.contrib.sites',
+     'django.contrib.flatpages',
 	'allauth',
 	'allauth.account',
 	'allauth.socialaccount',
@@ -50,7 +51,6 @@ INSTALLED_APPS = [
     'storages',
     'products',
     'shop',
-    'users',
     'cart',
     'wishlist',
     'checkout',
@@ -167,9 +167,7 @@ USE_TZ = True
 
 # AWS and dev config
 
-
-#if os.environ.get('USE_AWS') == 'True':
-    # AWS Config
+# AWS Config
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
     'CacheControl': 'max-age=94608000'  
@@ -188,7 +186,7 @@ MEDIAFILES_LOCATION = 'media'
 
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-#else:
+
 # Local config
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
