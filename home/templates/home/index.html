@@ -3,6 +3,22 @@
 
 {% block content %}
     <section class="hero-section flex flex-center">
+        {% comment %} CTA Elements on small devices {% endcomment %}
+        <div class="mobile-cta">
+            <div class="mobile-cta-text flex flex-center flex-column text-light">
+                <h1 class="main-heading">Get stylish shirts</h1>
+                <p class="slide-text">From freak to fancy - we got it!</p>
+            </div>
+            <div class="cta-mobile flex">
+                <a class="cta-button-link text-light" href="{% url "shop" %}">SHOP NOW</a>
+                {% if user.is_authenticated %}
+                <a class="cta-button-link text-light hide" href="{% url "account_signup" %}">REGISTER</a>
+                {% else %}
+                <a class="cta-button-link text-light m-left" href="{% url "account_signup" %}">REGISTER</a>
+                {% endif %}
+            </div>
+        </div>
+        {% comment %} CTA Elements on small devices end {% endcomment %}
         <div class="swiper container">
             <div class="cta flex">
                 <a class="cta-button-link text-light" href="{% url "shop" %}">SHOP NOW</a>
