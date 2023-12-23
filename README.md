@@ -2,86 +2,128 @@
 
 ## OVERVIEW
 
-Shirtmonster is an educational eCommerce website where customers can buy apparel products like t-shirts and hoodies. It was created as the 5th portfolio project for the full stack developer course at [Code Institute](https://codeinstitute.net/). The app is written with [Django](https://www.djangoproject.com/), [PosrgeSQL](https://www.postgresql.org/), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+Shirtmonster is an educational eCommerce website where customers can buy apparel products like t-shirts and hoodies. It was created as the 5th portfolio project for the full stack developer course at [Code Institute](https://codeinstitute.net/). The website can be visited [here](https://shirtmonster-c4453ded83e7.herokuapp.com).
+
 ## UX
 
-### PROJECT GOAL
+### Target Audience
 
-The projects´ goal is to build a webshop and enable visitors and customers as well as the website owner to perform different tasks like order an item or write testimonials.
+The website is geared towards young and stylish people who like to wear printed shirts. This is emphasized by using images of young and "unusual" looking persons wearing the websites´ products. Also the team image was made with the intention to show users that the website staff is made of people who look the same they do. This gives a sense of customers and staff belonging together and helps the customer to sympathize with the staff.
 
-### PROJECT OBJECTIVES
+### User Stories
 
-Objectives as list
-### SCOPE
+#### Shop Owner
 
-#### DELIVER A SIMPLE AND INTUITIVE UX
 
-Deliverables as list
-#### RELEVANT CONTENT
+| ISSUE ID | USER STORY                                                   |
+| -------- | ------------------------------------------------------------ |
+| #10      | As the site owner I want to have a page where I can see all orders, so I can look them up easily. |
+| #11      | As the website owner I want canceled or deleted orders to remain in the database, so I can analyze them. |
+| #12      | As the website owner I want relevant website content to be displayed, so customers know what the website is about. |
+| #13      | As the website owner I want a modern dark website design.    |
+| #31      | As the site owner I want the site to display a newsletter signup, so visitors and customers can sign up for news. |
 
-Content as list
-#### FEATURES
+#### First Time Visitor
 
-Features as list
+| ISSUE ID | USER STORY                                                   |
+| -------- | ------------------------------------------------------------ |
+| #14      | As a first time visitor I want to know immediately know what the website is about, so I can decide if want to buy something. |
+| #15      | As a first time visitor I want to navigate easily and intuitively through the website. |
+| #25      | As a first time visitor I want to be able to register an account. |
+| #26      | As a registered first time visitor I want to confirm my account with an email. |
 
-#### RESPONSIVENESS
+#### Returning Visitor
 
-For responsive behaviour the default bootstrap 4.6.2 breakpoints were used:
+| ISSUE ID | USER STORY                                                   |
+| -------- | ------------------------------------------------------------ |
+| #16      | As a customer I want to be able to view my data in an overview. |
+| #17      | As a customer I want to be notified when an item on my wishlist is changed so I can decide if want to buy it. |
+| #18      | As a customer I want to be able to add an item easily to my wishlist. |
+| #19      | As a customer I want to be able to delete an item easily from my wishlist. |
+| #20      | As a customer I want to be able to easily view product details. |
+| #27      | As a registered user I want to recover my password easily if I forget it. |
+| #26      | As a registered user I want to be able to easily log in and out. |
 
-- Extra Small: < 576px
+## Business Model
 
-- Small: <u>></u> 576px
+he business model is B2C (Business to Customer), this means the business sells to customers only. It is possible for musicians and other persons to write an inquiry for a custom shirt, but these are not offered in large quantities.
 
-- Medium: <u>></u> 768px
+### The Customer Persona
 
-- Large: <u>></u> 992px
+The website is aimed at a diverse group of persons. May it be young people to adults which have a taste for printed apparel. The customers age might be between 18 to 45 years. The shops emphasis lies in a stylish, dark and modern design providing users the options they need to purchase something quick and easily.
 
-- Extra Large: <u>></u> 1200px
+## Web Marketing
 
-### STRUCTURE
+### Newsletters
 
-### SKELETON
-
-#### Wireframes
-
-The wireframes were made using [Figma](https://figma.com). However, the finished wireframes are compiled into page based groups for easy viewing. The complete design file can be downloaded [here](design-files/shirtmonster-designs.fig).
-
-<details>
-  <summary>Login Page Wireframes</summary>
-<img src="docs/readme-files/login-page-wireframes/login-wireframes-all.png" ><br>
-</details>
-
-<details>
-  <summary>Logout Page Wireframes</summary>
-<img src="docs/readme-files/logout-page-wireframes/logout-wireframes-all.png" ><br>
-</details>
-
-<details>
-  <summary>Password Forgotten Page Wireframes</summary>
-<img src="docs/readme-files/forgot-password-wireframes/forgot-password-wireframes-all.png" ><br>
-</details>
-
-### DATABASE
-The app structure is defined by the database tables and their relationships. The following images illustrate the inital and the final database schema. The following database models count as custom models:
-
-- Wishlist
-- User Address
-- User Payment
-- Order
+Newsletters are handled via [Mailchimp](https://mailchimp.com/), there is a newsletter sign-up form appearing at the bottom of the page when the user scrolls down.
 
 <details>
-  <summary>PP5 ERD initial</summary>
-<img src="docs/readme-files/PP5-ERD-initial.png" ><br>
+  <summary>Mailchimp Signup</summary>
+<img src="docs/readme-files/mailchimp-working.png" ><br>
 </details>
+To be consize with the german market and its customers, newsletters are only sent when real news are available. For the purpose of this MVP and the limitations of the free Mailchimp plan newsletters wont be sent. Mailchimp free only allows to send newsletters immediately. There is no automation available.
+
+### Facebook
+
+For more presence in the internet and for access to a wide and diverse audience via targeting ads, a facebook page could be made. The mockup page below shows how it could look, according to the old facebook design.
 
 <details>
-  <summary>PP5 ERD final</summary>
-<img src="docs/readme-files/PP5-ERD-final.png" ><br>
+  <summary>Facebook Mockup</summary>
+<img src="docs/readme-files/shirtmonster-fb-mockup.png" ><br>
 </details>
+In any case there are more possibilities like X/Twitter, Instagram, TikTok and others to widen the audience even more and get more targeted ads out.
 
-### SURFACE
+## Future Development
 
-#### COLOR SCHEME
+### Finish the admin frontend
+
+As stated in the kanban board, the functionalities for order overviews on the admin side are implemented in the admin backend. However, this feature should be converted to an asy to use frontend for the shop owner.
+
+### Give users the ability to delete their accounts
+
+Users need to be able to delete their accounts. Cheesy tactics like having to contact the business for accout deletion is not possible in germany due to GDPR.
+
+### Order Cancellation
+
+Users need the ability to at least contact the business to cancel an order. Why no button? To ensure the users do not juggle around with their orders. 
+
+## Technologies used
+
+### Languages
+
+- [Python 3.11.6](https://www.python.org/ftp/python/3.11.6/python-3.11.6-amd64.exe) as the primary language for the backend.
+- [JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript) as the main language for interaactivity on the frontend.
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) for the websites structure.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) for the websites look and feel.
+
+### Frameworks and Libraries
+
+- [Django](https://www.djangoproject.com/) as the main backend framework.
+
+- [jQuery](https://jquery.com/) for some of the functionality, basically as a shortcut.
+
+- For the used libraries, please refer to the [requirements.txt](requirements.txt) file.
+
+### Databases
+
+- [Postgresql](https://www.postgresql.org/) via ElephantSQL is used to hold the persistent data for the app.
+
+### Other Tools
+
+- ERDs were made with [dbdiagram.io](https://dbdiagram.io/)
+- The shirt and hoodie base images were generated by [Midjourney](https://www.midjourney.com/)
+- The on-shirt images are mine.
+- The mockups were produced with [Affinity Photo](https://affinity.serif.com/de/) using the base images and the on-shirt images.
+- The website structure image was made with [drawio](https://app.diagrams.net/)
+
+## Features
+
+For the features, please refer to the [FEATURES.md](FEATURES.md) file.
+
+## Design
+
+### Color Scheme
 
 The chosen color theme is compiled of dark backgrounds and colorful elements to give an underground feel to the site. The colors have a good contrast on dark backgrounds and add visual dynamics to the site by using hover effects and gradient backgrounds to visual landmarks.
 
@@ -95,7 +137,7 @@ The chosen color theme is compiled of dark backgrounds and colorful elements to 
 <img src="docs/readme-files/main-gradient.png" ><br>
 </details>
 
-#### FONTS
+#### Fonts
 
 For this project the chosen fonts are [Montserrat](https://fonts.google.com/specimen/Montserrat?query=montserrat) and [Poppins](https://fonts.google.com/specimen/Poppins?query=poppins) provided by Google Fonts. Montserrat is used as the main heading font and Poppins is used as the text font.
 
@@ -109,62 +151,54 @@ For this project the chosen fonts are [Montserrat](https://fonts.google.com/spec
 <img src="docs/readme-files/text-font.png" ><br>
 </details>
 
-#### VISUAL EFFECTS
+### Icons
 
-##### BUTTON HOVER EFFECTS
+The icons seen on the website are made and provided by [Lucide Icons](https://lucide.dev/icons/)
 
-- To give the user visual feedback for certain elements, hover effects were added mainly to the cta button links.
+## Agile Methodology
 
-<details>
-  <summary>Button Hover Effects</summary>
-<img src="docs/readme-files/hover-effects.gif" ><br>
-</details>
+### GitHub Project Management
 
-##### NAVIGATION HOVER EFFECTS AND ACTIVE STATE
-
-- The navbar also has hover effects for the navigation links, the hover color is applied when the user clicks the link and is on the corresponsing page. In the example the user is on the home page which has the applied hover color.
+For project management GitHub Projects was used. You can see the roadmap and the kanban board [here](https://github.com/users/RebellionWebdesign/projects/6).
 
 <details>
-  <summary>Navbar Hover Effects</summary>
-<img src="docs/readme-files/nav-hover-effects.gif" ><br>
+  <summary>Kanban while working</summary>
+<img src="docs/readme-files/agile-board.png" ><br>
 </details>
 
-## AGILE METHODOLOGY
+## Flowcharts
 
-Link to agile tools
+To show the websites structure I created a sitemap:
 
-## FEATURES
+<details>
+  <summary>Site structure</summary>
+<img src="docs/readme-files/shirtmonster-structure.png" ><br>
+</details>
+## Information Architecture
 
-### EXISTING FEATURES
+The app structure is defined by the database tables and their relationships. The following images illustrate the inital and the final database schema. The following database models are custom models:
 
-Existing features here
+- CustomShirt
+- WishList
+- Testimonials
 
-### FUTURE FEATURE CONSIDERATIONS
+Other models are from the walkthrough, but modified.
 
-Future features here
+<details>
+  <summary>PP5 ERD initial</summary>
+<img src="docs/readme-files/PP5-ERD-initial.png" ><br>
+</details>
 
-## TOOLS USED
+<details>
+  <summary>PP5 ERD final</summary>
+<img src="docs/readme-files/PP5-ERD-final.png" ><br>
+</details>
 
-### VSCODE EXTENSIONS
+## Testing
 
-Extensions here
+Please refer to the [TESTING.md](TESTING.md) file.
 
-### PYTHON PACKAGES
-
-Packages here
-
-### OTHER  TOOLS
-
-- The database schematics were created with [dbdiagram.io](https://dbdiagram.io/)
-- Wireframes were created with [Figma](https://www.figma.com), the .fig file can be found [here](design-files)
-- The Product base images were generated with [MidJourney AI](https://www.midjourney.com/) and post processed with [Affinity Photo](https://affinity.serif.com/) to generate the mockups
-- The Product texts (product description, category description) were generated with [ChatGPT](https://chat.openai.com/auth/login)
-
-## TESTING
-
-Link to testing md
-
-## DEPLOYMENT
+## Deployment
 
 ### CREATE A DATABASE ON ELEPHANTSQL
 
@@ -198,9 +232,6 @@ This section describes the creation of an initial database on [elephantSQL](http
   <summary>Create new instance on ElephantSQL</summary>
   <img src="docs/readme-files/database-elephantsql/elephantsql-confirm.png" ><br>
 </details>
-
-ADD STEPS FOR DBURL TO HEROKU
-
 ### DEPLOY ON HEROKU
 
 This section explains the deployment steps on [Heroku](https://www.heroku.com)
@@ -247,21 +278,18 @@ This section explains the deployment steps on [Heroku](https://www.heroku.com)
   <img src="docs/readme-files/deployment-heroku/heroku-config.png" ><br>
 </details>
 
-NEEDS EXPANSION ON DEPLOY ERROR BECAUSE OF MISSING URL
-
-### DEPLOY ON A LOCAL MACHINE (Windows)
-
-Deployment explanation here
-
-## CREDITS
+## Credits
 
 - Creating a table of contents isn´t needed anymore. GitHub does this automatically now. Please see below how to open them:
 
-  <details>
-    <summary>Open table of content on GitHub</summary>
-    <img src="docs/readme-files/open-toc-github.png" ><br>
-  </details>
+<details>
+  <summary>TOC Github</summary>
+  <img src="docs/readme-files/deployment-heroku/open-toc-github.png" ><br>
+</details>
+- The sitemap.xml file was generated with [Sitemap Generator](https://www.marcobeierer.com/tools/sitemap-generator)
+- The privacy policy was generated with [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
 
-## ACKNOWLEDGEMENTS
+## Acknowledgments
 
-Acknowledgements here
+- [Juliia Konovalova](https://github.com/IuliiaKonovalova) for being my mentor and helping through some of the issues I encountered on the project. The README.md, TESTING.md and FEATURES.md files were inspired by hers.
+- My family for bearing with me and for keeping me grounded.
