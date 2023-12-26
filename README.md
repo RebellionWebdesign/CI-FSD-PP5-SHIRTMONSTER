@@ -128,6 +128,7 @@ Users need the ability to at least contact the business to cancel an order. Why 
 - The mockups were produced with [Affinity Photo](https://affinity.serif.com/de/) using the base images and the on-shirt images.
 - The website structure image was made with [drawio](https://app.diagrams.net/)
 - The meyword meta tags were generated with [wordtracker.com](wordtracker.com)
+- The Hero- and Testimonial Slider were made using [SwiperJS](https://swiperjs.com/)
 
 ## Features
 
@@ -214,7 +215,7 @@ Please refer to the [TESTING.md](TESTING.md) file.
 
 ### CREATE A DATABASE ON ELEPHANTSQL
 
-NOTE: This section is deprecated for the free tier at elephantsql since it doesnt exist anymore. However, the steps should be the same for the other tiers so the instructions are kept in this document.
+***NOTE: This section is deprecated for the free tier at elephantsql since it doesnt exist anymore. However, the steps should be the same for the other tiers so the instructions are kept in this document.***
 
 This section describes the creation of an initial database on [elephantSQL](https://elephantsql.com)
 
