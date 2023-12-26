@@ -15,34 +15,34 @@ The website is geared towards young and stylish people who like to wear printed 
 #### Shop Owner
 
 
-| ISSUE ID | USER STORY                                                   |
-| -------- | ------------------------------------------------------------ |
-| #10      | As the site owner I want to have a page where I can see all orders, so I can look them up easily. |
-| #11      | As the website owner I want canceled or deleted orders to remain in the database, so I can analyze them. |
-| #12      | As the website owner I want relevant website content to be displayed, so customers know what the website is about. |
-| #13      | As the website owner I want a modern dark website design.    |
-| #31      | As the site owner I want the site to display a newsletter signup, so visitors and customers can sign up for news. |
+| ISSUE ID | USER STORY                                                   | FULFILLED |
+| -------- | ------------------------------------------------------------ | --------- |
+| #10      | As the site owner I want to have a page where I can see all orders, so I can look them up easily. | PARTLY    |
+| #11      | As the website owner I want canceled or deleted orders to remain in the database, so I can analyze them. | NO        |
+| #12      | As the website owner I want relevant website content to be displayed, so customers know what the website is about. | YES       |
+| #13      | As the website owner I want a modern dark website design.    | YES       |
+| #31      | As the site owner I want the site to display a newsletter signup, so visitors and customers can sign up for news. | YES       |
 
 #### First Time Visitor
 
-| ISSUE ID | USER STORY                                                   |
-| -------- | ------------------------------------------------------------ |
-| #14      | As a first time visitor I want to know immediately know what the website is about, so I can decide if want to buy something. |
-| #15      | As a first time visitor I want to navigate easily and intuitively through the website. |
-| #25      | As a first time visitor I want to be able to register an account. |
-| #26      | As a registered first time visitor I want to confirm my account with an email. |
+| ISSUE ID | USER STORY                                                   | FULFILLED |
+| -------- | ------------------------------------------------------------ | --------- |
+| #14      | As a first time visitor I want to know immediately know what the website is about, so I can decide if want to buy something. | YES       |
+| #15      | As a first time visitor I want to navigate easily and intuitively through the website. | YES       |
+| #25      | As a first time visitor I want to be able to register an account. | YES       |
+| #26      | As a registered first time visitor I want to confirm my account with an email. | YES       |
 
 #### Returning Visitor
 
-| ISSUE ID | USER STORY                                                   |
-| -------- | ------------------------------------------------------------ |
-| #16      | As a customer I want to be able to view my data in an overview. |
-| #17      | As a customer I want to be notified when an item on my wishlist is changed so I can decide if want to buy it. |
-| #18      | As a customer I want to be able to add an item easily to my wishlist. |
-| #19      | As a customer I want to be able to delete an item easily from my wishlist. |
-| #20      | As a customer I want to be able to easily view product details. |
-| #27      | As a registered user I want to recover my password easily if I forget it. |
-| #26      | As a registered user I want to be able to easily log in and out. |
+| ISSUE ID | USER STORY                                                   | FULFILLED |
+| -------- | ------------------------------------------------------------ | --------- |
+| #16      | As a customer I want to be able to view my data in an overview. | YES       |
+| #17      | As a customer I want to be notified when my wishlist is changed so I can decide if want to something from it. | YES       |
+| #18      | As a customer I want to be able to add an item easily to my wishlist. | YES       |
+| #19      | As a customer I want to be able to delete an item easily from my wishlist. | YES       |
+| #20      | As a customer I want to be able to easily view product details. | YES       |
+| #27      | As a registered user I want to recover my password easily if I forget it. | YES       |
+| #26      | As a registered user I want to be able to easily log in and out. | YES       |
 
 ## Business Model
 
