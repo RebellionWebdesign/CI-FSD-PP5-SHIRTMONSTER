@@ -74,6 +74,17 @@ For more presence in the internet and for access to a wide and diverse audience 
 </details>
 In any case there are more possibilities like X/Twitter, Instagram, TikTok and others to widen the audience even more and get more targeted ads out.
 
+### Meta Tags
+
+For good SEO results, meta tags were used. The process for finding the correct and important meta tags is as follows:
+
+- Find initial keywords to use (streetwear, print on demand, t-shirt, shirt, hoodie, print, pod, fashion, apparel)
+- Go to [wordtracker.com](wordtracker.com)
+- Select keywords from initial list (max 2 -> streetwear, print on demand)
+- Select highest ranking keywords from list 1 -> **streetwear**, streetwear brands, japanese streetwear, anime streetwear, streetwear hoodies
+- Select highest ranking keywords from list 2 -> **print on demand companies**, print on demand shirts, best print on demand sites
+- Insert merged list to header meta tag -> (t-shirt, shirt, hoodie, print, pod, fashion, apparel, print on demand, print on demand companies, print on demand shirts, best print on demand sites, streetwear, streetwear brands, japanese streetwear, anime streetwear, streetwear hoodies)
+
 ## Future Development
 
 ### Finish the admin frontend
@@ -116,6 +127,7 @@ Users need the ability to at least contact the business to cancel an order. Why 
 - The on-shirt images are mine.
 - The mockups were produced with [Affinity Photo](https://affinity.serif.com/de/) using the base images and the on-shirt images.
 - The website structure image was made with [drawio](https://app.diagrams.net/)
+- The meyword meta tags were generated with [wordtracker.com](wordtracker.com)
 
 ## Features
 
@@ -201,6 +213,8 @@ Please refer to the [TESTING.md](TESTING.md) file.
 ## Deployment
 
 ### CREATE A DATABASE ON ELEPHANTSQL
+
+NOTE: This section is deprecated for the free tier at elephantsql since it doesnt exist anymore. However, the steps should be the same for the other tiers so the instructions are kept in this document.
 
 This section describes the creation of an initial database on [elephantSQL](https://elephantsql.com)
 
