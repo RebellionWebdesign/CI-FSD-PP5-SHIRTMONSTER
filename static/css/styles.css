@@ -1190,7 +1190,7 @@ label[for=id_password2] {
 }
 
 .testimonial-column {
-    overflow: none;
+    overflow: hidden;
 }
 
 .testimonial-section {
@@ -1632,8 +1632,8 @@ footer {
         padding: 8px;
         display: block;
         text-align: right;
-        width: 100%\9;
-        float: left\9;
+        width: 100%;
+        float: caleft;
     }
 
     table tr {
