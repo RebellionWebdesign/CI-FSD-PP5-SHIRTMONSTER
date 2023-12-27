@@ -136,6 +136,136 @@ The warnings about unused and undefined variables come from Stripe and Swiper. T
 
 ### PYTHON VALIDATION HERE
 
+For the PEP8 validation, tutorial code was omitted
+
+#### CART APP
+
+<details>
+  <summary>Cart Views PEP8 Result</summary>
+<img src="docs/testing-files/pep8/cart/cart-view-validate.png" ><br>
+</details>
+
+<details>
+  <summary>Cart Tools PEP8 Result</summary>
+<img src="docs/testing-files/pep8/cart/cart-tools.png" ><br>
+</details>
+
+<details>
+  <summary>Cart Contexts PEP8 Result</summary>
+<img src="docs/testing-files/pep8/cart/cart-contexts.png" ><br>
+</details>
+
+#### CHECKOUT APP
+
+<details>
+  <summary>Checkout Views PEP8 Result</summary>
+<img src="docs/testing-files/pep8/checkout/checkout-views.png" ><br>
+</details>
+
+<details>
+  <summary>Checkout Models PEP8 Result</summary>
+<img src="docs/testing-files/pep8/checkout/checkout-models.png" ><br>
+</details>
+
+#### CUSTOM SHIRT APP
+
+<details>
+  <summary>Custom Shirt Models PEP8 Result</summary>
+<img src="docs/testing-files/pep8/customshirt/customshirt-models.png" ><br>
+</details>
+
+<details>
+  <summary>Custom Shirt Views PEP8 Result</summary>
+<img src="docs/testing-files/pep8/customshirt/customshirt-views.png" ><br>
+</details>
+
+<details>
+  <summary>Custom Shirt Admin PEP8 Result</summary>
+<img src="docs/testing-files/pep8/customshirt/customshirt-admin.png" ><br>
+</details>
+
+#### HOME APP
+
+<details>
+  <summary>Home Views PEP8 Result</summary>
+<img src="docs/testing-files/pep8/home/home-views.png" ><br>
+</details>
+
+#### PRODUCTS APP
+
+<details>
+  <summary>Products Models PEP8 Result</summary>
+<img src="docs/testing-files/pep8/products/products-models.png" ><br>
+</details>
+
+<details>
+  <summary>Products Views PEP8 Result</summary>
+<img src="docs/testing-files/pep8/products/products-views.png" ><br>
+</details>
+
+<details>
+  <summary>Products Admin PEP8 Result</summary>
+<img src="docs/testing-files/pep8/products/products-admin.png" ><br>
+</details>
+
+#### PROFILES APP
+
+<details>
+  <summary>Profiles Models PEP8 Result</summary>
+<img src="docs/testing-files/pep8/profiles/profiles-models.png" ><br>
+</details>
+
+<details>
+  <summary>Profiles Views PEP8 Result</summary>
+<img src="docs/testing-files/pep8/profiles/profiles-views.png" ><br>
+</details>
+
+<details>
+  <summary>Profiles Forms PEP8 Result</summary>
+<img src="docs/testing-files/pep8/profiles/profiles-forms.png" ><br>
+</details>
+
+<details>
+  <summary>Profiles Admin PEP8 Result</summary>
+<img src="docs/testing-files/pep8/profiles/profiles-admin.png" ><br>
+</details>
+
+#### SHOP APP
+
+<details>
+  <summary>Shop Views PEP8 Result</summary>
+<img src="docs/testing-files/pep8/shop/shop-views.png" ><br>
+</details>
+
+#### TESTIMONIAL APP
+
+<details>
+  <summary>Testimonial Models PEP8 Result</summary>
+<img src="docs/testing-files/pep8/testimonial/testimonial-models.png" ><br>
+</details>
+
+<details>
+  <summary>Products Forms PEP8 Result</summary>
+<img src="docs/testing-files/pep8/testimonial/testimonial-forms.png" ><br>
+</details>
+
+<details>
+  <summary>Products Admin PEP8 Result</summary>
+<img src="docs/testing-files/pep8/testimonial/testimonial-admin.png" ><br>
+</details>
+
+#### WISHLIST APP
+
+<details>
+  <summary>Wishlist Models PEP8 Result</summary>
+<img src="docs/testing-files/pep8/wishlist/wishlist-models.png" ><br>
+</details>
+
+<details>
+  <summary>WishlistWishlist Views PEP8 Result</summary>
+<img src="docs/testing-files/pep8/wishlist/wishlist-views.png" ><br>
+</details>
+
 ## BUGS
 
 - A very bad bug which I can not solve for now is that the update_total() function from the walkthrough works only in the cart. The function is returning NULL on save and reverts back to its default value of 0. I could not find out why this is happening. You can reproduce this by deleting the `default=0` attribute from the Order model and trying to save an order. The error will show the issue. However, this needs to be fixed urgently.
