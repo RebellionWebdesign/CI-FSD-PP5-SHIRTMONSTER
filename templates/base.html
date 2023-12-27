@@ -115,13 +115,15 @@
                         <div class="mobile-cart-wrapper flex">
                             <li><a id="cart" class="cart text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
                             {% comment "needs fix not allwed as ul child" %}{% endcomment %}
-                            <p id="grand-total" class="grand-total text-light">
-                                {% if grand_total %}
-                                    {{ grand_total|floatformat:2 }}€
-                                {% else %}
-                                    0.00 €
-                                {% endif %}
-                            </p>
+                            <li>
+                                <p id="grand-total" class="grand-total text-light">
+                                    {% if grand_total %}
+                                        {{ grand_total|floatformat:2 }}€
+                                    {% else %}
+                                        0.00 €
+                                    {% endif %}
+                                </p>
+                            </li>
                         </div>
                     </ul>
                 </nav>
