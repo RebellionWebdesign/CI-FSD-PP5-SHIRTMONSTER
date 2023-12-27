@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let shopUrl = window.location.href.includes('shop');
     let contactUrl = window.location.href.includes('custom_shirts');
     let cartUrl = window.location.href.includes('cart');
+    let wishUrl = window.location.href.includes('wishlist');
     let profileUrl = window.location.href.includes('profiles');
     let privacyUrl = window.location.href.includes('privacy');
     let filterAllUrl = window.location.href.includes('?category=hoodies,t_shirts');
@@ -106,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let filterHoodiesLink = document.getElementById('hoodies');
     let filterShirtsLink = document.getElementById('shirts');
     let cartLink = document.getElementById('cart');
+    let wishLink = document.getElementById('my-wishlist');
     let cartTotal = document.getElementById('grand-total');
 
     if (homeUrl) {
@@ -133,6 +135,9 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (shopUrl && filterShirtsUrl) {
         filterShirtsLink.classList.add("active");
         shopLink.classList.add("active");
+    } else if (wishUrl) {
+        wishLink.classList.remove("text-light");
+        wishLink.classList.add("active");
     }
     
 
