@@ -110,21 +110,23 @@
             <div class="column-3 flex flex-center flex-end">
                 <nav class="user-nav">
                     <ul class="flex flex-end">
-                        <li><a id="my-wishlist" class="text-light flex flex-center" href="{% url 'user_wishlist' %}"><i data-lucide="list-todo"></a></i></li>
+                        <li><a id="my-wishlist" class="text-light flex flex-center" href="{% url 'user_wishlist' %}"><i data-lucide="list-todo"></i></a></li>
                         <li><a id="my-profile" class="text-light flex flex-center" href="{% url 'profile' pk=user.pk %}"><i data-lucide="circle-user-round"></i></a></li>
-                        <div class="mobile-cart-wrapper flex">
-                            <li><a id="cart" class="cart text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
-                            {% comment "needs fix not allwed as ul child" %}{% endcomment %}
-                            <li>
-                                <p id="grand-total" class="grand-total text-light">
-                                    {% if grand_total %}
-                                        {{ grand_total|floatformat:2 }}€
-                                    {% else %}
-                                        0.00 €
-                                    {% endif %}
-                                </p>
-                            </li>
-                        </div>
+                        <li>
+                            <div class="mobile-cart-wrapper flex">
+                                <li><a id="cart" class="cart text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
+                                {% comment "needs fix not allwed as ul child" %}{% endcomment %}
+                                <li>
+                                    <p id="grand-total" class="grand-total text-light">
+                                        {% if grand_total %}
+                                            {{ grand_total|floatformat:2 }}€
+                                        {% else %}
+                                            0.00 €
+                                        {% endif %}
+                                    </p>
+                                </li>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
             </div>
