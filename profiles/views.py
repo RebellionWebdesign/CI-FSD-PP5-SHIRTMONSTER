@@ -51,7 +51,7 @@ class UserProfileView(LoginRequiredMixin, View):
     def get_object(self):
         return self.request.user
 
-class OrderOverview(View):
+class OrderOverview(LoginRequiredMixin, View):
     """
     This view provides the testimonial field and an order overview
     for registered customers
