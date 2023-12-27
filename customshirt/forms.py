@@ -30,3 +30,4 @@ class CustomShirtForm(forms.ModelForm):
             placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields['phone'].label = 'Phone'
+            self.fields['email'].label = 'Email'
