@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let profileUrl = window.location.href.includes('profiles');
     let homeLink = document.getElementById('home');
     let shopLink = document.getElementById('shop');
-    let customLink = document.getElementById('custom-shirts');
+    let contactLink = document.getElementById('custom-shirts');
     let profileLink = document.getElementById('my-profile');
     let cartLink = document.getElementById('cart');
     let cartTotal = document.getElementById('grand-total');
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (contactUrl) {
         contactLink.classList.add("active");
     } else if (contactUrl) {
-        customLink.classList.add("active");
+        contactLink.classList.add("active");
     } else if (profileUrl) {
         profileLink.classList.add("active");
         profileLink.classList.remove("text-light");
