@@ -4,15 +4,16 @@
 {% block content %}
 <section class="shop-section flex flex-center flex-column">
     {% if products %}
-        <h2 class="banner text-light">MERCH REDEFINED - OUR COLLECTION 2024
-        <br>
-        <strong>FREE DELIVERY FOR ORDERS OVER {{ free_delivery_threshold }}€</strong>
+        <h1 class="banner text-light"><small>MERCH REDEFINED - OUR COLLECTION 2024</small>
+            <br>
+            <strong><small>FREE DELIVERY FOR ORDERS OVER {{ free_delivery_threshold }}€</small></strong>
+        </h1>
     {% else %}
-    <h2 class="banner text-light hide">MERCH REDEFINED - OUR COLLECTION 2024
+    <h1 class="banner text-light hide">MERCH REDEFINED - OUR COLLECTION 2024
         <br>
         <strong>FREE DELIVERY FOR ORDERS OVER {{ free_delivery_threshold }}€</strong>
+    </h1>
     {% endif %}
-    </h2>
     <div class="container grid m-top-large">
         {% for product in products %}
             <div class="product-card">
@@ -21,7 +22,7 @@
                         <p>DETAILS</p>
                     </a>
                 </div>
-                <div id="product-category_{{ product.id }}" class="flex flex-center text-light">
+                <div id="product-category_{{ product.id }}" class="product-category flex flex-center text-light">
                     <i data-lucide="tags"></i>
                     <p class="text-light">{{ product.category_id.display_name }}</p>
                 </div>
