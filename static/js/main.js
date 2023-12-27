@@ -93,10 +93,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let contactUrl = window.location.href.includes('custom_shirts');
     let cartUrl = window.location.href.includes('cart');
     let profileUrl = window.location.href.includes('profiles');
+    let privacyUrl = window.location.href.includes('privacy');
     let homeLink = document.getElementById('home');
     let shopLink = document.getElementById('shop');
     let contactLink = document.getElementById('custom-shirts');
     let profileLink = document.getElementById('my-profile');
+    let privacyLink = document.getElementById('privacy');
     let cartLink = document.getElementById('cart');
     let cartTotal = document.getElementById('grand-total');
 
@@ -114,6 +116,8 @@ document.addEventListener("DOMContentLoaded", function () {
         cartLink.classList.remove("text-light");
         cartTotal.classList.add("active");
         cartTotal.classList.remove("text-light");
+    } else if (privacyUrl) {
+        cartLink.classList.add("active");
     }
     
 
