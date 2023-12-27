@@ -94,11 +94,17 @@ document.addEventListener("DOMContentLoaded", function () {
     let cartUrl = window.location.href.includes('cart');
     let profileUrl = window.location.href.includes('profiles');
     let privacyUrl = window.location.href.includes('privacy');
+    let filterAllUrl = window.location.href.includes('?category=hoodies,t_shirts');
+    let filterHoodiesUrl = window.location.href.includes('?category=hoodies');
+    let filterShirtsUrl = window.location.href.includes('?category=t_shirts');
     let homeLink = document.getElementById('home');
     let shopLink = document.getElementById('shop');
     let contactLink = document.getElementById('custom-shirts');
     let profileLink = document.getElementById('my-profile');
     let privacyLink = document.getElementById('privacy');
+    let filterAllLink = document.getElementById('all');
+    let filterHoodiesLink = document.getElementById('hoodies');
+    let filterShirtsLink = document.getElementById('shirts');
     let cartLink = document.getElementById('cart');
     let cartTotal = document.getElementById('grand-total');
 
@@ -117,7 +123,13 @@ document.addEventListener("DOMContentLoaded", function () {
         cartTotal.classList.add("active");
         cartTotal.classList.remove("text-light");
     } else if (privacyUrl) {
-        cartLink.classList.add("active");
+        privacyLink.classList.add("active");
+    } else if (filterAllUrl) {
+        filterAllLink.classList.add("active");
+    } else if (filterHoodiesUrl) {
+        filterHoodiesLink.classList.add("active");
+    } else if (filterShirtsUrl) {
+        filterShirtsLink.classList.add("active");
     }
     
 
