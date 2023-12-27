@@ -104,7 +104,87 @@ NOTE: Most of the features are available to guests as well as registered users. 
 
 ## CODE VALIDATION
 
-### W3C VALIDATION HERE
+### W3C VALIDATION
+
+#### BASE HTML
+
+<details>
+  <summary>Base HTML results</summary>
+<img src="docs/testing-files/nuhtml/base/base-valid.png" ><br>
+</details>
+
+#### CART HTML
+
+<details>
+  <summary>Cart HTML results</summary>
+<img src="docs/testing-files/nuhtml/cart/cart-valid.png" ><br>
+</details>
+
+#### HOME HTML
+
+<details>
+  <summary>Home HTML results</summary>
+<img src="docs/testing-files/nuhtml/home/home-valid.png" ><br>
+</details>
+
+#### PRIVACY HTML
+
+<details>
+  <summary>Privacy HTML results</summary>
+<img src="docs/testing-files/nuhtml/privacy/privacy-valid.png" ><br>
+</details>
+
+#### SHOP HTML
+
+<details>
+  <summary>Shop HTML results</summary>
+<img src="docs/testing-files/nuhtml/shop/shop-valid.png" ><br>
+</details>
+
+#### WISHLIST HTML
+
+<details>
+  <summary>Wishlist HTML results</summary>
+<img src="docs/testing-files/nuhtml/wishlist/wishlist-valid.png" ><br>
+</details>
+
+***NOTE: The following screenshots contain errors either produced by django itself or by libraries like django-countries. These are not fixable for me, because I would need to change the package code which will most likely be overwritten by a future aupdate which may occur. The viable option would be to provide valid html to the developers github repository via pull request.***
+
+#### CHECKOUT HTML
+
+<details>
+  <summary>Checkout HTML results</summary>
+<img src="docs/testing-files/nuhtml/checkout/checkout-errors-django-countries.png" ><br>
+</details>
+
+<details>
+  <summary>Checkout HTML error proof</summary>
+<img src="docs/testing-files/nuhtml/checkout/cdjango-countries-error-proof.png" ><br>
+</details>
+
+#### CONTACT/INQUIRIES HTML
+
+<details>
+  <summary>Contact HTML results</summary>
+<img src="docs/testing-files/nuhtml/contact-inquiries/contact-errors-from-django.png" ><br>
+</details>
+
+<details>
+  <summary>Contact HTML error proof</summary>
+<img src="docs/testing-files/nuhtml/contact-inquiries/contact-errors-from-django-proof.png" ><br>
+</details>
+
+#### PROFILE HTML
+
+<details>
+  <summary>Profile HTML results</summary>
+<img src="docs/testing-files/nuhtml/profile/profile-django-errors.png" ><br>
+</details>
+
+<details>
+  <summary>Profile HTML error proof</summary>
+<img src="docs/testing-files/nuhtml/profile/error-proof.png" ><br>
+</details>
 
 ### CSS VALIDATION
 
@@ -134,9 +214,7 @@ The CSS warnings come from Swiper included via CDN.
 
 The warnings about unused and undefined variables come from Stripe and Swiper. They are included via CDN..
 
-### PYTHON VALIDATION HERE
-
-For the PEP8 validation, tutorial code was omitted
+### PYTHON VALIDATION
 
 #### CART APP
 
