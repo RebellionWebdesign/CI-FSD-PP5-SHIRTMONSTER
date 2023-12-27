@@ -3,7 +3,7 @@
 
 {% block content %}
     <section class="wishlist-section flex flex-center">
-        <container class="flex flex-center flex-column">
+        <div class="container flex flex-center flex-column">
             {% if user.is_authenticated %}
             {% if wishes %}
             <h2 class="text-light section-header">Hey {{ user.username }}, this is your wishlist!</h2>
@@ -12,7 +12,7 @@
             {% endif %}
             {% for wish in wishes %}
                 <div class="wishlist-item m-top m-bottom flex">
-                    <img class="wishlist-image" src="{{ wish.product_id.image_url }}" alt="{{ wish.product_id.name }}" class="wishlist-image">
+                    <img class="wishlist-image" src="{{ wish.product_id.image_url }}" alt="{{ wish.product_id.name }}">
                     <div class="wishlist-item-header flex flex-column">
                         <h3 class="text-light">{{ wish.product_id.name }}</h3>
                         <div class="wishlist-general-info flex flex-center-y flex-between text-light">
@@ -47,6 +47,6 @@
             {% else %}
                 <h2>Sorry, nothing is here yet!</h2>
             {% endif %}
-        </container>
+            </div>
     </section>
 {% endblock content %}
