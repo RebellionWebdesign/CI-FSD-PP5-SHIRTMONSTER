@@ -344,6 +344,33 @@ The warnings about unused and undefined variables come from Stripe and Swiper. T
 <img src="docs/testing-files/pep8/wishlist/wishlist-views.png" ><br>
 </details>
 
+### WAVE VALIDATION
+
+<details>
+  <summary>WAVE Homepage results</summary>
+<img src="docs/testing-files/wave/homepage-valid.png" ><br>
+</details>
+
+<details>
+  <summary>WAVE Shop-Page results</summary>
+<img src="docs/testing-files/wave/shop-valid.png" ><br>
+</details>
+
+<details>
+  <summary>WAVE Privacy results</summary>
+<img src="docs/testing-files/wave/privacy-valid.png" ><br>
+</details>
+
+<details>
+  <summary>WAVE Cart results</summary>
+<img src="docs/testing-files/wave/cart-valid.png" ><br>
+</details>
+
+<details>
+  <summary>WAVE Custom Shirt results</summary>
+<img src="docs/testing-files/wave/customshirt-valid.png" ><br>
+</details>
+
 ## BUGS
 
 - A very bad bug which I can not solve for now is that the update_total() function from the walkthrough works only in the cart. The function is returning NULL on save and reverts back to its default value of 0. I could not find out why this is happening. You can reproduce this by deleting the `default=0` attribute from the Order model and trying to save an order. The error will show the issue. However, this needs to be fixed urgently.
