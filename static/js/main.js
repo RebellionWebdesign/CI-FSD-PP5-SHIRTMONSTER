@@ -124,12 +124,15 @@ document.addEventListener("DOMContentLoaded", function () {
         cartTotal.classList.remove("text-light");
     } else if (privacyUrl) {
         privacyLink.classList.add("active");
-    } else if (filterAllUrl) {
+    } else if (shopUrl && filterAllUrl) {
         filterAllLink.classList.add("active");
-    } else if (filterHoodiesUrl) {
+        shopLink.classList.add("active");
+    } else if (shopUrl && filterHoodiesUrl) {
         filterHoodiesLink.classList.add("active");
-    } else if (filterShirtsUrl) {
+        shopLink.classList.add("active");
+    } else if (shopUrl && filterShirtsUrl) {
         filterShirtsLink.classList.add("active");
+        shopLink.classList.add("active");
     }
     
 
