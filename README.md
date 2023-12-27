@@ -350,5 +350,5 @@ This section explains the deployment steps on [Heroku](https://www.heroku.com)
 
 ## Acknowledgments
 
-- [Juliia Konovalova](https://github.com/IuliiaKonovalova) for being my mentor and helping through some of the issues I encountered on the project. The README.md, TESTING.md and FEATURES.md files were inspired by hers.
+- [Juliia Konovalova](https://github.com/IuliiaKonovalova) for being my mentor and helping through some of the issues I encountered on the project. The README.md and TESTING.md files were inspired by hers.
 - My family for bearing with me and for keeping me grounded.
