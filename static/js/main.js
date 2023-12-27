@@ -90,12 +90,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Checks the url for which page we are on and adds the .active class to the link
     let homeUrl = window.location.pathname == "/";
     let shopUrl = window.location.href.includes('shop');
-    let contactUrl = window.location.href.includes('contact');
+    let contactUrl = window.location.href.includes('custom_shirts');
     let cartUrl = window.location.href.includes('cart');
     let profileUrl = window.location.href.includes('profiles');
     let homeLink = document.getElementById('home');
     let shopLink = document.getElementById('shop');
-    let contactLink = document.getElementById('contact');
     let customLink = document.getElementById('custom-shirts');
     let profileLink = document.getElementById('my-profile');
     let cartLink = document.getElementById('cart');
