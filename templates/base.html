@@ -100,7 +100,7 @@
             <div class="filter-column column-3 flex flex-center">
                 <nav id="filter-nav" class="filter-nav">
                     <ul class="flex flex-center-y">
-                        <li><strong><p class="text-light">FILTER BY:</p></strong></li>
+                        <li><p class="text-light"><strong>FILTER BY:</strong></p></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies,t_shirts">ALL PRODUCTS</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies">HOODIES</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=t_shirts">T-SHIRTS</a></li>
@@ -114,6 +114,7 @@
                         <li><a id="my-profile" class="text-light flex flex-center" href="{% url 'profile' pk=user.pk %}"><i data-lucide="circle-user-round"></i></a></li>
                         <div class="mobile-cart-wrapper flex">
                             <li><a id="cart" class="cart text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
+                            {% comment "needs fix not allwed as ul child" %}{% endcomment %}
                             <p id="grand-total" class="grand-total text-light">
                                 {% if grand_total %}
                                     {{ grand_total|floatformat:2 }}€
