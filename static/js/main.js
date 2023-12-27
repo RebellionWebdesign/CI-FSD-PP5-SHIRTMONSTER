@@ -106,8 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
         shopLink.classList.add("active");
     } else if (contactUrl) {
         contactLink.classList.add("active");
-    } else if (contactUrl) {
-        contactLink.classList.add("active");
     } else if (profileUrl) {
         profileLink.classList.add("active");
         profileLink.classList.remove("text-light");
@@ -117,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cartTotal.classList.add("active");
         cartTotal.classList.remove("text-light");
     }
+    
 
     // Increase or decrease the product quantity in the cart
     let decreaseQuantityButtons = document.querySelectorAll(".decrement-quantity");
