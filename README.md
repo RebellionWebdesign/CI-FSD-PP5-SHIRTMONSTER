@@ -132,7 +132,50 @@ Users need the ability to at least contact the business to cancel an order. Why 
 
 ## Features
 
-For the features, please refer to the [FEATURES.md](FEATURES.md) file.
+#### APP FEATURES
+
+| APP              | FEATURE                                                      |
+| ---------------- | ------------------------------------------------------------ |
+| **CART**         |                                                              |
+|                  | user can add items                                           |
+|                  | user can increase and decrease item quantity                 |
+|                  | user can delete items                                        |
+|                  | cart calculates tax, shipping, sub total and grand total     |
+|                  | each item can have a max of five items                       |
+| **CHECKOUT**     |                                                              |
+|                  | shows total payment amount                                   |
+| **CUSTOM SHIRT** |                                                              |
+|                  | acts as an inquiry and contact form by omitting the image, this is a 'lazy' solution and should be separated into two distinct forms |
+|                  | inquiries are visible in the admin panel under 'custom shirt', including the image if any. This approach was decided on very late in the process hence the name. Should also be two distinct apps. |
+| **HOME**         |                                                              |
+|                  | pulls data from Products, ProductCategory and Testimonial to display |
+| **PRODUCTS**     |                                                              |
+|                  | ProductsHomeView provides data to home page, ProductDetailView provides data for detail pages, detail pages have button to add item to wishlist (logged in users) |
+| **PROFILES**     |                                                              |
+|                  | Provides a user detail view and an order overview as well as order details and a testimonial form |
+| **SHOP**         |                                                              |
+|                  | shows products as cards, provides link to details and BUY button |
+|                  | shop can be filtered by item category or all items           |
+| **TESTIMONIAL**  |                                                              |
+|                  | stores testimonial data and provides it to the home page     |
+|                  | testimonials are updateable                                  |
+| **WISHLIST**     |                                                              |
+|                  | displays items the user added                                |
+|                  | items can be deleted                                         |
+|                  | items can be added to cart                                   |
+| **FLATPAGES**    |                                                              |
+|                  | The privacy page uses the flat pages feature which is built in to django |
+
+#### GLOBAL FEATURES
+
+| FEATURE            | DESCRIPTION                                                  |
+| ------------------ | ------------------------------------------------------------ |
+| Header Search      | The header sports a search bar which can search the shop. If nothing is found, a message is displayed |
+| Role Based Login   | While authenticating on the same login form, there are limitations to what users can do:<br />Guests can buy in the shop, but dont have access to profiles or wishlists<br />Registered users have access to the wishlist and to the profile and to the admin panel if they are staff and/or admin<br />Admin users can see everything from above plus see everything in the admin panel |
+| Newsletter sign up | When the home page is completely scrolled down, a newsletter signup box will appear. it uses double opt-in. It sends a mail for the user to confirm. |
+| Data validation    | The data validation is handled completely by django. Either through default forms, or by using .is_valid() and .cleaned_data(). The only exception is the phone field in the forms. It can not be int only, since some countries require a country code in the form +49 (for germany). Django 3.2 also does not provide the tel field.<br />https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel |
+
+
 
 ## Design
 
