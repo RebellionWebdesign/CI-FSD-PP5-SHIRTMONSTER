@@ -44,6 +44,8 @@ For this MVP there were no automatic tests done.
 
 ## MANUAL TESTING
 
+NOTE: Most of the features are available to guests as well as registered users. If a feature is only for registered users it is filed under the related category, if a feature is for all users it will be filed as a guest test.
+
 | FEATURE                                                      | ACTION                                                       | EXPECTED RESULT                                              | ACTUAL RESULT                                                | TESTED | PASSED | COMMENTS                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | ------ | -------------------------- |
 | **NAVIGATION AS GUEST**                                      |                                                              |                                                              |                                                              |        |        |                            |
