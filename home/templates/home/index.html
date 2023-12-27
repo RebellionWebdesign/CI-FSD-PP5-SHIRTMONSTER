@@ -87,7 +87,7 @@
                             <p class="product-name">{{ product.name }}</p>
                             <div class="product-rating">{{ product.rating }}</div>
                         </div>
-                        <div class="product-info flex flex-between flex-center-y text-light">
+                        <div class="product-info flex flex-between flex-center-y text-light"><span class="testimonial-user">
                             <h3 class="product-price">{{ product.price }} €</h3>
                             <a class="cta-button-link text-light" href="{% url "product_detail" pk=product.pk %}">DETAILS</a>
                         </div>
@@ -159,7 +159,8 @@
                 <div class="swiper-slide flex">
                     <div class="slide-testimonial flex flex-center flex-column text-light">
                         <h3 class="m-bottom">
-                            <span class="testimonial-user">{{ testimonial.user_id }}<span> on {{ testimonial.created_at|date:'d.m.Y' }}</h3>
+                            <span class="testimonial-user">{{ testimonial.user_id }}<span> on {{ testimonial.created_at|date:'d.m.Y' }}
+                        </h3>
                         <p class="slide-text"><i>"{{ testimonial.content }}"</i></p>
                     </div>
                 </div>
