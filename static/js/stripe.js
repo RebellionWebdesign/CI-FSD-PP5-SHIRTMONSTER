@@ -37,7 +37,7 @@ card.mount('#card-element');
 
 // Card element error handler
 card.addEventListener("change", function (event) {
-    var errorDiv = document.getElementById("card-errors")
+    var errorDiv = document.getElementById("card-errors");
     if (event.error) {
         var html = 
             `<p>${event.error.message}</p>`;
@@ -45,7 +45,7 @@ card.addEventListener("change", function (event) {
     } else {
         errorDiv.textContent = '';
     }
-})
+});
 
 // Form submission handler
 var form = document.getElementById('payment-form');
@@ -57,12 +57,11 @@ form.addEventListener('submit', function(ev) {
 
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
-    console.log(csrfToken)
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
         'save_info': saveInfo,
-    }
+    };
 
     var url = '/checkout/cache_checkout_data/';
     $.post(url, postData).done(function () {
@@ -106,6 +105,6 @@ form.addEventListener('submit', function(ev) {
             }
         });
     }).fail(function () {
-        location.reload()
-    })
+        location.reload();
+    });
 });
