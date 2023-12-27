@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import View
+from django.contrib.auth.mixins import LoginRequiredMixin
 from products.models import Product
 from .models import WishList
 from django.contrib import messages
 
-class WishView(View):
+class WishView(LoginRequiredMixin, View):
     """ This displays the users wishlist on the wishlist page """
 
     def get(self, request):
@@ -17,7 +18,7 @@ class WishView(View):
         return render(request, 'wishlist/wishlist.html', context)
 
 
-class RemoveWish(View):
+class RemoveWish(LoginRequiredMixin, View):
     """ Deletes an item from the wishlist """
 
     def post(self, request, pk):
