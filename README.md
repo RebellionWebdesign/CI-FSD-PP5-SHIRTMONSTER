@@ -344,6 +344,7 @@ This section explains the deployment steps on [Heroku](https://www.heroku.com)
   <summary>TOC Github</summary>
   <img src="docs/readme-files/deployment-heroku/open-toc-github.png" ><br>
 </details>
+
 - The sitemap.xml file was generated with [Sitemap Generator](https://www.marcobeierer.com/tools/sitemap-generator)
 - The privacy policy was generated with [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
 
