@@ -60,7 +60,7 @@ Explanatory text here
 
 ## AUTOMATIC TESTING
 
-TEST RESULTS HERE
+For this MVP there were no automatic tests done.
 
 ## MANUAL TESTING
 
@@ -80,4 +80,4 @@ TEST RESULTS HERE
 
 ## BUGS
 
-## FURTHER NOTES
+- A very bad bug which I can not solve for now is that the update_total() function from the walkthrough works only in the cart. I could not pinpoint why the function returns NULL for the related fields on save. This needs to be fixed in the future.
