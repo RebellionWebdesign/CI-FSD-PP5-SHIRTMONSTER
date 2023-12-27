@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import messages
 from products.models import Product
 
+
 def view_cart(request):
     """ A view which lets shoppers view the shopping cart """
     return render(request, 'cart/cart.html')
@@ -20,7 +21,7 @@ def add_to_cart(request, item_id):
     if item_id in list(cart.keys()):
         if current_cart_items + quantity > 5:
             (messages.error(request, 'You only can have 5 items of each!'))
-            quantity = 5 - current_cart_items 
+            quantity = 5 - current_cart_items
         else:
             cart[item_id] += quantity
             messages.add_message(request, messages.SUCCESS, "Product added!")
