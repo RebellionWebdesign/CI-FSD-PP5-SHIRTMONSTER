@@ -7,7 +7,7 @@
                 <hr>
                 <h2 class="checkout-header">Thank You, {{ user.username }}</h2>
                 <hr>
-                <p class="">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                <p>Your order information is below.</p>
             <div class="checkout-order-data flex flex-between m-top">
                 <p><strong>Order Number:</strong> <small>{{ order.order_number }}</small></p>
                 <p><strong>Order Date:</strong> {{ order.order_date|date:'d.m.Y' }}</p>
