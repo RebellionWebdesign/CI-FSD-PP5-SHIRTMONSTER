@@ -142,7 +142,7 @@
             <div class="column-3 flex flex-center flex-end">
                 <nav id="filter-nav" class="filter-nav">
                     <ul>
-                        <li><strong><p class="text-light">FILTER BY:</p></strong></li>
+                        <li><p class="text-light"><strong>FILTER BY:</strong></p></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies,t_shirts">ALL PRODUCTS</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=hoodies">HOODIES</a></li>
                         <li><a class="text-light" href="{% url 'shop' %}?category=t_shirts">T-SHIRTS</a></li>
@@ -153,13 +153,15 @@
                 <nav class="user-nav">
                     <ul class="flex flex-end">
                         <li><a id="cart" class="text-light flex flex-center" href="{% url 'cart' %}"><i data-lucide="shopping-cart"></i></a></li>
-                        <p id="grand-total" class="grand-total text-light">
-                            {% if grand_total %}
-                                {{ grand_total|floatformat:2 }}€
-                            {% else %}
-                                0.00 €
-                            {% endif %}
-                        </p>
+                        <li>
+                            <p id="grand-total" class="grand-total text-light">
+                                {% if grand_total %}
+                                    {{ grand_total|floatformat:2 }}€
+                                {% else %}
+                                    0.00 €
+                                {% endif %}
+                            </p>
+                        </li>
                     </ul>
                 </nav>
             </div>
