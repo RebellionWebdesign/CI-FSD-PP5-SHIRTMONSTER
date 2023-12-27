@@ -1,61 +1,39 @@
 ## COMPATIBILITY
 
-For cross-browser compatibility the browsers Google Chrome and Firefox Developer Edition were tested. Apple devices were omitted because I don´t own any. The tests were conducted on the deployed site.
+For cross-browser compatibility the browsers Google Chrome and Firefox Developer Edition were tested. Apple devices were omitted because I don´t own any. The tests were conducted on the deployed site. For the sake of readbility and to not overwhelm readers I will include representative screenshots from the landing page, forms and the cart. All other screenshots are in the repository if the reader wishes to view them beyond assessment testing.
 
 ### CHROME:
 
 <details>
-  <summary>Homepage Desktop View</summary>
-<img src="docs/testing-files/chrome-desktop.png" ><br>
+  <summary>Landing Page Responsive</summary>
+<img src="docs/testing-files/homepage-responsive/homepage-responsive-all.png" ><br>
 </details>
 
 <details>
-  <summary>Homepage Tablet View</summary>
-<img src="docs/testing-files/chrome-tablet.png" ><br>
+  <summary>Contact Page Responsive</summary>
+<img src="docs/testing-files/contact-page-responsive/contact-responsive-all.png" ><br>
 </details>
 
 <details>
-  <summary>Homepage Phone View</summary>
-<img src="docs/testing-files/chrome-phone.png" ><br>
-</details>
-
-<details>
-  <summary>Shop Desktop View</summary>
-<img src="docs/testing-files/shop-page-desktope.png" ><br>
-</details>
-
-
-
-### FIREFOX:
-
-<details>
-  <summary>TITLE HERE</summary>
-<img src="IMAGE HERE" ><br>
-</details>
-
-## RESPONSIVE BEHAVIOR:
-
-Explanatory text here
-
-### CHROME:
-
-<details>
-  <summary>TITLE HERE</summary>
-<img src="IMAGE HERE" ><br>
+  <summary>Cart Page Responsive</summary>
+<img src="docs/testing-files/cart-page-responsive/cart-responsive-all.png" ><br>
 </details>
 
 ### FIREFOX:
 
 <details>
-  <summary>TITLE HERE</summary>
-<img src="IMAGE HERE" ><br>
+  <summary>Landing Page Responsive</summary>
+<img src="docs/testing-files/homepage-responsive/homepage-responsive-firefox-all.png" ><br>
 </details>
 
-### RESPONSIVELY:
+<details>
+  <summary>Contact Page Responsive</summary>
+<img src="docs/testing-files/contact-page-responsive/contact-responsive-firefox-all.png" ><br>
+</details>
 
 <details>
-  <summary>RESPONSIVELY CRITICAL BREAKPOINTS</summary>
-<img src="IMAGE HERE" ><br>
+  <summary>Cart Page Responsive</summary>
+<img src="docs/testing-files/cart-page-responsive/cart-responsive-firefox-all.png" ><br>
 </details>
 
 ## AUTOMATIC TESTING
