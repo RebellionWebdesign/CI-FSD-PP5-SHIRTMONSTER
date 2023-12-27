@@ -7,11 +7,11 @@
 {% block content %}
 <section class="inquiry-section flex flex-center">
     <div class="container flex flex-center flex-column text-light text-center">
-        <h2>
-            Hey shirt friend, looks like you need a custom shirt!<br>
+        <h1>
+            <small>Hey shirt friend, looks like you need a custom shirt!<br>
             Please use the form below to make an inquiry!<br>
-            <small>You can also contact us normally here.</small>
-        </h2>
+            You can also contact us normally here.</small>
+        </h1>
         <form class="inquiry-form text-light flex flex-center flex-column flex-center m-top"
                 action="{% url 'custom_shirts' %}" method='post' id="inquiry-form"
                 enctype="multipart/form-data">
