@@ -9,6 +9,7 @@ from testimonial.models import Testimonial
 from testimonial.forms import TestimonialForm
 from . import forms
 
+
 class UserProfileView(LoginRequiredMixin, View):
     template_name = 'profiles/profiles.html'
     context_object_name = 'profile'
@@ -29,11 +30,12 @@ class UserProfileView(LoginRequiredMixin, View):
         }
 
         return render(request, 'profiles/profiles.html', context)
-    
+
     def post(self, request, pk):
         user = get_object_or_404(User, pk=pk)
         profile = request.user.userprofile
-        form = forms.UserProfileForm(request.POST, instance=user.userprofile)
+        form = forms.UserProfileForm(request.POST,
+                                     instance=user.userprofile)
         form.set_update_user(user)
         context = {
             'user': user,
@@ -44,24 +46,30 @@ class UserProfileView(LoginRequiredMixin, View):
             form.save()
             messages.success(request, 'Profile updated successfully!')
         else:
-            messages.error(request, 'Whoops! Something went wrong while saving your data. Please check the form again!')
-        
+            messages.error(
+                request, 'Whoops! Something went wrong while saving'
+                         'your data. Please check the form again!')
+
         return render(request, 'profiles/profiles.html', context)
 
     def get_object(self):
         return self.request.user
+
 
 class OrderOverview(LoginRequiredMixin, View):
     """
     This view provides the testimonial field and an order overview
     for registered customers
     """
+
     def get(self, request, order_number):
         user_profile = get_object_or_404(UserProfile, user=request.user)
-        orders = get_object_or_404(Order, user_profile=user_profile, order_number=order_number)
+        orders = get_object_or_404(
+            Order, user_profile=user_profile, order_number=order_number)
         testimonial_form = TestimonialForm()
         testimonial_form.set_content(order_number)
-        testimonial_content = Testimonial.objects.filter(user_id=request.user, order_id=orders)
+        testimonial_content = Testimonial.objects.filter(
+            user_id=request.user, order_id=orders)
         order_items = orders.order_items.all()
         context = {
             'orders': orders,
@@ -72,16 +80,20 @@ class OrderOverview(LoginRequiredMixin, View):
 
         return render(request, 'profiles/order_detail.html', context)
 
-
     def post(self, request, order_number):
         order = get_object_or_404(Order, order_number=order_number)
-        testimonial, created = Testimonial.objects.get_or_create(user_id=request.user, order_id=order)
+        testimonial, created = Testimonial.objects.get_or_create(
+            user_id=request.user, order_id=order)
 
-        testimonial_form = TestimonialForm(data=request.POST, instance=testimonial)
+        testimonial_form = TestimonialForm(
+            data=request.POST, instance=testimonial)
         if testimonial_form.is_valid():
             testimonial_form.save()
             messages.success(request, 'Thanks for your testimonial!')
         else:
-            messages.error(request, 'Ooops...something went wrong here. Please check your testimonial.')
+            messages.error(
+                request, 'Ooops...something went wrong here.'
+                         'Please check your testimonial.')
 
-        return redirect(reverse('order_detail', kwargs={'order_number': order_number}))
+        return redirect(reverse('order_detail',
+                                kwargs={'order_number': order_number}))

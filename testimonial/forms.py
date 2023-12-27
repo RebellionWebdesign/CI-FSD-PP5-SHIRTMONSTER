@@ -1,6 +1,7 @@
 from django import forms
 from .models import Testimonial
 
+
 class TestimonialForm(forms.ModelForm):
     """ This form lets users write a testimonial """
     class Meta:
@@ -11,7 +12,8 @@ class TestimonialForm(forms.ModelForm):
 
     def set_content(self, order_number):
         try:
-            testimonial = Testimonial.objects.get(order_id__order_number=order_number)
+            testimonial = Testimonial.objects.get(
+                order_id__order_number=order_number)
             self.fields['content'].initial = testimonial.content
         except Testimonial.DoesNotExist:
             pass
@@ -34,7 +36,7 @@ class TestimonialForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'testimonial-form'
             self.fields[field].label = False
-    
+
     def update_testimonial(self, testimonial, user):
         testimonial.content = self.cleaned_data['content']
         testimonial.save()

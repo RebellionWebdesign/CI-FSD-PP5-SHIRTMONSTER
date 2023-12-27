@@ -5,6 +5,7 @@ from products.models import Product
 from .models import WishList
 from django.contrib import messages
 
+
 class WishView(LoginRequiredMixin, View):
     """ This displays the users wishlist on the wishlist page """
 
@@ -14,7 +15,7 @@ class WishView(LoginRequiredMixin, View):
         context = {
             "wishes": wishes,
         }
-    
+
         return render(request, 'wishlist/wishlist.html', context)
 
 
@@ -27,5 +28,5 @@ class RemoveWish(LoginRequiredMixin, View):
 
         wish_item.delete()
         messages.success(request, 'Product removed from wishlist!')
-    
+
         return redirect(reverse('user_wishlist'))

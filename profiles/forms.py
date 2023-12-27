@@ -16,7 +16,8 @@ class UserProfileForm(forms.ModelForm):
             'user',
         ]
 
-    user = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.HiddenInput())
+    user = forms.ModelChoiceField(queryset=User.objects.all(),
+                                  widget=forms.HiddenInput())
 
     def set_update_user(self, user):
         self.fields['country'].widget.attrs['autofocus'] = True
@@ -38,7 +39,6 @@ class UserProfileForm(forms.ModelForm):
             'user': 'Username',
         }
 
-        
         for field in self.fields:
             if field != 'country':
                 if self.fields[field].required:

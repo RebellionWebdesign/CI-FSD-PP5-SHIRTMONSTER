@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import UserProfile
 
+
 class ProfileAdmin(admin.ModelAdmin):
     list_display = (
         'user',
@@ -11,5 +12,6 @@ class ProfileAdmin(admin.ModelAdmin):
         'adress_line_1',
         'adress_line_2',
     )
+
 
 admin.site.register(UserProfile)

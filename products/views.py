@@ -5,6 +5,7 @@ from django.contrib import messages
 from products.models import Product
 from wishlist.models import WishList
 
+
 class ProductsHomeView(View):
     """
     A view which gets all products from the database, so they can be
@@ -21,10 +22,12 @@ class ProductsHomeView(View):
 
         return render(request, 'home/index.html', context)
 
+
 class ProductDetailView(View):
     """
     A view to show the detail page for a given product
     """
+
     def get(self, request, pk):
 
         products = Product.objects.filter(pk=pk)
@@ -35,6 +38,7 @@ class ProductDetailView(View):
         }
 
         return render(request, 'products/product_detail.html', context)
+
 
 def add_to_wishlist(request, pk):
     """ A view to let users add products to a wishlist """
@@ -53,6 +57,5 @@ def add_to_wishlist(request, pk):
         wish.full_clean()
         wish.save()
         messages.success(request, 'Product added to wishlist!')
-    
-    return redirect(reverse('product_detail', kwargs={'pk': product.pk}))
 
+    return redirect(reverse('product_detail', kwargs={'pk': product.pk}))

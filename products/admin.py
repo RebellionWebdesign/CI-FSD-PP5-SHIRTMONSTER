@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Product, ProductCategory
 
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -23,8 +24,6 @@ class CategoryAdmin(admin.ModelAdmin):
         'created_at',
         'modified_at',
     )
-
-
 
 
 admin.site.register(Product, ProductAdmin)
