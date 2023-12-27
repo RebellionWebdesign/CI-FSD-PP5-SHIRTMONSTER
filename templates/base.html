@@ -68,9 +68,10 @@
                 </div>
                 {% comment %} MOBILE NAVBAR ELEMENTS END {% endcomment %}
             </div>
-            <form method="get" action="{% url 'shop' %}" id="search-box" class="search-box column-3 flex">
+            <label class="hide" for="search-box">Search</label>
+            <form method="get" action="{% url 'shop' %}" id="search-box" name="search-box" class="search-box column-3 flex">
                 <input class="main-search" type="search" id="main-search" name="main-search" placeholder="Search the Shop...">
-                <button class="main-search-button flex flex-center">
+                <button class="main-search-button flex flex-center" aria-label="search">
                     <i data-lucide="search"></i>
                 </button>
             </form>
@@ -162,7 +163,7 @@
                 <nav class="user-nav">
                     <ul class="flex flex-end">
                         <li>
-                            <a id="cart" class="text-light flex flex-center" href="{% url 'cart' %}">
+                            <a id="cart" class="text-light flex flex-center" href="{% url 'cart' %}" aria-label="link to cart">
                                 <i data-lucide="shopping-cart"></i>
                             </a>
                         </li>
@@ -207,13 +208,13 @@
             </div>
             <div class="footer-column-center column-3 flex flex-center">
                 <div class="social-wrapper">
-                    <a href="https://facebook.com" target="blank" class="social-link m-right">
+                    <a href="https://facebook.com" target="blank" class="social-link m-right" aria-label="link to facebook">
                         <i data-lucide="facebook"></i>
                     </a>
-                    <a href="https://instagram.com" target="blank" class="social-link">
+                    <a href="https://instagram.com" target="blank" class="social-link" aria-label="link to instagram">
                         <i data-lucide="instagram"></i>
                     </a>
-                    <a href="https://twitter.com" target="blank" class="social-link m-left">
+                    <a href="https://twitter.com" target="blank" class="social-link m-left" aria-label="link to twitter">
                         <i data-lucide="twitter"></i>
                     </a>
                 </div>
