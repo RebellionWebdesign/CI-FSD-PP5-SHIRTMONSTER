@@ -380,7 +380,8 @@ The warnings about unused and undefined variables come from Stripe and Swiper. T
 
 ## BUGS
 
-- A very bad bug which I can not solve for now is that the update_total() function from the walkthrough works only in the cart. The function is returning NULL on save and reverts back to its default value of 0. I could not find out why this is happening. You can reproduce this by deleting the `default=0` attribute from the Order model and trying to save an order. The error will show the issue. However, this needs to be fixed urgently.
+- ~~A very bad bug which I can not solve for now is that the update_total() function from the walkthrough works only in the cart. The function is returning NULL on save and reverts back to its default value of 0. I could not find out why this is happening. You can reproduce this by deleting the `default=0` attribute from the Order model and trying to save an order. The error will show the issue. However, this needs to be fixed urgently.~~
+  - This issue was fixed by changing the `self.save()` method to `super().save()` and adding the tax field to the database. Upon order completion all relevant data is saved to the database and gets displayed in the checkout success summary.
 
 - A smaller bug is that the filter links arent colored when they are clicked. This is happening because the main.js function handling the coloring is an if/else block checking the URL. This can be solved by adding a different visual marker. Due to time constraints this couldnt be implemented.
 
