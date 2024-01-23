@@ -26,10 +26,10 @@
                 {% endfor %}
                 <hr>
                 <div class="checkout-success-summary flex flex-between m-top">
-                    <p class="w-100">Order Total: {{ order.order_total }}€</p>
-                    <p class="w-100">Tax: {{ tax|floatformat:2 }}</p>
-                    <p class="w-100">Shipping: {{ order.shipping_cost }}</p>
-                    <p class="w-100"><strong>Grand Total: {{ order.grand_total }}€</strong></p>
+                    <p class="w-100">Order Total: {{ order.order_total }} €</p>
+                    <p class="w-100">Tax: {{ order.tax|floatformat:2 }} €</p>
+                    <p class="w-100">Shipping: {{ order.shipping_cost }} €</p>
+                    <p class="w-100"><strong>Grand Total: {{ order.grand_total }} €</strong></p>
                 </div>
                 <p class="w-100 text-center m-top"><strong>Your card will be charged {{ order.grand_total }}€</strong></p>
                 <a class="cta-button-link text-light flex flex-center m-top" href="{% url 'home' %}">BACK TO HOME</a>
