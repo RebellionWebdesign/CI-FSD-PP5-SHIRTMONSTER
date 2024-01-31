@@ -79,7 +79,7 @@ In any case there are more possibilities like X/Twitter, Instagram, TikTok and o
 For good SEO results, meta tags were used. The process for finding the correct and important meta tags is as follows:
 
 - Find initial keywords to use (streetwear, print on demand, t-shirt, shirt, hoodie, print, pod, fashion, apparel)
-- Go to [wordtracker.com](wordtracker.com)
+- Go to [wordtracker.com](https://wordtracker.com)
 - Select keywords from initial list (max 2 -> streetwear, print on demand)
 - Select highest ranking keywords from list 1 -> **streetwear**, streetwear brands, japanese streetwear, anime streetwear, streetwear hoodies
 - Select highest ranking keywords from list 2 -> **print on demand companies**, print on demand shirts, best print on demand sites
